@@ -20,7 +20,7 @@ function App() {
         document.execCommand('copy')
         document.body.removeChild(ta)
       }
-      setToast('email copies')
+      setToast('email copied')
       setTimeout(() => setToast(null), 2000)
     } catch {
       setToast('email copied') // mantener el mensaje solicitado
@@ -67,8 +67,8 @@ function App() {
       )}
       <header className="px-6 md:px-10 py-6">
         <div className="flex items-center justify-between">
-          <h1 className="text-lg font-semibold">Maria del Rio</h1>
-          <div className="flex items-center gap-4 text-sm">
+          <h1 className="text-sm md:text-lg font-semibold">Maria del Rio</h1>
+          <div className="flex items-center gap-3 text-xs md:text-sm">
             <a
               href="https://www.instagram.com/bymariadelrio"
               className="text-black hover:opacity-70"
@@ -98,11 +98,11 @@ function App() {
           </div>
         </div>
 
-        <div className="mt-8 text-left">
-          <p className="text-3xl md:text-4xl font-bold leading-tight">
+        <div className="mt-6 md:mt-8 text-left">
+          <p className="text-xl sm:text-2xl md:text-4xl font-bold leading-tight">
             Passionate about challenging opportunities to create a new
           </p>
-          <p className="text-3xl md:text-4xl font-bold leading-tight">
+          <p className="text-xl sm:text-2xl md:text-4xl font-bold leading-tight">
             postproduction
           </p>
         </div>
@@ -118,7 +118,7 @@ function App() {
                   : 'border-transparent text-neutral-500 hover:text-black'
               }`}
             >
-              {tab === 'all' ? 'Show all' : tab[0].toUpperCase() + tab.slice(1)}
+              {tab === 'all' ? 'All' : tab[0].toUpperCase() + tab.slice(1)}
             </button>
           ))}
         </nav>
@@ -155,6 +155,42 @@ function App() {
           </section>
         )}
       </main>
+      <footer className="border-t border-neutral-200 px-6 md:px-10 py-6">
+        <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between text-sm">
+          <div className="flex items-center gap-4">
+            <a
+              href="https://www.instagram.com/bymariadelrio"
+              className="text-black hover:opacity-70"
+              aria-label="Instagram"
+              title="Instagram"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src="/insta.svg" alt="Instagram" className="h-5 w-5" />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/maria-del-rio-/"
+              className="text-black hover:opacity-70"
+              aria-label="LinkedIn"
+              title="LinkedIn"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src="/linkedin.svg" alt="LinkedIn" className="h-6 w-6" />
+            </a>
+          </div>
+          <div className="flex items-end gap-3 flex-col">
+            <span className="font-semibold">Maria del Rio</span>
+            <button
+              onClick={handleCopyEmail}
+              className="underline hover:opacity-70"
+              aria-label="Copy email to clipboard"
+            >
+              bymariadelrio@gmail.com
+            </button>
+          </div>
+        </div>
+      </footer>
     </div>
   )
 }
