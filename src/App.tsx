@@ -2,7 +2,7 @@ import { useState } from 'react'
 import './App.css'
 
 function App() {
-  type Tab = 'all' | 'personal' | 'ads' | 'about' | 'interviews'
+  type Tab = 'all' | 'personal' | 'ads' | 'about' | 'interviews' | 'photo'
   const [activeTab, setActiveTab] = useState<Tab>('all')
   // Notificación (toast)
   const [toast, setToast] = useState<string | null>(null)
@@ -32,7 +32,7 @@ function App() {
     id: string
     title: string
     src: string
-    category: 'personal' | 'ads' | 'interviews'
+    category: 'personal' | 'ads' | 'interviews' | 'photo'
   }
 
   const videos: Video[] = [
@@ -55,6 +55,8 @@ function App() {
       ? videos.filter((v) => v.category === 'ads')
       : activeTab === 'interviews'
       ? videos.filter((v) => v.category === 'interviews')
+      : activeTab === 'photo'
+      ? videos.filter((v) => v.category === 'photo')
       : []
 
   return (
@@ -111,7 +113,7 @@ function App() {
         </div>
 
         <nav className="mt-6 flex gap-1 md:gap-2 text-xs md:text-sm">
-          {(['all', 'personal', 'ads', 'interviews', 'about'] as const).map((tab) => (
+          {(['all', 'personal', 'ads', 'interviews', 'photo', 'about'] as const).map((tab) => (
             <button
               key={tab}
               onClick={() => setActiveTab(tab)}
