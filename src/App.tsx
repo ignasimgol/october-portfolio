@@ -20,10 +20,10 @@ function App() {
         document.execCommand('copy')
         document.body.removeChild(ta)
       }
-      setToast('email copied')
+      setToast('Email Copied')
       setTimeout(() => setToast(null), 2000)
     } catch {
-      setToast('email copied') // mantener el mensaje solicitado
+      setToast('Email Copied')
       setTimeout(() => setToast(null), 2000)
     }
   }
@@ -59,10 +59,13 @@ function App() {
 
   return (
     <div className="min-h-screen bg-white text-black">
-      {/* Toast de notificación */}
       {toast && (
-        <div className="fixed top-4 right-4 bg-black text-white text-sm px-3 py-2 rounded shadow">
-          {toast}
+        <div className="fixed inset-0 z-50 flex items-center justify-center">
+          <div className="bg-black text-white max-w-md w-11/12 rounded-md shadow-lg px-5 py-4">
+            <p className="text-base md:text-lg font-semibold text-center">
+              {toast}
+            </p>
+          </div>
         </div>
       )}
       <header className="px-6 md:px-10 py-6">
@@ -180,7 +183,7 @@ function App() {
             </a>
           </div>
           <div className="flex items-end gap-3 flex-col">
-            <span className="font-semibold">Maria del Rio</span>
+            <span className="font-semibold">Maria del Rio. All rights reseved. 2025.</span>
             <button
               onClick={handleCopyEmail}
               className="underline hover:opacity-70"
