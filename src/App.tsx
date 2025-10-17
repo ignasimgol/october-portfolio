@@ -110,15 +110,15 @@ function App() {
           </p>
         </div>
 
-        <nav className="mt-6 flex gap-4 text-sm">
+        <nav className="mt-6 flex gap-1 md:gap-2 text-xs md:text-sm">
           {(['all', 'personal', 'ads', 'interviews', 'about'] as const).map((tab) => (
             <button
               key={tab}
               onClick={() => setActiveTab(tab)}
-              className={`pb-1 border-b-2 transition ${
+              className={`px-2 py-0.5 md:px-3 md:py-1 border rounded-[5px] transition-colors ${
                 activeTab === tab
-                  ? 'border-black'
-                  : 'border-transparent text-neutral-500 hover:text-black'
+                  ? 'bg-black text-white border-black'
+                  : 'bg-transparent border-neutral-300 text-neutral-600 hover:border-black hover:text-black'
               }`}
             >
               {tab === 'all' ? 'All' : tab[0].toUpperCase() + tab.slice(1)}
