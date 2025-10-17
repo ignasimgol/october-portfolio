@@ -2,23 +2,48 @@ import { useState } from 'react'
 import './App.css'
 
 function App() {
-  type Tab = 'all' | 'personal' | 'ads' | 'about'
+  type Tab = 'all' | 'personal' | 'ads' | 'about' | 'interviews'
   const [activeTab, setActiveTab] = useState<Tab>('all')
+  // Notificación (toast)
+  const [toast, setToast] = useState<string | null>(null)
+
+  const handleCopyEmail = async () => {
+    const email = 'bymariadelrio@gmail.com'
+    try {
+      if (navigator.clipboard?.writeText) {
+        await navigator.clipboard.writeText(email)
+      } else {
+        const ta = document.createElement('textarea')
+        ta.value = email
+        document.body.appendChild(ta)
+        ta.select()
+        document.execCommand('copy')
+        document.body.removeChild(ta)
+      }
+      setToast('email copies')
+      setTimeout(() => setToast(null), 2000)
+    } catch {
+      setToast('email copied') // mantener el mensaje solicitado
+      setTimeout(() => setToast(null), 2000)
+    }
+  }
 
   type Video = {
     id: string
     title: string
     src: string
-    category: 'personal' | 'ads'
+    category: 'personal' | 'ads' | 'interviews'
   }
 
   const videos: Video[] = [
-    { id: 'p1', title: 'Offline + Online editor. ROVE HOME - Dubai Marina', src: 'https://yjfzriagdd.ufs.sh/f/DM7CcnrlhW9ZEMjtROZglonH4wkj7WTqzFi8bDdG3tp2vVUc', category: 'ads' },
-    { id: 'p2', title: 'Offline editor. Etihad Airways - Cadet Pilot Program', src: 'https://yjfzriagdd.ufs.sh/f/DM7CcnrlhW9Zrhw7mtiSzmJlgELyvNHfAPoKwc73r54QnqB1', category: 'ads' },
-    { id: 'a1', title: 'Offline + Online editor. MiZa Tenants - Ripple', src: 'https://yjfzriagdd.ufs.sh/f/DM7CcnrlhW9ZbfonAiahc9oyKGWHFpJwSjug7ECl2OkV0sdX', category: 'ads' },
-    { id: 'a2', title: 'Offline + Online editor. MiZa Tenants - Wai Wiz', src: 'https://yjfzriagdd.ufs.sh/f/DM7CcnrlhW9ZrJyJVgiSzmJlgELyvNHfAPoKwc73r54QnqB1', category: 'ads' },
-    { id: 'a3', title: 'Offline Editor. UAE Union Day', src: 'https://yjfzriagdd.ufs.sh/f/DM7CcnrlhW9Z1AqWbojPZc3mDwh6s4XzBMUYLg2Aix58oFt0', category: 'ads' },
-    { id: 'a4', title: 'UPS Spec Ad. Directed and Edited by Maria del Rio', src: 'https://yjfzriagdd.ufs.sh/f/DM7CcnrlhW9ZqfOZqkPb8f3zC7VlOi9SNTXEDsk5IvRGB40M', category: 'ads' },
+    { id: 'a1', title: 'Offline + Online editor. ROVE HOME - Dubai Marina', src: 'https://yjfzriagdd.ufs.sh/f/DM7CcnrlhW9ZEMjtROZglonH4wkj7WTqzFi8bDdG3tp2vVUc', category: 'ads' },
+    { id: 'a2', title: 'Offline editor. Banco Santander', src: 'https://yjfzriagdd.ufs.sh/f/DM7CcnrlhW9Z2mwbsNRcZ30ow7GD2ILksnTq96u5dyfpz4Xg', category: 'ads' },
+    { id: 'a3', title: 'Offline editor. Securitas Direct', src: 'https://yjfzriagdd.ufs.sh/f/DM7CcnrlhW9ZV9Mmr8CuhYn70AJ2DZlT953KORFC6mikWe8o', category: 'ads' },
+    { id: 'a4', title: 'Offline editor. Mahou', src: 'https://yjfzriagdd.ufs.sh/f/DM7CcnrlhW9Z7k5V3cyipkDrQuhS0qbYLnPlG2tOAxcmEdH6', category: 'ads' },
+    { id: 'a5', title: 'Offline Editor. UAE Union Day', src: 'https://yjfzriagdd.ufs.sh/f/DM7CcnrlhW9Z1AqWbojPZc3mDwh6s4XzBMUYLg2Aix58oFt0', category: 'ads' },
+    { id: 'a6', title: 'UPS Spec Ad. Directed and Edited by Maria del Rio', src: 'https://yjfzriagdd.ufs.sh/f/DM7CcnrlhW9ZqfOZqkPb8f3zC7VlOi9SNTXEDsk5IvRGB40M', category: 'ads' },
+    { id: 'i1', title: 'Offline + Online editor. MiZa Tenants - Ripple', src: 'https://yjfzriagdd.ufs.sh/f/DM7CcnrlhW9ZbfonAiahc9oyKGWHFpJwSjug7ECl2OkV0sdX', category: 'interviews' },
+    { id: 'i2', title: 'Offline + Online editor. MiZa Tenants - Wai Wiz', src: 'https://yjfzriagdd.ufs.sh/f/DM7CcnrlhW9ZrJyJVgiSzmJlgELyvNHfAPoKwc73r54QnqB1', category: 'interviews' },
   ]
 
   const filtered =
@@ -28,10 +53,18 @@ function App() {
       ? videos.filter((v) => v.category === 'personal')
       : activeTab === 'ads'
       ? videos.filter((v) => v.category === 'ads')
+      : activeTab === 'interviews'
+      ? videos.filter((v) => v.category === 'interviews')
       : []
 
   return (
     <div className="min-h-screen bg-white text-black">
+      {/* Toast de notificación */}
+      {toast && (
+        <div className="fixed top-4 right-4 bg-black text-white text-sm px-3 py-2 rounded shadow">
+          {toast}
+        </div>
+      )}
       <header className="px-6 md:px-10 py-6">
         <div className="flex items-center justify-between">
           <h1 className="text-lg font-semibold">Maria del Rio</h1>
@@ -56,7 +89,10 @@ function App() {
             >
               <img src="/linkedin.svg" alt="LinkedIn" className="h-7 w-7" />
             </a>
-            <button className="border border-black px-3 py-1 rounded hover:bg-black hover:text-white transition">
+            <button
+              className="border border-black px-3 py-1 rounded hover:bg-black hover:text-white transition"
+              onClick={handleCopyEmail}
+            >
               Contact Me
             </button>
           </div>
@@ -72,7 +108,7 @@ function App() {
         </div>
 
         <nav className="mt-6 flex gap-4 text-sm">
-          {(['all', 'personal', 'ads', 'about'] as const).map((tab) => (
+          {(['all', 'personal', 'ads', 'interviews', 'about'] as const).map((tab) => (
             <button
               key={tab}
               onClick={() => setActiveTab(tab)}
