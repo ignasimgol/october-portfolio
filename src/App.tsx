@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import './App.css'
+import VimeoComponent from './components/VimeoComponent'
 
 function App() {
   type Tab =  'personal' | 'commercials' | 'interviews' | 'about' | 'photo'
@@ -31,8 +32,11 @@ function App() {
   type Video = {
     id: string
     title: string
-    src: string
+    src?: string
     category: 'personal' | 'commercials' | 'interviews' | 'photo'
+    provider?: 'file' | 'youtube' | 'vimeo'
+    youtubeId?: string
+    vimeoId?: string
   }
 
   const videos: Video[] = [
@@ -44,6 +48,8 @@ function App() {
     { id: 'a6', title: 'UPS Spec Ad. Directed and Edited by Maria del Rio', src: 'https://yjfzriagdd.ufs.sh/f/DM7CcnrlhW9ZqfOZqkPb8f3zC7VlOi9SNTXEDsk5IvRGB40M', category: 'commercials' },
     { id: 'i1', title: 'Offline + Online editor. MiZa Tenants - Ripple', src: 'https://yjfzriagdd.ufs.sh/f/DM7CcnrlhW9ZbfonAiahc9oyKGWHFpJwSjug7ECl2OkV0sdX', category: 'interviews' },
     { id: 'i2', title: 'Offline + Online editor. MiZa Tenants - Wai Wiz', src: 'https://yjfzriagdd.ufs.sh/f/DM7CcnrlhW9ZrJyJVgiSzmJlgELyvNHfAPoKwc73r54QnqB1', category: 'interviews' },
+    // Personal tab Vimeo item (no branding, no controls)
+    { id: 'p2', title: 'Personal — Vimeo Sample', provider: 'vimeo', vimeoId: '1128518372', category: 'personal' }
   ]
 
   const filtered =
@@ -154,15 +160,28 @@ function App() {
             {filtered.map((v) => (
               <div key={v.id} className="flex flex-col">
                 <figure className="relative overflow-hidden rounded-md bg-neutral-100 aspect-[4/3]">
-                  <video
-                    src={v.src}
-                    className="h-full w-full object-cover"
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
-                    controls
-                  />
+                  {v.provider === 'vimeo' ? (
+                    <VimeoComponent vimeoId={v.vimeoId!} title={v.title} />
+                  ) : v.provider === 'youtube' ? (
+                    <iframe
+                      src={`https://www.youtube-nocookie.com/embed/${v.youtubeId}?autoplay=1&mute=1&playsinline=1&controls=0&rel=0&modestbranding=1&loop=1&playlist=${v.youtubeId}&iv_load_policy=3&fs=0&disablekb=1`}
+                      title={v.title}
+                      className="h-full w-full object-cover pointer-events-none"
+                      allow="autoplay; encrypted-media; picture-in-picture"
+                      frameBorder="0"
+                      allowFullScreen
+                    />
+                  ) : (
+                    <video
+                      src={v.src}
+                      className="h-full w-full object-cover"
+                      autoPlay
+                      muted
+                      loop
+                      playsInline
+                      controls
+                    />
+                  )}
                 </figure>
                 <div className="mt-2 text-xs text-black">
                   {v.title}
