@@ -103,13 +103,24 @@ function App() {
           </div>
         </div>
 
-        <div className="mt-6 md:mt-8 text-left">
-          <p className="text-xl sm:text-2xl md:text-4xl font-bold leading-tight">
-            Passionate about challenging opportunities to create a new
-          </p>
-          <p className="text-xl sm:text-2xl md:text-4xl font-bold leading-tight">
-            postproduction
-          </p>
+        <div className="mt-6 md:mt-8">
+          <div className="relative w-full h-40 sm:h-48 md:h-56 lg:h-64 rounded-md overflow-hidden">
+            <img
+              src="/test.gif"
+              alt="hero animation"
+              className="absolute inset-0 w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 z-10 flex items-center justify-center">
+              <div className="max-w-xl px-4 py-3 sm:px-6 sm:py-4 rounded">
+                <p className="text-center text-xl sm:text-2xl md:text-4xl font-bold leading-tight">
+                  Passionate about challenging opportunities to create a new
+                </p>
+                <p className="text-center text-xl sm:text-2xl md:text-4xl font-bold leading-tight">
+                  postproduction
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
 
         <nav className="mt-6 flex gap-1 md:gap-2 text-xs md:text-sm">
