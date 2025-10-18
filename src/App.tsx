@@ -2,7 +2,7 @@ import { useState } from 'react'
 import './App.css'
 
 function App() {
-  type Tab =  'personal' | 'all' | 'commercials' | 'interviews' | 'about' | 'photo'
+  type Tab =  'personal' | 'commercials' | 'interviews' | 'about' | 'photo'
   const [activeTab, setActiveTab] = useState<Tab>('commercials')
   // Notificación (toast)
   const [toast, setToast] = useState<string | null>(null)
@@ -47,17 +47,9 @@ function App() {
   ]
 
   const filtered =
-    activeTab === 'all'
-      ? videos
-      : activeTab === 'personal'
-      ? videos.filter((v) => v.category === 'personal')
-      : activeTab === 'commercials'
-      ? videos.filter((v) => v.category === 'commercials')
-      : activeTab === 'interviews'
-      ? videos.filter((v) => v.category === 'interviews')
-      : activeTab === 'photo'
-      ? videos.filter((v) => v.category === 'photo')
-      : []
+    activeTab === 'about'
+      ? []
+      : videos.filter((v) => v.category === activeTab)
 
   return (
     <div className="min-h-screen bg-white text-black">
@@ -121,7 +113,7 @@ function App() {
         </div>
 
         <nav className="mt-6 grid grid-cols-3 gap-1 md:flex md:flex-nowrap md:gap-2 text-xs md:text-sm">
-          {(['all', 'commercials', 'interviews', 'personal', 'photo', 'about'] as const).map((tab) => (
+          {(['commercials', 'interviews', 'personal', 'photo', 'about'] as const).map((tab) => (
             <button
               key={tab}
               onClick={() => setActiveTab(tab)}
@@ -131,7 +123,7 @@ function App() {
                   : 'bg-transparent border-neutral-300 text-neutral-600 hover:border-black hover:text-black'
               }`}
             >
-              {tab === 'all' ? 'All' : tab[0].toUpperCase() + tab.slice(1)}
+              {tab[0].toUpperCase() + tab.slice(1)}
             </button>
           ))}
         </nav>
@@ -158,7 +150,7 @@ function App() {
             </div>
           </section>
         ) : (
-          <section className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          <section className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
             {filtered.map((v) => (
               <div key={v.id} className="flex flex-col">
                 <figure className="relative overflow-hidden rounded-md bg-neutral-100 aspect-[4/3]">
