@@ -137,11 +137,23 @@ function App() {
 
       <main className="px-6 md:px-10 pb-20">
         {activeTab === 'about' ? (
-          <section className="max-w-3xl text-base leading-relaxed text-left">
-            <h2 className="text-2xl font-semibold mb-4">About</h2>
-            <p>
-              Add your bio, capabilities, and contact details here. Replace this copy with your own content.
-            </p>
+          <section className="grid md:grid-cols-3 gap-8 md:gap-6 lg:gap-4 items-left">
+            <div className="flex justify-center md:justify-start">
+              <div className="rounded-2xl bg-gradient-to-tr from-indigo-200 via-pink-200 to-orange-200 p-2 shadow-sm">
+                <img
+                  src="/maria.jpg"
+                  alt="Maria del Rio"
+                  className="h-64 w-64 md:h-80 md:w-80 object-cover rounded-xl"
+                />
+              </div>
+            </div>
+            <div className="md:col-span-2">
+              <h2 className="text-4xl md:text-5xl font-bold mb-4 text-left">Hi there!</h2>
+              <p className="text-neutral-600 text-base md:text-lg leading-7 max-w-xl text-left">
+                Fuelled by a passion for designing compelling products, I have a deep desire
+                to excel and continuously improve in my work. Learn more about my journey below.
+              </p>
+            </div>
           </section>
         ) : (
           <section className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
