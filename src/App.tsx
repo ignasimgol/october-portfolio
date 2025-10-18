@@ -2,8 +2,8 @@ import { useState } from 'react'
 import './App.css'
 
 function App() {
-  type Tab = 'all' | 'personal' | 'commercials' | 'about' | 'photo'
-  const [activeTab, setActiveTab] = useState<Tab>('all')
+  type Tab =  'personal' | 'all' | 'commercials' | 'interviews' | 'about' | 'photo'
+  const [activeTab, setActiveTab] = useState<Tab>('commercials')
   // Notificación (toast)
   const [toast, setToast] = useState<string | null>(null)
 
@@ -32,7 +32,7 @@ function App() {
     id: string
     title: string
     src: string
-    category: 'personal' | 'commercials' | 'photo'
+    category: 'personal' | 'commercials' | 'interviews' | 'photo'
   }
 
   const videos: Video[] = [
@@ -42,8 +42,8 @@ function App() {
     { id: 'a4', title: 'Offline editor. Mahou', src: 'https://yjfzriagdd.ufs.sh/f/DM7CcnrlhW9Z7k5V3cyipkDrQuhS0qbYLnPlG2tOAxcmEdH6', category: 'commercials' },
     { id: 'a5', title: 'Offline Editor. UAE Union Day', src: 'https://yjfzriagdd.ufs.sh/f/DM7CcnrlhW9Z1AqWbojPZc3mDwh6s4XzBMUYLg2Aix58oFt0', category: 'commercials' },
     { id: 'a6', title: 'UPS Spec Ad. Directed and Edited by Maria del Rio', src: 'https://yjfzriagdd.ufs.sh/f/DM7CcnrlhW9ZqfOZqkPb8f3zC7VlOi9SNTXEDsk5IvRGB40M', category: 'commercials' },
-    { id: 'a7', title: 'Offline + Online editor. MiZa Tenants - Ripple', src: 'https://yjfzriagdd.ufs.sh/f/DM7CcnrlhW9ZbfonAiahc9oyKGWHFpJwSjug7ECl2OkV0sdX', category: 'commercials' },
-    { id: 'a8', title: 'Offline + Online editor. MiZa Tenants - Wai Wiz', src: 'https://yjfzriagdd.ufs.sh/f/DM7CcnrlhW9ZrJyJVgiSzmJlgELyvNHfAPoKwc73r54QnqB1', category: 'commercials' },
+    { id: 'i1', title: 'Offline + Online editor. MiZa Tenants - Ripple', src: 'https://yjfzriagdd.ufs.sh/f/DM7CcnrlhW9ZbfonAiahc9oyKGWHFpJwSjug7ECl2OkV0sdX', category: 'interviews' },
+    { id: 'i2', title: 'Offline + Online editor. MiZa Tenants - Wai Wiz', src: 'https://yjfzriagdd.ufs.sh/f/DM7CcnrlhW9ZrJyJVgiSzmJlgELyvNHfAPoKwc73r54QnqB1', category: 'interviews' },
   ]
 
   const filtered =
@@ -53,6 +53,8 @@ function App() {
       ? videos.filter((v) => v.category === 'personal')
       : activeTab === 'commercials'
       ? videos.filter((v) => v.category === 'commercials')
+      : activeTab === 'interviews'
+      ? videos.filter((v) => v.category === 'interviews')
       : activeTab === 'photo'
       ? videos.filter((v) => v.category === 'photo')
       : []
@@ -118,12 +120,12 @@ function App() {
           </div>
         </div>
 
-        <nav className="mt-6 flex gap-1 md:gap-2 text-xs md:text-sm">
-          {(['all', 'personal', 'commercials', 'photo', 'about'] as const).map((tab) => (
+        <nav className="mt-6 grid grid-cols-3 gap-1 md:flex md:flex-nowrap md:gap-2 text-xs md:text-sm">
+          {(['all', 'commercials', 'interviews', 'personal', 'photo', 'about'] as const).map((tab) => (
             <button
               key={tab}
               onClick={() => setActiveTab(tab)}
-              className={`px-2 py-0.5 md:px-3 md:py-1 border rounded-[5px] transition-colors ${
+              className={`w-full md:w-auto text-center px-2 py-0.5 md:px-3 md:py-1 border rounded-[5px] transition-colors ${
                 activeTab === tab
                   ? 'bg-black text-white border-black'
                   : 'bg-transparent border-neutral-300 text-neutral-600 hover:border-black hover:text-black'
