@@ -255,6 +255,7 @@ function App() {
             >
               bymariadelrio@gmail.com
             </button>
+            <span>Barcelona</span>
           </div>
         </div>
       </footer>
