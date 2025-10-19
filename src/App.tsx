@@ -40,35 +40,35 @@ function App() {
   const videos: Video[] = [
     {
       id: 'a1',
-      title: 'Offline + Online editor. ROVE HOME - Dubai Marina',
+      title: 'Rove Home - Dubai Marina',
       src: 'https://yjfzriagdd.ufs.sh/f/DM7CcnrlhW9ZEMjtROZglonH4wkj7WTqzFi8bDdG3tp2vVUc',
       category: 'commercials',
       cover: new URL('./assets/covers/rove.jpg', import.meta.url).href
     },
     {
       id: 'a2',
-      title: 'Offline editor. Banco Santander',
+      title: 'Inclusión - Banco Santander',
       src: 'https://yjfzriagdd.ufs.sh/f/DM7CcnrlhW9Z2mwbsNRcZ30ow7GD2ILksnTq96u5dyfpz4Xg',
       category: 'commercials',
       cover: new URL('./assets/covers/santander.jpg', import.meta.url).href
     },
     {
       id: 'a3',
-      title: 'Offline editor. Securitas Direct',
+      title: 'Nueva alarma de Securitas Direct con cerradura inteligente - Securitas Direct',
       src: 'https://yjfzriagdd.ufs.sh/f/DM7CcnrlhW9ZV9Mmr8CuhYn70AJ2DZlT953KORFC6mikWe8o',
       category: 'commercials',
       cover: new URL('./assets/covers/securitas.jpg', import.meta.url).href
     },
     {
       id: 'a8',
-      title: 'Offline editor. Etihad Airways - Cadet Pilot Program',
+      title: 'Cadet Pilot Program - Etihad Airways',
       src: 'https://yjfzriagdd.ufs.sh/f/DM7CcnrlhW9Zrhw7mtiSzmJlgELyvNHfAPoKwc73r54QnqB1',
       category: 'commercials',
       cover: new URL('./assets/covers/airlines.jpg', import.meta.url).href
     },
     {
       id: 'a5',
-      title: 'Offline Editor. UAE Union Day',
+      title: 'UAE Union Day - The Crown Prince Court',
       src: 'https://yjfzriagdd.ufs.sh/f/DM7CcnrlhW9Z1AqWbojPZc3mDwh6s4XzBMUYLg2Aix58oFt0',
       category: 'commercials',
       cover: new URL('./assets/covers/union.jpg', import.meta.url).href
@@ -82,14 +82,14 @@ function App() {
     },
     {
       id: 'a6',
-      title: 'Offline + Online editor. MiZa Tenants - Ripple',
+      title: 'MiZa Tenants: Ripple - MiZa Abu Dhabi',
       src: 'https://yjfzriagdd.ufs.sh/f/DM7CcnrlhW9ZbfonAiahc9oyKGWHFpJwSjug7ECl2OkV0sdX',
       category: 'commercials',
       cover: new URL('./assets/covers/ripple.jpg', import.meta.url).href
     },
     {
       id: 'a7',
-      title: 'Santander Bienestando (YouTube)',
+      title: 'Santander Bienestando -Banco Santander',
       src: 'https://www.youtube.com/watch?v=zGRJN3-KhSI',
       category: 'commercials',
       cover: new URL('./assets/covers/youtube.jpg', import.meta.url).href
@@ -122,7 +122,7 @@ function App() {
       )}
       <header className="px-6 md:px-10 py-6">
         <div className="flex items-center justify-between">
-          <h1 className="text-sm md:text-lg font-semibold">Maria del Rio</h1>
+          <h1 className="text-sm md:text-lg font-semibold">Maria del Río</h1>
           <div className="flex items-center gap-3 text-xs md:text-sm">
             <a
               href="https://www.instagram.com/bymariadelrio"
@@ -194,16 +194,18 @@ function App() {
               <div className="rounded-2xl bg-gradient-to-tr from-yellow-200 via-amber-200 to-orange-300 p-2 shadow-sm">
                 <img
                   src="/maria.jpg"
-                  alt="Maria del Rio"
+                  alt="Maria del Río"
                   className="h-64 w-64 md:h-80 md:w-80 object-cover rounded-xl"
                 />
               </div>
             </div>
             <div className="md:col-span-2">
-              <h2 className="text-4xl md:text-5xl font-bold mb-4 text-left">Hi there!</h2>
-              <p className="text-neutral-600 text-base md:text-lg leading-7 max-w-xl text-left">
-                Fuelled by a passion for designing compelling products, I have a deep desire
-                to excel and continuously improve in my work. Learn more about my journey below.
+              <h2 className="text-4xl md:text-5xl font-bold mb-4 text-left">Hola!</h2>
+              <p className="text-black text-base md:text-m leading-7 max-w-xl text-left">
+                Soy María del Río, editora de vídeo y fotógrafa. He trabajado en Madrid (Serena), Abu Dhabi (She Films) y Dubái (Ninja Media Productions), editando campañas, vídeos corporativos y comerciales de alto nivel para marcas como Banco Santander, Alsa, Securitas Direct y Etihad Airways.
+              </p>
+              <p className="text-blue-900 text-base md:text-m leading-7 max-w-xl text-left mt-4">
+                I’m María del Río, a video editor and photographer. I’ve worked in Madrid (Serena), Abu Dhabi (She Films), and Dubai (Ninja Media Productions), editing high-end campaigns, corporate videos, and commercials for brands such as Banco Santander, Alsa, Securitas Direct, and Etihad Airways.
               </p>
             </div>
           </section>
@@ -247,7 +249,7 @@ function App() {
             </a>
           </div>
           <div className="flex items-end gap-3 flex-col">
-            <span className="font-semibold">Maria del Rio. All rights reseved. 2025.</span>
+            <span className="font-semibold">Maria del Río. All rights reseved. 2025.</span>
             <button
               onClick={handleCopyEmail}
               className="underline hover:opacity-70"
