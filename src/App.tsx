@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from 'react'
 import './App.css'
 import Pics from './components/Pics'
+import About from './components/About'
 
 function App() {
   type Tab =  'personal' | 'commercials' | 'about' | 'photo'
@@ -54,7 +55,7 @@ function App() {
     },
     {
       id: 'a3',
-      title: 'Nueva alarma de Securitas Direct con cerradura inteligente - Securitas Direct',
+      title: 'Securitas Direct con cerradura inteligente - Securitas Direct',
       src: 'https://yjfzriagdd.ufs.sh/f/DM7CcnrlhW9ZV9Mmr8CuhYn70AJ2DZlT953KORFC6mikWe8o',
       category: 'commercials',
       cover: new URL('./assets/covers/securitas.jpg', import.meta.url).href
@@ -82,17 +83,17 @@ function App() {
     },
     {
       id: 'a6',
-      title: 'MiZa Tenants: Ripple - MiZa Abu Dhabi',
-      src: 'https://yjfzriagdd.ufs.sh/f/DM7CcnrlhW9ZbfonAiahc9oyKGWHFpJwSjug7ECl2OkV0sdX',
-      category: 'commercials',
-      cover: new URL('./assets/covers/ripple.jpg', import.meta.url).href
-    },
-    {
-      id: 'a7',
       title: 'Santander Bienestando -Banco Santander',
       src: 'https://www.youtube.com/watch?v=zGRJN3-KhSI',
       category: 'commercials',
       cover: new URL('./assets/covers/youtube.jpg', import.meta.url).href
+    },
+    {
+      id: 'a7',
+      title: 'MiZa Tenants: Ripple - MiZa Abu Dhabi',
+      src: 'https://yjfzriagdd.ufs.sh/f/DM7CcnrlhW9ZbfonAiahc9oyKGWHFpJwSjug7ECl2OkV0sdX',
+      category: 'commercials',
+      cover: new URL('./assets/covers/ripple.jpg', import.meta.url).href
     },
     {
       id: 'p2',
@@ -189,26 +190,7 @@ function App() {
 
       <main className="px-6 md:px-10 pb-20">
         {activeTab === 'about' ? (
-          <section className="grid md:grid-cols-3 gap-8 md:gap-6 lg:gap-4 items-left">
-            <div className="flex justify-center md:justify-start">
-              <div className="rounded-2xl bg-gradient-to-tr from-yellow-200 via-amber-200 to-orange-300 p-2 shadow-sm">
-                <img
-                  src="/maria.jpg"
-                  alt="Maria del Río"
-                  className="h-64 w-64 md:h-80 md:w-80 object-cover rounded-xl"
-                />
-              </div>
-            </div>
-            <div className="md:col-span-2">
-              <h2 className="text-4xl md:text-5xl font-bold mb-4 text-left">Hola!</h2>
-              <p className="text-black text-base md:text-m leading-7 max-w-xl text-left">
-                Soy María del Río, editora de vídeo y fotógrafa. He trabajado en Madrid (Serena), Abu Dhabi (She Films) y Dubái (Ninja Media Productions), editando campañas, vídeos corporativos y comerciales de alto nivel para marcas como Banco Santander, Alsa, Securitas Direct y Etihad Airways.
-              </p>
-              <p className="text-blue-900 text-base md:text-m leading-7 max-w-xl text-left mt-4">
-                I’m María del Río, a video editor and photographer. I’ve worked in Madrid (Serena), Abu Dhabi (She Films), and Dubai (Ninja Media Productions), editing high-end campaigns, corporate videos, and commercials for brands such as Banco Santander, Alsa, Securitas Direct, and Etihad Airways.
-              </p>
-            </div>
-          </section>
+          <About />
         ) : activeTab === 'photo' ? (
           <Pics />
         ) : (
