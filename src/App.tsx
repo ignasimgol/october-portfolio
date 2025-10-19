@@ -1,6 +1,5 @@
-import { useState } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import './App.css'
-import VimeoComponent from './components/VimeoComponent'
 
 function App() {
   type Tab =  'personal' | 'commercials' | 'interviews' | 'about' | 'photo'
@@ -32,11 +31,8 @@ function App() {
   type Video = {
     id: string
     title: string
-    src?: string
+    src: string
     category: 'personal' | 'commercials' | 'interviews' | 'photo'
-    provider?: 'file' | 'youtube' | 'vimeo'
-    youtubeId?: string
-    vimeoId?: string
   }
 
   const videos: Video[] = [
@@ -45,11 +41,9 @@ function App() {
     { id: 'a3', title: 'Offline editor. Securitas Direct', src: 'https://yjfzriagdd.ufs.sh/f/DM7CcnrlhW9ZV9Mmr8CuhYn70AJ2DZlT953KORFC6mikWe8o', category: 'commercials' },
     { id: 'a4', title: 'Offline editor. Mahou', src: 'https://yjfzriagdd.ufs.sh/f/DM7CcnrlhW9Z7k5V3cyipkDrQuhS0qbYLnPlG2tOAxcmEdH6', category: 'commercials' },
     { id: 'a5', title: 'Offline Editor. UAE Union Day', src: 'https://yjfzriagdd.ufs.sh/f/DM7CcnrlhW9Z1AqWbojPZc3mDwh6s4XzBMUYLg2Aix58oFt0', category: 'commercials' },
-    { id: 'a6', title: 'UPS Spec Ad. Directed and Edited by Maria del Rio', src: 'https://yjfzriagdd.ufs.sh/f/DM7CcnrlhW9ZqfOZqkPb8f3zC7VlOi9SNTXEDsk5IvRGB40M', category: 'commercials' },
+    { id: 'p1', title: 'UPS Spec Ad. Directed and Edited by Maria del Rio', src: 'https://yjfzriagdd.ufs.sh/f/DM7CcnrlhW9ZqfOZqkPb8f3zC7VlOi9SNTXEDsk5IvRGB40M', category: 'personal' },
     { id: 'i1', title: 'Offline + Online editor. MiZa Tenants - Ripple', src: 'https://yjfzriagdd.ufs.sh/f/DM7CcnrlhW9ZbfonAiahc9oyKGWHFpJwSjug7ECl2OkV0sdX', category: 'interviews' },
     { id: 'i2', title: 'Offline + Online editor. MiZa Tenants - Wai Wiz', src: 'https://yjfzriagdd.ufs.sh/f/DM7CcnrlhW9ZrJyJVgiSzmJlgELyvNHfAPoKwc73r54QnqB1', category: 'interviews' },
-    // Personal tab Vimeo item (no branding, no controls)
-    { id: 'p2', title: 'Personal — Vimeo Sample', provider: 'vimeo', vimeoId: '1128518372', category: 'personal' }
   ]
 
   const filtered =
@@ -110,7 +104,7 @@ function App() {
             />
             <div className="absolute inset-0 z-10 flex items-center justify-center">
               <div className="max-w-xl px-4 py-3 sm:px-6 sm:py-4 rounded">
-                <p className="text-center text-xl sm:text-2xl md:text-4xl font-bold leading-tight">
+                <p className="text-center text-white text-xl sm:text-2xl md:text-4xl font-bold leading-tight">
                   Passionate about challenging opportunities to create a new
                 </p>
               </div>
@@ -159,30 +153,7 @@ function App() {
           <section className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
             {filtered.map((v) => (
               <div key={v.id} className="flex flex-col">
-                <figure className="relative overflow-hidden rounded-md bg-neutral-100 aspect-[4/3]">
-                  {v.provider === 'vimeo' ? (
-                    <VimeoComponent vimeoId={v.vimeoId!} title={v.title} />
-                  ) : v.provider === 'youtube' ? (
-                    <iframe
-                      src={`https://www.youtube-nocookie.com/embed/${v.youtubeId}?autoplay=1&mute=1&playsinline=1&controls=0&rel=0&modestbranding=1&loop=1&playlist=${v.youtubeId}&iv_load_policy=3&fs=0&disablekb=1`}
-                      title={v.title}
-                      className="h-full w-full object-cover pointer-events-none"
-                      allow="autoplay; encrypted-media; picture-in-picture"
-                      frameBorder="0"
-                      allowFullScreen
-                    />
-                  ) : (
-                    <video
-                      src={v.src}
-                      className="h-full w-full object-cover"
-                      autoPlay
-                      muted
-                      loop
-                      playsInline
-                      controls
-                    />
-                  )}
-                </figure>
+                <VideoTile src={v.src} title={v.title} />
                 <div className="mt-2 text-xs text-black">
                   {v.title}
                 </div>
@@ -228,6 +199,92 @@ function App() {
         </div>
       </footer>
     </div>
+  )
+}
+
+function VideoTile({ src, title }: { src: string; title: string }) {
+  const videoRef = useRef<HTMLVideoElement | null>(null)
+  const [, setIsPlaying] = useState(false) // eslint-disable-line @typescript-eslint/no-unused-vars
+  // NOTE: isPlaying is intentionally unused; kept for future UI state needs
+  const coverPoster = new URL('./assets/covers/bg.jpeg', import.meta.url).href
+  const [open, setOpen] = useState(false)
+
+  useEffect(() => {
+    const el = videoRef.current
+    if (!el) return
+    const onPlay = () => setIsPlaying(true)
+    const onPause = () => setIsPlaying(false)
+    const onEnded = () => setIsPlaying(false)
+    el.addEventListener('play', onPlay)
+    el.addEventListener('pause', onPause)
+    el.addEventListener('ended', onEnded)
+    return () => {
+      el.removeEventListener('play', onPlay)
+      el.removeEventListener('pause', onPause)
+      el.removeEventListener('ended', onEnded)
+    }
+  }, [])
+
+  useEffect(() => {
+    const prevOverflow = document.body.style.overflow
+    if (open) document.body.style.overflow = 'hidden'
+    return () => {
+      document.body.style.overflow = prevOverflow
+    }
+  }, [open])
+
+  return (
+    <>
+      {/* Tile cover: no video UI elements, just image + hover play */}
+      <figure className="group relative overflow-hidden rounded-md bg-neutral-100 aspect-[4/3]">
+        <img
+          src={coverPoster}
+          alt={title}
+          className="h-full w-full object-cover cursor-pointer"
+          onClick={() => setOpen(true)}
+        />
+        <button
+          type="button"
+          onClick={() => setOpen(true)}
+          className="absolute inset-0 flex items-center justify-center"
+          aria-label={`Open ${title}`}
+        >
+          <span className="flex items-center justify-center w-14 h-14 rounded-full bg-black/70 text-white text-xl transition-opacity opacity-0 group-hover:opacity-100">
+            ▶
+          </span>
+        </button>
+      </figure>
+
+      {/* Modal at ~75% of viewport */}
+      {open && (
+        <div
+          className="fixed inset-0 z-50 bg-black/70 flex items-center justify-center"
+          onClick={() => setOpen(false)}
+          aria-modal="true"
+          role="dialog"
+        >
+          <div
+            className="relative w-[65vw] h-[75vh] bg-black rounded-lg overflow-hidden shadow-xl"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Ensure video sits below the close button */}
+            <video
+              src={src}
+              className="w-full h-full object-contain bg-black"
+              controls
+              playsInline
+            />
+            <button
+              onClick={() => setOpen(false)}
+              aria-label="Close video"
+              className="absolute top-3 right-3 z-20 text-white bg-black/40 hover:bg-black/60 rounded px-3 py-1"
+            >
+              ×
+            </button>
+          </div>
+        </div>
+      )}
+    </>
   )
 }
 
