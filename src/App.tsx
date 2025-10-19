@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from 'react'
 import './App.css'
+import Pics from './components/Pics'
 
 function App() {
   type Tab =  'personal' | 'commercials' | 'about' | 'photo'
@@ -184,6 +185,8 @@ function App() {
               </p>
             </div>
           </section>
+        ) : activeTab === 'photo' ? (
+          <Pics />
         ) : (
           <section className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
             {filtered.map((v) => (
