@@ -30,7 +30,7 @@ export default function About() {
   return (
     <section className="grid md:grid-cols-3 gap-8 md:gap-6 lg:gap-4 items-left">
       <div className="flex justify-center md:justify-start">
-        <div className="rounded-2xl bg-gradient-to-tr from-yellow-200 via-amber-200 to-orange-300 p-2 shadow-sm">
+        <div className="rounded-2xl bg-[#FFDE59] p-2 shadow-sm">
           <img
             src="/maria.jpg"
             alt="Maria del Rio"
