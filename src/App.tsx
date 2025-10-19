@@ -60,6 +60,13 @@ function App() {
       cover: new URL('./assets/covers/securitas.jpg', import.meta.url).href
     },
     {
+      id: 'a8',
+      title: 'Offline editor. Etihad Airways - Cadet Pilot Program',
+      src: 'https://yjfzriagdd.ufs.sh/f/DM7CcnrlhW9Zrhw7mtiSzmJlgELyvNHfAPoKwc73r54QnqB1',
+      category: 'commercials',
+      cover: new URL('./assets/covers/airlines.jpg', import.meta.url).href
+    },
+    {
       id: 'a5',
       title: 'Offline Editor. UAE Union Day',
       src: 'https://yjfzriagdd.ufs.sh/f/DM7CcnrlhW9Z1AqWbojPZc3mDwh6s4XzBMUYLg2Aix58oFt0',
@@ -80,6 +87,21 @@ function App() {
       category: 'commercials',
       cover: new URL('./assets/covers/ripple.jpg', import.meta.url).href
     },
+    {
+      id: 'a7',
+      title: 'Santander Bienestando (YouTube)',
+      src: 'https://www.youtube.com/watch?v=zGRJN3-KhSI',
+      category: 'commercials',
+      cover: new URL('./assets/covers/youtube.jpg', import.meta.url).href
+    },
+    {
+      id: 'p2',
+      title: 'Abu Dhabi Streets',
+      src: 'https://yjfzriagdd.ufs.sh/f/DM7CcnrlhW9ZIpAPSN9ifLgd8hMTA76owI0mJxEtuOpnrlD1',
+      category: 'personal',
+      cover: new URL('./assets/covers/personal1.jpg', import.meta.url).href
+    },
+
   ]
 
   const filtered =
@@ -245,11 +267,28 @@ function VideoTile({ src, title, cover }: { src: string; title: string; cover?: 
   const [, setIsPlaying] = useState(false) // eslint-disable-line @typescript-eslint/no-unused-vars
   const coverPoster = new URL('./assets/covers/bg.jpeg', import.meta.url).href
   const [open, setOpen] = useState(false)
-
-  const [muted, setMuted] = useState(true)
+  const [muted, setMuted] = useState(false) // start with sound ON
   const tileCover = cover ?? coverPoster
 
+  const isYouTube = src.includes('youtube.com') || src.includes('youtu.be')
+  const buildYouTubeEmbed = (url: string, mute: boolean) => {
+    try {
+      const u = new URL(url)
+      let id = ''
+      if (u.hostname.includes('youtu.be')) {
+        id = u.pathname.split('/').filter(Boolean).pop() || ''
+      } else {
+        id = u.searchParams.get('v') || ''
+      }
+      return `https://www.youtube.com/embed/${id}?autoplay=1&mute=${mute ? 1 : 0}&rel=0&playsinline=1`
+    } catch {
+      return url
+    }
+  }
+  const embedUrl = isYouTube ? buildYouTubeEmbed(src, muted) : null
+
   useEffect(() => {
+    if (!open || isYouTube) return
     const el = videoRef.current
     if (!el) return
     const onPlay = () => setIsPlaying(true)
@@ -263,10 +302,10 @@ function VideoTile({ src, title, cover }: { src: string; title: string; cover?: 
       el.removeEventListener('pause', onPause)
       el.removeEventListener('ended', onEnded)
     }
-  }, [open])
+  }, [open, isYouTube])
 
   useEffect(() => {
-    if (!open) return
+    if (!open || isYouTube) return
     const v = videoRef.current
     if (!v) return
     v.muted = muted
@@ -274,25 +313,16 @@ function VideoTile({ src, title, cover }: { src: string; title: string; cover?: 
       const p = v.play()
       if (p && typeof p.catch === 'function') {
         p.catch(() => {
-          v.muted = true
-          v.play().catch(() => {})
+          // Autoplay with sound may be blocked by the browser; user can press play.
         })
       }
     }
     setTimeout(attemptPlay, 0)
-  }, [open, muted])
-
-  useEffect(() => {
-    const prevOverflow = document.body.style.overflow
-    if (open) document.body.style.overflow = 'hidden'
-    return () => {
-      document.body.style.overflow = prevOverflow
-    }
-  }, [open])
+  }, [open, muted, isYouTube])
 
   return (
     <>
-      {/* Tile cover: click to open and auto-play */}
+      {/* Tile cover */}
       <figure className="group relative overflow-hidden rounded-md bg-neutral-100 aspect-[4/3]">
         <img
           src={tileCover}
@@ -313,7 +343,7 @@ function VideoTile({ src, title, cover }: { src: string; title: string; cover?: 
         </button>
       </figure>
 
-      {/* Responsive modal: mobile-first, larger viewport usage */}
+      {/* Modal */}
       {open && (
         <div
           className="fixed inset-0 z-50 bg-black/70 flex items-center justify-center p-0 sm:p-4"
@@ -325,16 +355,26 @@ function VideoTile({ src, title, cover }: { src: string; title: string; cover?: 
             className="relative w-screen h-[85vh] sm:w-[65vw] sm:h-[75vh] bg-black rounded-none sm:rounded-lg overflow-hidden shadow-xl"
             onClick={(e) => e.stopPropagation()}
           >
-            <video
-              ref={videoRef}
-              src={src}
-              poster={tileCover}
-              preload="metadata"
-              autoPlay
-              controls
-              playsInline
-              className="w-full h-full object-contain bg-black"
-            />
+            {isYouTube ? (
+              <iframe
+                src={embedUrl ?? ''}
+                title={title}
+                className="w-full h-full bg-black"
+                allow="autoplay; encrypted-media; picture-in-picture"
+                allowFullScreen
+              />
+            ) : (
+              <video
+                ref={videoRef}
+                src={src}
+                poster={tileCover}
+                preload="metadata"
+                autoPlay
+                controls
+                playsInline
+                className="w-full h-full object-contain bg-black"
+              />
+            )}
             <button
               onClick={() => setOpen(false)}
               aria-label="Close video"
