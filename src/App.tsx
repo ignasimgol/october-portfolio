@@ -2,7 +2,7 @@ import { useState, useRef, useEffect } from 'react'
 import './App.css'
 
 function App() {
-  type Tab =  'personal' | 'commercials' | 'interviews' | 'about' | 'photo'
+  type Tab =  'personal' | 'commercials' | 'about' | 'photo'
   const [activeTab, setActiveTab] = useState<Tab>('commercials')
   // Notificación (toast)
   const [toast, setToast] = useState<string | null>(null)
@@ -32,18 +32,53 @@ function App() {
     id: string
     title: string
     src: string
-    category: 'personal' | 'commercials' | 'interviews' | 'photo'
+    category: 'personal' | 'commercials' | 'photo'
+    cover: string
   }
 
   const videos: Video[] = [
-    { id: 'a1', title: 'Offline + Online editor. ROVE HOME - Dubai Marina', src: 'https://yjfzriagdd.ufs.sh/f/DM7CcnrlhW9ZEMjtROZglonH4wkj7WTqzFi8bDdG3tp2vVUc', category: 'commercials' },
-    { id: 'a2', title: 'Offline editor. Banco Santander', src: 'https://yjfzriagdd.ufs.sh/f/DM7CcnrlhW9Z2mwbsNRcZ30ow7GD2ILksnTq96u5dyfpz4Xg', category: 'commercials' },
-    { id: 'a3', title: 'Offline editor. Securitas Direct', src: 'https://yjfzriagdd.ufs.sh/f/DM7CcnrlhW9ZV9Mmr8CuhYn70AJ2DZlT953KORFC6mikWe8o', category: 'commercials' },
-    { id: 'a4', title: 'Offline editor. Mahou', src: 'https://yjfzriagdd.ufs.sh/f/DM7CcnrlhW9Z7k5V3cyipkDrQuhS0qbYLnPlG2tOAxcmEdH6', category: 'commercials' },
-    { id: 'a5', title: 'Offline Editor. UAE Union Day', src: 'https://yjfzriagdd.ufs.sh/f/DM7CcnrlhW9Z1AqWbojPZc3mDwh6s4XzBMUYLg2Aix58oFt0', category: 'commercials' },
-    { id: 'p1', title: 'UPS Spec Ad. Directed and Edited by Maria del Rio', src: 'https://yjfzriagdd.ufs.sh/f/DM7CcnrlhW9ZqfOZqkPb8f3zC7VlOi9SNTXEDsk5IvRGB40M', category: 'personal' },
-    { id: 'i1', title: 'Offline + Online editor. MiZa Tenants - Ripple', src: 'https://yjfzriagdd.ufs.sh/f/DM7CcnrlhW9ZbfonAiahc9oyKGWHFpJwSjug7ECl2OkV0sdX', category: 'interviews' },
-    { id: 'i2', title: 'Offline + Online editor. MiZa Tenants - Wai Wiz', src: 'https://yjfzriagdd.ufs.sh/f/DM7CcnrlhW9ZrJyJVgiSzmJlgELyvNHfAPoKwc73r54QnqB1', category: 'interviews' },
+    {
+      id: 'a1',
+      title: 'Offline + Online editor. ROVE HOME - Dubai Marina',
+      src: 'https://yjfzriagdd.ufs.sh/f/DM7CcnrlhW9ZEMjtROZglonH4wkj7WTqzFi8bDdG3tp2vVUc',
+      category: 'commercials',
+      cover: new URL('./assets/covers/rove.jpg', import.meta.url).href
+    },
+    {
+      id: 'a2',
+      title: 'Offline editor. Banco Santander',
+      src: 'https://yjfzriagdd.ufs.sh/f/DM7CcnrlhW9Z2mwbsNRcZ30ow7GD2ILksnTq96u5dyfpz4Xg',
+      category: 'commercials',
+      cover: new URL('./assets/covers/santander.jpg', import.meta.url).href
+    },
+    {
+      id: 'a3',
+      title: 'Offline editor. Securitas Direct',
+      src: 'https://yjfzriagdd.ufs.sh/f/DM7CcnrlhW9ZV9Mmr8CuhYn70AJ2DZlT953KORFC6mikWe8o',
+      category: 'commercials',
+      cover: new URL('./assets/covers/securitas.jpg', import.meta.url).href
+    },
+    {
+      id: 'a5',
+      title: 'Offline Editor. UAE Union Day',
+      src: 'https://yjfzriagdd.ufs.sh/f/DM7CcnrlhW9Z1AqWbojPZc3mDwh6s4XzBMUYLg2Aix58oFt0',
+      category: 'commercials',
+      cover: new URL('./assets/covers/union.jpg', import.meta.url).href
+    },
+    {
+      id: 'p1',
+      title: 'UPS Spec Ad. Directed and Edited by Maria del Rio',
+      src: 'https://yjfzriagdd.ufs.sh/f/DM7CcnrlhW9ZqfOZqkPb8f3zC7VlOi9SNTXEDsk5IvRGB40M',
+      category: 'personal',
+      cover: new URL('./assets/covers/ups.jpg', import.meta.url).href
+    },
+    {
+      id: 'a6',
+      title: 'Offline + Online editor. MiZa Tenants - Ripple',
+      src: 'https://yjfzriagdd.ufs.sh/f/DM7CcnrlhW9ZbfonAiahc9oyKGWHFpJwSjug7ECl2OkV0sdX',
+      category: 'commercials',
+      cover: new URL('./assets/covers/ripple.jpg', import.meta.url).href
+    },
   ]
 
   const filtered =
@@ -113,7 +148,7 @@ function App() {
         </div>
 
         <nav className="mt-6 grid grid-cols-3 gap-1 md:flex md:flex-nowrap md:gap-2 text-xs md:text-sm">
-          {(['commercials', 'interviews', 'personal', 'photo', 'about'] as const).map((tab) => (
+          {(['commercials', 'personal', 'photo', 'about'] as const).map((tab) => (
             <button
               key={tab}
               onClick={() => setActiveTab(tab)}
@@ -153,7 +188,7 @@ function App() {
           <section className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
             {filtered.map((v) => (
               <div key={v.id} className="flex flex-col">
-                <VideoTile src={v.src} title={v.title} />
+                <VideoTile src={v.src} title={v.title} cover={v.cover} />
                 <div className="mt-2 text-xs text-black">
                   {v.title}
                 </div>
@@ -202,12 +237,14 @@ function App() {
   )
 }
 
-function VideoTile({ src, title }: { src: string; title: string }) {
+function VideoTile({ src, title, cover }: { src: string; title: string; cover?: string }) {
   const videoRef = useRef<HTMLVideoElement | null>(null)
   const [, setIsPlaying] = useState(false) // eslint-disable-line @typescript-eslint/no-unused-vars
-  // NOTE: isPlaying is intentionally unused; kept for future UI state needs
   const coverPoster = new URL('./assets/covers/bg.jpeg', import.meta.url).href
   const [open, setOpen] = useState(false)
+
+  const [muted, setMuted] = useState(true)
+  const tileCover = cover ?? coverPoster
 
   useEffect(() => {
     const el = videoRef.current
@@ -223,7 +260,24 @@ function VideoTile({ src, title }: { src: string; title: string }) {
       el.removeEventListener('pause', onPause)
       el.removeEventListener('ended', onEnded)
     }
-  }, [])
+  }, [open])
+
+  useEffect(() => {
+    if (!open) return
+    const v = videoRef.current
+    if (!v) return
+    v.muted = muted
+    const attemptPlay = () => {
+      const p = v.play()
+      if (p && typeof p.catch === 'function') {
+        p.catch(() => {
+          v.muted = true
+          v.play().catch(() => {})
+        })
+      }
+    }
+    setTimeout(attemptPlay, 0)
+  }, [open, muted])
 
   useEffect(() => {
     const prevOverflow = document.body.style.overflow
@@ -235,11 +289,12 @@ function VideoTile({ src, title }: { src: string; title: string }) {
 
   return (
     <>
-      {/* Tile cover: no video UI elements, just image + hover play */}
+      {/* Tile cover: click to open and auto-play */}
       <figure className="group relative overflow-hidden rounded-md bg-neutral-100 aspect-[4/3]">
         <img
-          src={coverPoster}
+          src={tileCover}
           alt={title}
+          loading="lazy"
           className="h-full w-full object-cover cursor-pointer"
           onClick={() => setOpen(true)}
         />
@@ -255,31 +310,41 @@ function VideoTile({ src, title }: { src: string; title: string }) {
         </button>
       </figure>
 
-      {/* Modal at ~75% of viewport */}
+      {/* Responsive modal: mobile-first, larger viewport usage */}
       {open && (
         <div
-          className="fixed inset-0 z-50 bg-black/70 flex items-center justify-center"
+          className="fixed inset-0 z-50 bg-black/70 flex items-center justify-center p-0 sm:p-4"
           onClick={() => setOpen(false)}
           aria-modal="true"
           role="dialog"
         >
           <div
-            className="relative w-[65vw] h-[75vh] bg-black rounded-lg overflow-hidden shadow-xl"
+            className="relative w-screen h-[85vh] sm:w-[65vw] sm:h-[75vh] bg-black rounded-none sm:rounded-lg overflow-hidden shadow-xl"
             onClick={(e) => e.stopPropagation()}
           >
-            {/* Ensure video sits below the close button */}
             <video
+              ref={videoRef}
               src={src}
-              className="w-full h-full object-contain bg-black"
+              poster={tileCover}
+              preload="metadata"
+              autoPlay
               controls
               playsInline
+              className="w-full h-full object-contain bg-black"
             />
             <button
               onClick={() => setOpen(false)}
               aria-label="Close video"
-              className="absolute top-3 right-3 z-20 text-white bg-black/40 hover:bg-black/60 rounded px-3 py-1"
+              className="absolute top-3 right-3 z-20 text-white bg-black/40 hover:bg-black/60 rounded px-4 py-2 text-xl sm:text-base"
             >
               ×
+            </button>
+            <button
+              onClick={() => setMuted(!muted)}
+              aria-label={muted ? 'Unmute' : 'Mute'}
+              className="absolute top-3 left-3 z-20 text-white bg-black/40 hover:bg-black/60 rounded px-4 py-2 text-xs sm:text-sm"
+            >
+              {muted ? 'Unmute' : 'Mute'}
             </button>
           </div>
         </div>
