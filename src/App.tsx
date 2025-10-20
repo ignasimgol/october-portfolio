@@ -40,13 +40,6 @@ function App() {
 
   const videos: Video[] = [
     {
-      id: 'a1',
-      title: 'Rove Home - Dubai Marina',
-      src: 'https://yjfzriagdd.ufs.sh/f/DM7CcnrlhW9ZEMjtROZglonH4wkj7WTqzFi8bDdG3tp2vVUc',
-      category: 'commercials',
-      cover: new URL('./assets/covers/rove.jpg', import.meta.url).href
-    },
-    {
       id: 'a2',
       title: 'Inclusión - Banco Santander',
       src: 'https://yjfzriagdd.ufs.sh/f/DM7CcnrlhW9Z2mwbsNRcZ30ow7GD2ILksnTq96u5dyfpz4Xg',
@@ -67,19 +60,19 @@ function App() {
       category: 'commercials',
       cover: new URL('./assets/covers/airlines.jpg', import.meta.url).href
     },
+     {
+      id: 'a1',
+      title: 'Rove Home - Dubai Marina',
+      src: 'https://yjfzriagdd.ufs.sh/f/DM7CcnrlhW9ZEMjtROZglonH4wkj7WTqzFi8bDdG3tp2vVUc',
+      category: 'commercials',
+      cover: new URL('./assets/covers/rove.jpg', import.meta.url).href
+    },
     {
       id: 'a5',
       title: 'UAE Union Day - The Crown Prince Court',
       src: 'https://yjfzriagdd.ufs.sh/f/DM7CcnrlhW9Z1AqWbojPZc3mDwh6s4XzBMUYLg2Aix58oFt0',
       category: 'commercials',
       cover: new URL('./assets/covers/union.jpg', import.meta.url).href
-    },
-    {
-      id: 'p1',
-      title: 'UPS Spec Ad. Directed and Edited by Maria del Rio',
-      src: 'https://yjfzriagdd.ufs.sh/f/DM7CcnrlhW9ZqfOZqkPb8f3zC7VlOi9SNTXEDsk5IvRGB40M',
-      category: 'personal',
-      cover: new URL('./assets/covers/ups.jpg', import.meta.url).href
     },
     {
       id: 'a6',
@@ -103,6 +96,13 @@ function App() {
       cover: new URL('./assets/covers/barca.jpg', import.meta.url).href
     },
     {
+      id: 'p1',
+      title: 'UPS Spec Ad. Directed and Edited by Maria del Rio',
+      src: 'https://yjfzriagdd.ufs.sh/f/DM7CcnrlhW9ZqfOZqkPb8f3zC7VlOi9SNTXEDsk5IvRGB40M',
+      category: 'personal',
+      cover: new URL('./assets/covers/ups.jpg', import.meta.url).href
+    },
+    {
       id: 'p3',
       title: 'Centelles',
       src: 'https://yjfzriagdd.ufs.sh/f/DM7CcnrlhW9ZcO6xZApIVJPvr8hDmW1HetyGF2bz7iaYLEsf',
@@ -123,6 +123,8 @@ function App() {
     activeTab === 'about'
       ? []
       : videos.filter((v) => v.category === activeTab)
+
+  const heroGif = new URL('./assets/rove.gif', import.meta.url).href
 
   return (
     <div className="min-h-screen bg-white text-black">
@@ -171,13 +173,13 @@ function App() {
         <div className="mt-6 md:mt-8">
           <div className="relative w-full h-40 sm:h-48 md:h-56 lg:h-64 rounded-md overflow-hidden">
             <img
-              src="/test.gif"
+              src={heroGif}
               alt="hero animation"
               className="absolute inset-0 w-full h-full object-cover"
             />
             <div className="absolute inset-0 z-10 flex items-center justify-center">
-              <div className="max-w-xl px-4 py-3 sm:px-6 sm:py-4 rounded">
-                <p className="text-center text-white text-xl sm:text-2xl md:text-4xl font-bold leading-tight">
+              <div className="w-full max-w-3xl px-4 py-3 sm:px-6 sm:py-4 rounded">
+                <p className="whitespace-nowrap text-center text-white text-xl sm:text-2xl md:text-4xl font-bold leading-tight">
                   Ready to create something new?
                 </p>
               </div>

@@ -6,19 +6,19 @@ const copy: Record<Lang, { title: string; paragraphs: string[] }> = {
   en: {
     title: 'Hi there!',
     paragraphs: [
-      'I’m María del Río, a video editor and photographer. I’ve worked in Madrid (Serena), Abu Dhabi (She Films), and Dubai (Ninja Media Productions), editing high-end campaigns, corporate videos, and commercials for brands such as Banco Santander, Alsa, Securitas Direct, and Etihad Airways.',
+      'I’m Maria del Río, a video editor and photographer. I’ve worked in Madrid (Serena), Abu Dhabi (She Films), and Dubai (Ninja Media Productions), editing high-end campaigns, corporate videos, and commercials for brands such as Banco Santander, Alsa, Securitas Direct, and Etihad Airways.',
     ],
   },
   es: {
     title: '¡Hola!',
     paragraphs: [
-      'Soy María del Río, editora de vídeo y fotógrafa. He trabajado en Madrid (Serena), Abu Dhabi (She Films) y Dubái (Ninja Media Productions), editando campañas, vídeos corporativos y comerciales de alto nivel para marcas como Banco Santander, Alsa, Securitas Direct y Etihad Airways.',
+      'Soy María del Río, editora de video y fotógrafa. He trabajado en Madrid (Serena), Abu Dhabi (She Films) y Dubái (Ninja Media Productions), editando campañas, vídeos corporativos y comerciales de alto nivel para marcas como Banco Santander, Alsa, Securitas Direct y Etihad Airways.',
     ],
   },
   ca: {
     title: 'Hola!',
     paragraphs: [
-      'Sóc la María del Río, editora de vídeo i fotògrafa. He treballat a Madrid (Serena), Abu Dhabi (She Films) i Dubai (Ninja Media Productions), editant campanyes, vídeos corporatius i anuncis d’alt nivell per a marques com Banco Santander, Alsa, Securitas Direct i Etihad Airways.',
+      'Sóc la Maria del Rio, editora de vídeo i fotògrafa. He treballat a Madrid (Serena), Abu Dhabi (She Films) i Dubai (Ninja Media Productions), editant campanyes, vídeos corporatius i anuncis d’alt nivell per a marques com Banco Santander, Alsa, Securitas Direct i Etihad Airways.',
     ],
   },
 }
