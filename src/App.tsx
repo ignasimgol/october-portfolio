@@ -95,6 +95,20 @@ function App() {
       category: 'commercials',
       cover: new URL('./assets/covers/ripple.jpg', import.meta.url).href
     },
+     {
+      id: 'p4',
+      title: 'Els carrers i el Barça',
+      src: 'https://yjfzriagdd.ufs.sh/f/DM7CcnrlhW9ZrxRrmRiSzmJlgELyvNHfAPoKwc73r54QnqB1',
+      category: 'personal',
+      cover: new URL('./assets/covers/barca.jpg', import.meta.url).href
+    },
+    {
+      id: 'p3',
+      title: 'Centelles',
+      src: 'https://yjfzriagdd.ufs.sh/f/DM7CcnrlhW9ZcO6xZApIVJPvr8hDmW1HetyGF2bz7iaYLEsf',
+      category: 'personal',
+      cover: new URL('./assets/covers/centelles.jpg', import.meta.url).href
+    },
     {
       id: 'p2',
       title: 'Abu Dhabi Streets',
@@ -164,7 +178,7 @@ function App() {
             <div className="absolute inset-0 z-10 flex items-center justify-center">
               <div className="max-w-xl px-4 py-3 sm:px-6 sm:py-4 rounded">
                 <p className="text-center text-white text-xl sm:text-2xl md:text-4xl font-bold leading-tight">
-                  Passionate about challenging opportunities to create a new
+                  Ready to create something new?
                 </p>
               </div>
             </div>
