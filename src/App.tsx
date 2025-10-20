@@ -76,7 +76,7 @@ function App() {
     },
     {
       id: 'a6',
-      title: 'Santander Bienestando -Banco Santander',
+      title: 'Santander Bienestando - Banco Santander',
       src: 'https://www.youtube.com/watch?v=zGRJN3-KhSI',
       category: 'commercials',
       cover: new URL('./assets/covers/youtube.jpg', import.meta.url).href

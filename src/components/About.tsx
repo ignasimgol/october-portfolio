@@ -12,7 +12,7 @@ const copy: Record<Lang, { title: string; paragraphs: string[] }> = {
   es: {
     title: '¡Hola!',
     paragraphs: [
-      'Soy María del Río, editora de video y fotógrafa. He trabajado en Madrid (Serena), Abu Dhabi (She Films) y Dubái (Ninja Media Productions), editando campañas, vídeos corporativos y comerciales de alto nivel para marcas como Banco Santander, Alsa, Securitas Direct y Etihad Airways.',
+      'Soy María del Río, editora de video y fotógrafa. He trabajado en Madrid (Serena), Abu Dhabi (She Films) y Dubái (Ninja Media Productions), editando campañas, videos corporativos y comerciales de alto nivel para marcas como Banco Santander, Alsa, Securitas Direct y Etihad Airways.',
     ],
   },
   ca: {
