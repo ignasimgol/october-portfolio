@@ -124,7 +124,7 @@ function App() {
       ? []
       : videos.filter((v) => v.category === activeTab)
 
-  const heroGif = new URL('./assets/rove.gif', import.meta.url).href
+  const heroGif = new URL('./assets/rove-cover.jpeg', import.meta.url).href
 
   return (
     <div className="min-h-screen bg-white text-black">
@@ -174,7 +174,7 @@ function App() {
           <div className="relative w-full h-40 sm:h-48 md:h-56 lg:h-64 rounded-md overflow-hidden">
             <img
               src={heroGif}
-              alt="hero animation"
+              alt="hero image"
               className="absolute inset-0 w-full h-full object-cover"
             />
             <div className="absolute inset-0 z-10 flex items-center justify-center">
