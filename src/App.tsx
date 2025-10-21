@@ -124,7 +124,7 @@ function App() {
       ? []
       : videos.filter((v) => v.category === activeTab)
 
-  const heroGif = new URL('./assets/rove-cover.jpeg', import.meta.url).href
+  const heroGif = new URL('./assets/rove-2.gif', import.meta.url).href
 
   return (
     <div className="min-h-screen bg-white text-black">
@@ -180,7 +180,7 @@ function App() {
             <div className="absolute inset-0 z-10 flex items-center justify-center">
               <div className="w-full max-w-3xl px-4 py-3 sm:px-6 sm:py-4 rounded">
                 <p className="whitespace-nowrap text-center text-white text-sm sm:text-2xl md:text-4xl font-bold leading-tight">
-                  Ready to create something new?
+                  
                 </p>
               </div>
             </div>
