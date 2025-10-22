@@ -247,7 +247,7 @@ function App() {
             </a>
           </div>
           <div className="flex items-end gap-3 flex-col">
-            <span className="font-semibold">Maria del Río. All rights reseved. 2025.</span>
+            <span className="font-semibold">Maria del Río. All rights reserved. 2025.</span>
             <button
               onClick={handleCopyEmail}
               className="underline hover:opacity-70"
