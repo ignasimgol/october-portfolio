@@ -116,6 +116,13 @@ function App() {
       category: 'personal',
       cover: new URL('./assets/covers/personal1.jpg', import.meta.url).href
     },
+    {
+      id: 'p5',
+      title: 'Hoops Sant Adrià',
+      src: 'https://yjfzriagdd.ufs.sh/f/DM7CcnrlhW9ZjNuU82rVnyrCSgjcqJWdZufx87wUAlOXF4pk',
+      category: 'personal',
+      cover: new URL('./assets/covers/hoops.jpeg', import.meta.url).href
+    },
 
   ]
 
