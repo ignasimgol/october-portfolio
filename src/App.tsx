@@ -40,12 +40,13 @@ function App() {
 
   const videos: Video[] = [
     {
-      id: 'a2',
-      title: 'Inclusión - Banco Santander',
-      src: 'https://yjfzriagdd.ufs.sh/f/DM7CcnrlhW9Z2mwbsNRcZ30ow7GD2ILksnTq96u5dyfpz4Xg',
+      id: 'a7',
+      title: 'MiZa Tenants: Ripple - MiZa Abu Dhabi',
+      src: 'https://yjfzriagdd.ufs.sh/f/DM7CcnrlhW9ZbfonAiahc9oyKGWHFpJwSjug7ECl2OkV0sdX',
       category: 'commercials',
-      cover: new URL('./assets/covers/santander.jpg', import.meta.url).href
+      cover: new URL('./assets/covers/ripple.jpg', import.meta.url).href
     },
+    
     {
       id: 'a3',
       title: 'Securitas Direct con cerradura inteligente - Securitas Direct',
@@ -82,12 +83,13 @@ function App() {
       cover: new URL('./assets/covers/youtube.jpg', import.meta.url).href
     },
     {
-      id: 'a7',
-      title: 'MiZa Tenants: Ripple - MiZa Abu Dhabi',
-      src: 'https://yjfzriagdd.ufs.sh/f/DM7CcnrlhW9ZbfonAiahc9oyKGWHFpJwSjug7ECl2OkV0sdX',
+      id: 'a2',
+      title: 'Inclusión - Banco Santander',
+      src: 'https://yjfzriagdd.ufs.sh/f/DM7CcnrlhW9Z2mwbsNRcZ30ow7GD2ILksnTq96u5dyfpz4Xg',
       category: 'commercials',
-      cover: new URL('./assets/covers/ripple.jpg', import.meta.url).href
+      cover: new URL('./assets/covers/santander.jpg', import.meta.url).href
     },
+
      {
       id: 'p4',
       title: 'Els carrers i el Barça',
