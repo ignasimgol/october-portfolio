@@ -93,7 +93,7 @@ function App() {
      {
       id: 'p4',
       title: 'Els carrers i el Barça',
-      src: 'https://yjfzriagdd.ufs.sh/f/DM7CcnrlhW9ZrxRrmRiSzmJlgELyvNHfAPoKwc73r54QnqB1',
+      src: 'https://yjfzriagdd.ufs.sh/f/DM7CcnrlhW9ZSOUIgBGO3uGKn8IF6U9LXNTsZWPt7rCcimfy',
       category: 'personal',
       cover: new URL('./assets/covers/barca.jpg', import.meta.url).href
     },
