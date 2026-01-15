@@ -40,6 +40,15 @@ function App() {
 
   const videos: Video[] = [
     {
+      id: 'a33',
+      title: 'Experience Abu Dhabi - GTS',
+      src: 'https://yjfzriagdd.ufs.sh/f/DM7CcnrlhW9ZIyjm7dy9ifLgd8hMTA76owI0mJxEtuOpnrlD',
+      category: 'commercials',
+      cover: new URL('./assets/covers/barca.png', import.meta.url).href
+    },
+
+   
+    {
       id: 'a7',
       title: 'MiZa Tenants: Ripple - MiZa Abu Dhabi',
       src: 'https://yjfzriagdd.ufs.sh/f/DM7CcnrlhW9ZbfonAiahc9oyKGWHFpJwSjug7ECl2OkV0sdX',
