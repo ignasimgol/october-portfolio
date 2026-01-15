@@ -55,13 +55,12 @@ function App() {
       category: 'commercials',
       cover: new URL('./assets/covers/ripple.jpg', import.meta.url).href
     },
-    
-    {
-      id: 'a3',
-      title: 'Securitas Direct con cerradura inteligente - Securitas Direct',
-      src: 'https://yjfzriagdd.ufs.sh/f/DM7CcnrlhW9ZV9Mmr8CuhYn70AJ2DZlT953KORFC6mikWe8o',
+       {
+      id: 'a2',
+      title: 'Inclusión - Banco Santander',
+      src: 'https://yjfzriagdd.ufs.sh/f/DM7CcnrlhW9Z2mwbsNRcZ30ow7GD2ILksnTq96u5dyfpz4Xg',
       category: 'commercials',
-      cover: new URL('./assets/covers/securitas.jpg', import.meta.url).href
+      cover: new URL('./assets/covers/santander.jpg', import.meta.url).href
     },
     {
       id: 'a8',
@@ -90,13 +89,6 @@ function App() {
       src: 'https://www.youtube.com/watch?v=zGRJN3-KhSI',
       category: 'commercials',
       cover: new URL('./assets/covers/youtube.jpg', import.meta.url).href
-    },
-    {
-      id: 'a2',
-      title: 'Inclusión - Banco Santander',
-      src: 'https://yjfzriagdd.ufs.sh/f/DM7CcnrlhW9Z2mwbsNRcZ30ow7GD2ILksnTq96u5dyfpz4Xg',
-      category: 'commercials',
-      cover: new URL('./assets/covers/santander.jpg', import.meta.url).href
     },
 
      {
@@ -133,6 +125,13 @@ function App() {
       src: 'https://yjfzriagdd.ufs.sh/f/DM7CcnrlhW9ZjNuU82rVnyrCSgjcqJWdZufx87wUAlOXF4pk',
       category: 'personal',
       cover: new URL('./assets/covers/hoops.jpeg', import.meta.url).href
+    },
+        {
+      id: 'a3',
+      title: 'Securitas Direct con cerradura inteligente - Securitas Direct',
+      src: 'https://yjfzriagdd.ufs.sh/f/DM7CcnrlhW9ZV9Mmr8CuhYn70AJ2DZlT953KORFC6mikWe8o',
+      category: 'commercials',
+      cover: new URL('./assets/covers/securitas.jpg', import.meta.url).href
     },
 
   ]
