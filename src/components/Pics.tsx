@@ -42,12 +42,82 @@ const pics: PicItem[] = [
   },
   // Sports
   {
-    src: new URL('../assets/covers/hoops.jpeg', import.meta.url).href,
+    src: 'https://yjfzriagdd.ufs.sh/f/DM7CcnrlhW9ZPpbWUIKd9DKlaMegp1VzXkUnctLRICHvhE6J',
     alt: 'Sports photography',
     category: 'sports',
   },
   {
-    src: new URL('../assets/covers/barca.jpg', import.meta.url).href,
+    src: 'https://yjfzriagdd.ufs.sh/f/DM7CcnrlhW9ZVENRVCuhYn70AJ2DZlT953KORFC6mikWe8og',
+    alt: 'Sports photography',
+    category: 'sports',
+  },
+  {
+    src: 'https://yjfzriagdd.ufs.sh/f/DM7CcnrlhW9Z8PKf4DGnTwoMRPnVrEO1mkHjcLUZ6gAd0zXB',
+    alt: 'Sports photography',
+    category: 'sports',
+  },
+  {
+    src: 'https://yjfzriagdd.ufs.sh/f/DM7CcnrlhW9Z1fHc6JjPZc3mDwh6s4XzBMUYLg2Aix58oFt0',
+    alt: 'Sports photography',
+    category: 'sports',
+  },
+  {
+    src: 'https://yjfzriagdd.ufs.sh/f/DM7CcnrlhW9ZPjpyv9Kd9DKlaMegp1VzXkUnctLRICHvhE6J',
+    alt: 'Sports photography',
+    category: 'sports',
+  },
+  {
+    src: 'https://yjfzriagdd.ufs.sh/f/DM7CcnrlhW9ZxzB4He5GhpvSgs5yaJmncdDLYZ2wQF6UiqNo',
+    alt: 'Sports photography',
+    category: 'sports',
+  },
+  {
+    src: 'https://yjfzriagdd.ufs.sh/f/DM7CcnrlhW9Z1SwhbjPZc3mDwh6s4XzBMUYLg2Aix58oFt07',
+    alt: 'Sports photography',
+    category: 'sports',
+  },
+  {
+    src: 'https://yjfzriagdd.ufs.sh/f/DM7CcnrlhW9ZQ8f2XEVeDCBVMG6LYgvc4QXSK53d7laJxTzO',
+    alt: 'Sports photography',
+    category: 'sports',
+  },
+  {
+    src: 'https://yjfzriagdd.ufs.sh/f/DM7CcnrlhW9Z91Zwjg7ZNjycYJWlBUEMrdAt1TKGf2k7miQL',
+    alt: 'Sports photography',
+    category: 'sports',
+  },
+  {
+    src: 'https://yjfzriagdd.ufs.sh/f/DM7CcnrlhW9ZyLlXsT1s0hxKJVQYnFpReLTN86qcZDlioGHy',
+    alt: 'Sports photography',
+    category: 'sports',
+  },
+  {
+    src: 'https://yjfzriagdd.ufs.sh/f/DM7CcnrlhW9ZNZg0dEBVGMp1OyuW6wUeBzKQc4tsISmaAD2h',
+    alt: 'Sports photography',
+    category: 'sports',
+  },
+  {
+    src: 'https://yjfzriagdd.ufs.sh/f/DM7CcnrlhW9ZiZDrvgkn1tXSFCjxbYgd8QcvUK0fGA5kJHVh',
+    alt: 'Sports photography',
+    category: 'sports',
+  },
+  {
+    src: 'https://yjfzriagdd.ufs.sh/f/DM7CcnrlhW9ZNHRi9cBVGMp1OyuW6wUeBzKQc4tsISmaAD2h',
+    alt: 'Sports photography',
+    category: 'sports',
+  },
+  {
+    src: 'https://yjfzriagdd.ufs.sh/f/DM7CcnrlhW9ZloA8xTHVBGdgrfMQsJvh6T85uayOKj9zFNYU',
+    alt: 'Sports photography',
+    category: 'sports',
+  },
+  {
+    src: 'https://yjfzriagdd.ufs.sh/f/DM7CcnrlhW9ZZDeHbG1zVpI42HAsox3raXMSFvdTDYOfnc7B',
+    alt: 'Sports photography',
+    category: 'sports',
+  },
+  {
+    src: 'https://yjfzriagdd.ufs.sh/f/DM7CcnrlhW9Zd88GCLckVR3vTU8Pq6O1MAINYZC4cKlezywm',
     alt: 'Sports photography',
     category: 'sports',
   },
