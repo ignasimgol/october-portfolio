@@ -137,13 +137,13 @@ export default function Pics() {
           {filteredPics.map((pic, i) => (
             <div
               key={i}
-              className="snap-center shrink-0 w-[70vw] sm:w-[60vw] md:w-[40vw] lg:w-[30vw] aspect-[4/5] relative rounded-none overflow-hidden bg-neutral-100"
+              className="snap-center shrink-0 h-[50vh] md:h-[60vh] w-auto relative rounded-none overflow-hidden bg-neutral-100"
             >
               <img
                 src={pic.src}
                 alt={pic.alt}
                 loading="lazy"
-                className="h-full w-full object-cover"
+                className="h-full w-auto max-w-none"
               />
             </div>
           ))}
