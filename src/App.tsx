@@ -217,7 +217,7 @@ function App() {
               </svg>
             </a>
             <button
-              className="border border-black px-3 py-1 rounded hover:bg-black hover:text-white transition"
+              className="cta-button border border-black px-3 py-1 rounded hover:bg-black hover:text-white transition"
               onClick={() => setActiveTab('contact')}
               onMouseEnter={() => setIsContactHovered(true)}
               onMouseLeave={() => setIsContactHovered(false)}

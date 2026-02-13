@@ -40,3 +40,28 @@
 .read-the-docs {
   color: #888;
 }
+
+@keyframes cta-colors {
+  0% {
+    border-color: #013C88; /* Blue */
+    color: #013C88;
+    transform: translateY(0);
+    box-shadow: 0 2px 5px rgba(1, 60, 136, 0.2);
+  }
+  50% {
+    border-color: #F5D34B; /* Yellow */
+    color: #D4B200; /* Darker yellow text */
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 5px 15px rgba(255, 222, 89, 0.4);
+  }
+  100% {
+    border-color: #013C88; /* Blue */
+    color: #013C88;
+    transform: translateY(0);
+    box-shadow: 0 2px 5px rgba(1, 60, 136, 0.2);
+  }
+}
+
+.cta-button {
+  animation: cta-colors 3s infinite ease-in-out;
+}
