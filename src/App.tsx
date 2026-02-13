@@ -12,7 +12,7 @@ function App() {
   const [isContactHovered, setIsContactHovered] = useState(false)
 
   const handleCopyEmail = async () => {
-    const email = 'bymariadelrio@gmail.com'
+    const email = 'hola@bymariadelrio.com'
     try {
       if (navigator.clipboard?.writeText) {
         await navigator.clipboard.writeText(email)
@@ -321,7 +321,7 @@ function App() {
               className="underline hover:opacity-70"
               aria-label="Copy email to clipboard"
             >
-              bymariadelrio@gmail.com
+              hola@bymariadelrio.com
             </button>
             <span>Barcelona</span>
           </div>
