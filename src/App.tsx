@@ -154,6 +154,15 @@ function App() {
     }
   }, [isContactHovered])
 
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search)
+    if (params.get('success') === 'true') {
+      setToast('Message sent successfully!')
+      setTimeout(() => setToast(null), 3000)
+      window.history.replaceState({}, document.title, window.location.pathname)
+    }
+  }, [])
+
   return (
     <div className={`min-h-screen text-black transition-colors duration-300 ${isContactHovered ? 'bg-[#FFDE59]' : 'bg-white'}`}>
       {toast && (

@@ -24,6 +24,7 @@ export default function ContactForm() {
           <input type="hidden" name="_subject" value="New message from Portfolio" />
           <input type="text" name="_honey" style={{ display: 'none' }} />
           <input type="hidden" name="_captcha" value="false" />
+          <input type="hidden" name="_next" value="https://www.bymariadelrio.com/?success=true" />
           
           {/* Fields */}
           <div>
