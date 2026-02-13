@@ -107,11 +107,6 @@ const pics: PicItem[] = [
     category: 'sports',
   },
   {
-    src: 'https://yjfzriagdd.ufs.sh/f/DM7CcnrlhW9ZloA8xTHVBGdgrfMQsJvh6T85uayOKj9zFNYU',
-    alt: 'Sports photography',
-    category: 'sports',
-  },
-  {
     src: 'https://yjfzriagdd.ufs.sh/f/DM7CcnrlhW9ZZDeHbG1zVpI42HAsox3raXMSFvdTDYOfnc7B',
     alt: 'Sports photography',
     category: 'sports',
