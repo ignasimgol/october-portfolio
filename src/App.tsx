@@ -175,9 +175,9 @@ function App() {
         </div>
       )}
       <header className="px-6 md:px-10 py-6">
-        <div className="flex items-center justify-between">
-          <h1 className="text-sm md:text-lg font-semibold">Maria del Río - Filmmaker, fotógrafa y editora de vídeo</h1>
-          <div className="flex items-center gap-3 text-xs md:text-sm">
+        <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+          <h1 className="text-lg md:text-xl font-semibold text-center md:text-left leading-tight">Maria del Río - Filmmaker, fotógrafa y editora de vídeo</h1>
+          <div className="flex items-center justify-center gap-4 md:gap-3 text-sm">
             <a
               href="https://www.instagram.com/bymariadelrio"
               className="inline-block text-black hover:text-[#013C88] hover:scale-125 transition-all duration-300"
@@ -244,7 +244,7 @@ function App() {
           </div>
         </div>
 
-        <nav className="mt-6 grid grid-cols-3 gap-1 md:flex md:flex-nowrap md:gap-2 text-xs md:text-sm">
+        <nav className="mt-6 grid grid-cols-2 gap-2 md:flex md:flex-nowrap md:gap-2 text-xs md:text-sm">
           {(['commercials', 'personal', 'photo', 'about'] as const).map((tab) => (
             <button
               key={tab}
