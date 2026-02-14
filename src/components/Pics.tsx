@@ -40,6 +40,16 @@ const pics: PicItem[] = [
     alt: 'Street photography',
     category: 'street',
   },
+  {
+    src: 'https://yjfzriagdd.ufs.sh/f/DM7CcnrlhW9Z8pk7kMnTwoMRPnVrEO1mkHjcLUZ6gAd0zXB4',
+    alt: 'Street photography',
+    category: 'street',
+  },
+  {
+    src: 'https://yjfzriagdd.ufs.sh/f/DM7CcnrlhW9ZX8afVSNlr4FZL6Qwtmsdfy5eNnG2V0aMBucK',
+    alt: 'Street photography',
+    category: 'street',
+  },
   // Sports
   {
     src: 'https://yjfzriagdd.ufs.sh/f/DM7CcnrlhW9ZPpbWUIKd9DKlaMegp1VzXkUnctLRICHvhE6J',
@@ -62,12 +72,12 @@ const pics: PicItem[] = [
     category: 'sports',
   },
   {
-    src: 'https://yjfzriagdd.ufs.sh/f/DM7CcnrlhW9ZPjpyv9Kd9DKlaMegp1VzXkUnctLRICHvhE6J',
+    src: 'https://yjfzriagdd.ufs.sh/f/DM7CcnrlhW9ZGILqwjg5P7eKumiMfCVo64tRTsIXaZr2Ol1n',
     alt: 'Sports photography',
     category: 'sports',
   },
   {
-    src: 'https://yjfzriagdd.ufs.sh/f/DM7CcnrlhW9ZxzB4He5GhpvSgs5yaJmncdDLYZ2wQF6UiqNo',
+    src: 'https://yjfzriagdd.ufs.sh/f/DM7CcnrlhW9Zjy7vUBrVnyrCSgjcqJWdZufx87wUAlOXF4pk',
     alt: 'Sports photography',
     category: 'sports',
   },
@@ -116,23 +126,71 @@ const pics: PicItem[] = [
     alt: 'Sports photography',
     category: 'sports',
   },
-  // Events
+  // Events (ordered)
   {
-    src: new URL('../assets/covers/union.jpg', import.meta.url).href,
+    src: 'https://yjfzriagdd.ufs.sh/f/DM7CcnrlhW9ZdF0R9IckVR3vTU8Pq6O1MAINYZC4cKlezywm',
     alt: 'Event photography',
     category: 'events',
   },
   {
-    src: new URL('../assets/covers/securitas.jpg', import.meta.url).href,
+    src: 'https://yjfzriagdd.ufs.sh/f/DM7CcnrlhW9ZXhGMYC7Nlr4FZL6Qwtmsdfy5eNnG2V0aMBuc',
     alt: 'Event photography',
     category: 'events',
   },
+  {
+    src: 'https://yjfzriagdd.ufs.sh/f/DM7CcnrlhW9ZJwHOrAE5W1i9svfeu7UmS3BF0ITbNQgVXMdC',
+    alt: 'Event photography',
+    category: 'events',
+  },
+  {
+    src: 'https://yjfzriagdd.ufs.sh/f/DM7CcnrlhW9ZGi9TzYg5P7eKumiMfCVo64tRTsIXaZr2Ol1n',
+    alt: 'Event photography',
+    category: 'events',
+  },
+  {
+    src: 'https://yjfzriagdd.ufs.sh/f/DM7CcnrlhW9Zs0KQKlx3XZiABck94pfWJShwQVjM8m6T0F7b',
+    alt: 'Event photography',
+    category: 'events',
+  },
+  {
+    src: 'https://yjfzriagdd.ufs.sh/f/DM7CcnrlhW9Zs3laPbx3XZiABck94pfWJShwQVjM8m6T0F7b',
+    alt: 'Event photography',
+    category: 'events',
+  },
+  {
+    src: 'https://yjfzriagdd.ufs.sh/f/DM7CcnrlhW9ZqrSNRkPb8f3zC7VlOi9SNTXEDsk5IvRGB40M',
+    alt: 'Event photography',
+    category: 'events',
+  },
+  {
+    src: 'https://yjfzriagdd.ufs.sh/f/DM7CcnrlhW9ZPiYorZKd9DKlaMegp1VzXkUnctLRICHvhE6J',
+    alt: 'Event photography',
+    category: 'events',
+  },
+  {
+    src: 'https://yjfzriagdd.ufs.sh/f/DM7CcnrlhW9Z2Udo4wRcZ30ow7GD2ILksnTq96u5dyfpz4Xg',
+    alt: 'Event photography',
+    category: 'events',
+  }
+]
+
+const abuDhabi: PicItem[] = [
+  { src: 'https://yjfzriagdd.ufs.sh/f/DM7CcnrlhW9Zj7FySjrVnyrCSgjcqJWdZufx87wUAlOXF4pk', alt: 'Abu Dhabi street', category: 'street' },
+  { src: 'https://yjfzriagdd.ufs.sh/f/DM7CcnrlhW9Zi95pSxkn1tXSFCjxbYgd8QcvUK0fGA5kJHVh', alt: 'Abu Dhabi street', category: 'street' },
+  { src: 'https://yjfzriagdd.ufs.sh/f/DM7CcnrlhW9ZBuenPPhTSov2LDVwkHi8Z6ea7gmKqjus9OXW', alt: 'Abu Dhabi street', category: 'street' },
+  { src: 'https://yjfzriagdd.ufs.sh/f/DM7CcnrlhW9ZiT1VRPkn1tXSFCjxbYgd8QcvUK0fGA5kJHVh', alt: 'Abu Dhabi street', category: 'street' },
+  { src: 'https://yjfzriagdd.ufs.sh/f/DM7CcnrlhW9Zxd4xtP5GhpvSgs5yaJmncdDLYZ2wQF6UiqNo', alt: 'Abu Dhabi street', category: 'street' },
+  { src: 'https://yjfzriagdd.ufs.sh/f/DM7CcnrlhW9ZUypUvImRBXhxoecZrtk3Izb1WUfaJLADdiq6', alt: 'Abu Dhabi street', category: 'street' },
 ]
 
 export default function Pics() {
   const [activeCategory, setActiveCategory] = useState<Category>('street')
   const [activeIndex, setActiveIndex] = useState(0)
   const scrollContainerRef = useRef<HTMLDivElement>(null)
+  const adScrollRef = useRef<HTMLDivElement>(null)
+  const [adIndex, setAdIndex] = useState(0)
+  const [orientations, setOrientations] = useState<Record<number, boolean>>({})
+  const [adOrientations, setAdOrientations] = useState<Record<number, boolean>>({})
 
   const filteredPics = pics.filter((p) => p.category === activeCategory)
 
@@ -141,6 +199,12 @@ export default function Pics() {
     if (scrollContainerRef.current) {
       scrollContainerRef.current.scrollTo({ left: 0 })
     }
+    setAdIndex(0)
+    if (adScrollRef.current) {
+      adScrollRef.current.scrollTo({ left: 0 })
+    }
+    setOrientations({})
+    setAdOrientations({})
   }, [activeCategory])
 
   useEffect(() => {
@@ -174,6 +238,33 @@ export default function Pics() {
     return () => container.removeEventListener('scroll', handleScroll)
   }, [filteredPics])
 
+  useEffect(() => {
+    const container = adScrollRef.current
+    if (!container) return
+
+    const handleScroll = () => {
+      const rect = container.getBoundingClientRect()
+      const center = rect.left + rect.width / 2
+      let closestIndex = 0
+      let minDistance = Number.MAX_VALUE
+
+      Array.from(container.children).forEach((child, index) => {
+        const childRect = (child as HTMLElement).getBoundingClientRect()
+        const childCenter = childRect.left + childRect.width / 2
+        const distance = Math.abs(childCenter - center)
+        if (distance < minDistance) {
+          minDistance = distance
+          closestIndex = index
+        }
+      })
+
+      setAdIndex(closestIndex)
+    }
+
+    container.addEventListener('scroll', handleScroll)
+    return () => container.removeEventListener('scroll', handleScroll)
+  }, [activeCategory])
+
   return (
     <div className="space-y-8">
       {/* Category Navigation */}
@@ -194,6 +285,9 @@ export default function Pics() {
       </nav>
 
       {/* Carousel */}
+      {activeCategory === 'street' && (
+        <h3 className="text-sm font-medium mb-2">Helsinki</h3>
+      )}
       <div className="relative w-full">
         <div 
           ref={scrollContainerRef}
@@ -202,13 +296,18 @@ export default function Pics() {
           {filteredPics.map((pic, i) => (
             <div
               key={i}
-              className="snap-center shrink-0 h-[50vh] md:h-[60vh] w-auto relative rounded-none overflow-hidden bg-neutral-100"
+              className={`snap-center shrink-0 ${orientations[i] ? 'h-[38vh] w-full' : 'h-[50vh] w-auto'} md:h-[60vh] md:w-auto relative rounded-none overflow-hidden bg-transparent md:bg-neutral-100`}
             >
               <img
                 src={pic.src}
                 alt={pic.alt}
                 loading="lazy"
-                className="h-full w-auto max-w-none"
+                className={orientations[i] ? 'h-full w-full object-contain' : 'h-full w-auto max-w-none'}
+                onLoad={(e) => {
+                  const img = e.currentTarget
+                  const landscape = img.naturalWidth >= img.naturalHeight
+                  setOrientations((prev) => (prev[i] === landscape ? prev : { ...prev, [i]: landscape }))
+                }}
               />
             </div>
           ))}
@@ -244,6 +343,48 @@ export default function Pics() {
           </div>
         )}
       </div>
+
+      {activeCategory === 'street' && (
+        <div className="mt-8">
+          <h3 className="text-sm font-medium mb-2">Abu Dhabi</h3>
+          <div className="relative w-full">
+            <div
+              ref={adScrollRef}
+              className="flex w-full overflow-x-auto snap-x snap-mandatory gap-4 pb-6 px-4 md:px-0 scrollbar-hide"
+            >
+              {abuDhabi.map((pic, i) => (
+                <div
+                  key={i}
+                  className={`snap-center shrink-0 ${adOrientations[i] ? 'h-[38vh] w-full' : 'h-[50vh] w-auto'} md:h-[60vh] md:w-auto relative rounded-none overflow-hidden bg-transparent md:bg-neutral-100`}
+                >
+                  <img
+                    src={pic.src}
+                    alt={pic.alt}
+                    loading="lazy"
+                    className={adOrientations[i] ? 'h-full w-full object-contain' : 'h-full w-auto max-w-none'}
+                    onLoad={(e) => {
+                      const img = e.currentTarget
+                      const landscape = img.naturalWidth >= img.naturalHeight
+                      setAdOrientations((prev) => (prev[i] === landscape ? prev : { ...prev, [i]: landscape }))
+                    }}
+                  />
+                </div>
+              ))}
+            </div>
+            {abuDhabi.length > 0 && (
+              <div className="flex justify-center gap-1.5 mt-2">
+                {abuDhabi.map((_, i) => (
+                  <button
+                    key={i}
+                    className={`h-1.5 rounded-full transition-all duration-300 ${i === adIndex ? 'w-1.5 bg-black' : 'w-1.5 bg-neutral-300'}`}
+                    aria-label={`Go to AD image ${i + 1}`}
+                  />
+                ))}
+              </div>
+            )}
+          </div>
+        </div>
+      )}
     </div>
   )
 }
