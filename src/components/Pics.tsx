@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from 'react'
 
-type Category = 'events' | 'street' | 'sports'
+type Category = 'street' | 'sports' | 'events'
 
 type PicItem = {
   src: string
@@ -11,32 +11,32 @@ type PicItem = {
 const pics: PicItem[] = [
   // Street
   {
-    src: new URL('../assets/pics/helsinki-street-photography-2.jpg', import.meta.url).href,
+    src: 'https://yjfzriagdd.ufs.sh/f/DM7CcnrlhW9ZtTlAV08PKfT7J1mDe5bv8iRz3XohN2AlruOW',
     alt: 'Street photography',
     category: 'street',
   },
   {
-    src: new URL('../assets/pics/helsinki-street-photography-1.jpg', import.meta.url).href,
+    src: 'https://yjfzriagdd.ufs.sh/f/DM7CcnrlhW9ZyrVYhQC1s0hxKJVQYnFpReLTN86qcZDlioGH',
     alt: 'Street photography',
     category: 'street',
   },
   {
-    src: new URL('../assets/pics/helsinki-street-photography-4.jpg', import.meta.url).href,
+    src: 'https://yjfzriagdd.ufs.sh/f/DM7CcnrlhW9ZIy16YJz9ifLgd8hMTA76owI0mJxEtuOpnrlD',
     alt: 'Street photography',
     category: 'street',
   },
   {
-    src: new URL('../assets/pics/helsinki-street-photography-13.jpg', import.meta.url).href,
+    src: 'https://yjfzriagdd.ufs.sh/f/DM7CcnrlhW9Z2ZwOKWRcZ30ow7GD2ILksnTq96u5dyfpz4Xg',
     alt: 'Street photography',
     category: 'street',
   },
   {
-    src: new URL('../assets/pics/helsinki-street-photography-12.jpg', import.meta.url).href,
+    src: 'https://yjfzriagdd.ufs.sh/f/DM7CcnrlhW9ZK7x2oVAOTNJsPaL2xq9me7t0Gh4CoukZ31WQ',
     alt: 'Street photography',
     category: 'street',
   },
   {
-    src: new URL('../assets/pics/helsinki-street-photography-8.jpg', import.meta.url).href,
+    src: 'https://yjfzriagdd.ufs.sh/f/DM7CcnrlhW9ZWI6nM4dwM62EqnuspVFR0a85iCLkJrmHXycG',
     alt: 'Street photography',
     category: 'street',
   },
@@ -72,12 +72,12 @@ const pics: PicItem[] = [
     category: 'sports',
   },
   {
-    src: 'https://yjfzriagdd.ufs.sh/f/DM7CcnrlhW9ZGILqwjg5P7eKumiMfCVo64tRTsIXaZr2Ol1n',
+    src: 'https://yjfzriagdd.ufs.sh/f/DM7CcnrlhW9Z187lMsjPZc3mDwh6s4XzBMUYLg2Aix58oFt0',
     alt: 'Sports photography',
     category: 'sports',
   },
   {
-    src: 'https://yjfzriagdd.ufs.sh/f/DM7CcnrlhW9Zjy7vUBrVnyrCSgjcqJWdZufx87wUAlOXF4pk',
+    src: 'https://yjfzriagdd.ufs.sh/f/DM7CcnrlhW9ZkPCWJQs5cpAJ8UsG0IKWxZtiXDYzb9yBlEMm',
     alt: 'Sports photography',
     category: 'sports',
   },
@@ -118,11 +118,6 @@ const pics: PicItem[] = [
   },
   {
     src: 'https://yjfzriagdd.ufs.sh/f/DM7CcnrlhW9ZZDeHbG1zVpI42HAsox3raXMSFvdTDYOfnc7B',
-    alt: 'Sports photography',
-    category: 'sports',
-  },
-  {
-    src: 'https://yjfzriagdd.ufs.sh/f/DM7CcnrlhW9Zd88GCLckVR3vTU8Pq6O1MAINYZC4cKlezywm',
     alt: 'Sports photography',
     category: 'sports',
   },
@@ -269,7 +264,7 @@ export default function Pics() {
     <div className="space-y-8">
       {/* Category Navigation */}
       <nav className="flex justify-start gap-2 text-xs">
-        {(['events', 'street', 'sports'] as const).map((cat) => (
+        {(['street', 'sports', 'events'] as const).map((cat) => (
           <button
             key={cat}
             onClick={() => setActiveCategory(cat)}
