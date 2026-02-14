@@ -291,13 +291,13 @@ export default function Pics() {
           {filteredPics.map((pic, i) => (
             <div
               key={i}
-              className={`snap-center shrink-0 ${orientations[i] ? 'h-[38vh] w-full' : 'h-[50vh] w-auto'} md:h-[60vh] md:w-auto relative rounded-none overflow-hidden bg-transparent md:bg-neutral-100`}
+              className={`snap-center shrink-0 ${orientations[i] ? 'h-[38vh] w-full' : 'h-[50vh] w-auto'} md:h-[60vh] md:w-auto md:max-w-[85vw] relative rounded-none overflow-hidden bg-transparent md:bg-neutral-100`}
             >
               <img
                 src={pic.src}
                 alt={pic.alt}
                 loading="lazy"
-                className={orientations[i] ? 'h-full w-full object-contain' : 'h-full w-auto max-w-none'}
+                className={orientations[i] ? 'h-full w-full object-contain md:w-auto md:max-w-[85vw] md:mx-auto' : 'h-full w-auto max-w-none md:object-contain md:max-w-[85vw] md:mx-auto'}
                 onLoad={(e) => {
                   const img = e.currentTarget
                   const landscape = img.naturalWidth >= img.naturalHeight
@@ -350,13 +350,13 @@ export default function Pics() {
               {abuDhabi.map((pic, i) => (
                 <div
                   key={i}
-                  className={`snap-center shrink-0 ${adOrientations[i] ? 'h-[38vh] w-full' : 'h-[50vh] w-auto'} md:h-[60vh] md:w-auto relative rounded-none overflow-hidden bg-transparent md:bg-neutral-100`}
+                  className={`snap-center shrink-0 ${adOrientations[i] ? 'h-[38vh] w-full' : 'h-[50vh] w-auto'} md:h-[60vh] md:w-auto md:max-w-[85vw] relative rounded-none overflow-hidden bg-transparent md:bg-neutral-100`}
                 >
                   <img
                     src={pic.src}
                     alt={pic.alt}
                     loading="lazy"
-                    className={adOrientations[i] ? 'h-full w-full object-contain' : 'h-full w-auto max-w-none'}
+                    className={adOrientations[i] ? 'h-full w-full object-contain md:w-auto md:max-w-[85vw] md:mx-auto' : 'h-full w-auto max-w-none md:object-contain md:max-w-[85vw] md:mx-auto'}
                     onLoad={(e) => {
                       const img = e.currentTarget
                       const landscape = img.naturalWidth >= img.naturalHeight
