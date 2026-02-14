@@ -148,7 +148,7 @@ const pics: PicItem[] = [
     category: 'events',
   },
   {
-    src: 'https://yjfzriagdd.ufs.sh/f/DM7CcnrlhW9Zs3laPbx3XZiABck94pfWJShwQVjM8m6T0F7b',
+    src: 'https://yjfzriagdd.ufs.sh/f/DM7CcnrlhW9ZHe16oFXMOt69jEp5iJyP7QB2rLf3xSz0NeU4',
     alt: 'Event photography',
     category: 'events',
   },
