@@ -345,7 +345,7 @@ function App() {
 function VideoTile({ src, title, cover }: { src: string; title: string; cover?: string }) {
   const videoRef = useRef<HTMLVideoElement | null>(null)
   const [, setIsPlaying] = useState(false) // eslint-disable-line @typescript-eslint/no-unused-vars
-  const coverPoster = new URL('./assets/covers/bg.jpeg', import.meta.url).href
+  const coverPoster = 'https://ik.imagekit.io/dhlq5fcy7w/covers/bg.jpeg'
   const [open, setOpen] = useState(false)
   const [muted, setMuted] = useState(false) // start with sound ON
   const tileCover = cover ?? coverPoster
