@@ -263,7 +263,10 @@ function App() {
 
       <main className="px-6 md:px-10 pb-20">
         {activeTab === 'about' ? (
-          <About />
+          <About
+            onContactClick={() => setActiveTab('contact')}
+            onContactHoverChange={setIsContactHovered}
+          />
         ) : activeTab === 'photo' ? (
           <Pics />
         ) : activeTab === 'contact' ? (

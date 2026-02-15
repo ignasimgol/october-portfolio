@@ -2,12 +2,17 @@ import { useState } from 'react'
 
 type Lang = 'ca' | 'es' | 'en'
 
+type AboutProps = {
+  onContactClick?: () => void
+  onContactHoverChange?: (hovered: boolean) => void
+}
+
 const copy: Record<Lang, { title: string; paragraphs: string[] }> = {
   en: {
     title: 'Hi there!',
     paragraphs: [
       'I’m María del Río. I grew up with cinema always present, and with a camera never far away.',
-      'Video editor, photographer and filmmaker ✂️📷🎥',
+      'Video editor, photographer and filmmaker ✂️ 📷 🎥',
       'I have worked with production companies such as Serena (Madrid) and She Films (Abu Dhabi), taking part in advertising and cultural campaigns, as well as projects for brands like Banco Santander, Alsa and Securitas Direct, and collaborating on productions in Dubai.',
       '🌍 My international experience has allowed me to work in multicultural environments and adapt to different ways of producing.',
       '📍 Currently freelancing in Barcelona. Available for projects and collaborations.',
@@ -17,7 +22,7 @@ const copy: Record<Lang, { title: string; paragraphs: string[] }> = {
     title: '¡Hola!',
     paragraphs: [
       'Soy María del Río. Crecí con el cine muy presente y con una cámara siempre cerca.',
-      'Editora de vídeo, fotógrafa y filmmaker ✂️📷🎥',
+      'Editora de vídeo, fotógrafa y filmmaker ✂️ 📷 🎥',
       'He trabajado en productoras como Serena (Madrid) y She Films (Abu Dhabi), participando en campañas publicitarias y culturales, así como en proyectos para marcas como Banco Santander, Alsa y Securitas Direct, además de colaborar en producciones en Dubái.',
       '🌍 La experiencia internacional me ha permitido trabajar en entornos multiculturales y adaptarme a distintas formas de producir.',
       '📍 Actualmente freelance en Barcelona. Disponible para proyectos y colaboraciones.',
@@ -27,7 +32,7 @@ const copy: Record<Lang, { title: string; paragraphs: string[] }> = {
     title: 'Hola!',
     paragraphs: [
       'Sóc la María del Río. Vaig créixer amb el cinema molt present i amb una càmera sempre a prop.',
-      'Editora de vídeo, fotògrafa i filmmaker ✂️📷🎥',
+      'Editora de vídeo, fotògrafa i filmmaker ✂️ 📷 🎥',
       'He treballat en productores com Serena (Madrid) i She Films (Abu Dhabi), participant en campanyes publicitàries i culturals, així com en projectes per a marques com Banco Santander, Alsa i Securitas Direct, a més de col·laborar en produccions a Dubai.',
       '🌍 L’experiència internacional m’ha permès treballar en entorns multiculturals i adaptar-me a diferents maneres de produir.',
       '📍 Actualment freelance a Barcelona. Disponible per a projectes i col·laboracions.',
@@ -35,7 +40,7 @@ const copy: Record<Lang, { title: string; paragraphs: string[] }> = {
   },
 }
 
-export default function About() {
+export default function About({ onContactClick, onContactHoverChange }: AboutProps) {
   const [lang, setLang] = useState<Lang>('en')
   const active = copy[lang]
 
@@ -46,7 +51,7 @@ export default function About() {
           <img
             src="/maria.jpg"
             alt="Maria del Rio"
-            className="block w-64 md:w-80 h-auto border-[#FFDE59] border-8 rounded-xl"
+            className="block w-64 md:w-80 h-auto border-[#FFDE59] border-8 rounded-2xl"
           />
         </div>
       </div>
@@ -64,26 +69,39 @@ export default function About() {
           ))}
         </div>
 
-        <nav className="mt-4 flex gap-2 text-xs md:text-xs">
-          {[
-            { id: 'ca', label: 'Català' },
-            { id: 'es', label: 'Castellano' },
-            { id: 'en', label: 'English' },
-          ].map((t) => (
-            <button
-              key={t.id}
-              onClick={() => setLang(t.id as Lang)}
-              className={`px-3 py-1 border rounded-[5px] transition-colors ${
-                lang === t.id
-                  ? 'bg-black text-white border-black'
-                  : 'bg-transparent border-neutral-300 text-neutral-600 hover:border-black hover:text-black'
-              }`}
-              aria-pressed={lang === t.id}
-            >
-              {t.label}
-            </button>
-          ))}
-        </nav>
+        <div className="mt-4 flex flex-wrap items-center gap-2 md:gap-3">
+          <nav className="flex gap-2 text-xs md:text-xs">
+            {[
+              { id: 'ca', label: 'Català' },
+              { id: 'es', label: 'Castellano' },
+              { id: 'en', label: 'English' },
+            ].map((t) => (
+              <button
+                key={t.id}
+                onClick={() => setLang(t.id as Lang)}
+                className={`px-3 py-1 border rounded-[5px] transition-colors ${
+                  lang === t.id
+                    ? 'bg-[#FFDE59] text-black border-[#FFDE59]'
+                    : 'bg-transparent border-neutral-300 text-neutral-600 hover:border-black hover:text-black'
+                }`}
+                aria-pressed={lang === t.id}
+              >
+                {t.label}
+              </button>
+            ))}
+          </nav>
+          <button
+            className="cta-button border border-black px-3 py-1 rounded hover:bg-black hover:text-white transition text-xs md:text-xs ml-3 md:ml-4"
+            onClick={() => {
+              onContactHoverChange?.(false)
+              onContactClick?.()
+            }}
+            onMouseEnter={() => onContactHoverChange?.(true)}
+            onMouseLeave={() => onContactHoverChange?.(false)}
+          >
+            Contact Me
+          </button>
+        </div>
       </div>
     </section>
   )
