@@ -6,19 +6,31 @@ const copy: Record<Lang, { title: string; paragraphs: string[] }> = {
   en: {
     title: 'Hi there!',
     paragraphs: [
-      'I’m Maria del Río, a video editor, photographer and filmmaker. I’ve worked in Madrid (Serena), Abu Dhabi (She Films), and Dubai (Ninja Media Productions), editing high-end campaigns, corporate videos, and commercials for brands such as Banco Santander, Alsa, Securitas Direct, and Etihad Airways.',
+      'I’m María del Río. I grew up with cinema always present, and with a camera never far away.',
+      'Video editor, photographer and filmmaker ✂️📷🎥',
+      'I have worked with production companies such as Serena (Madrid) and She Films (Abu Dhabi), taking part in advertising and cultural campaigns, as well as projects for brands like Banco Santander, Alsa and Securitas Direct, and collaborating on productions in Dubai.',
+      '🌍 My international experience has allowed me to work in multicultural environments and adapt to different ways of producing.',
+      '📍 Currently freelancing in Barcelona. Available for projects and collaborations.',
     ],
   },
   es: {
     title: '¡Hola!',
     paragraphs: [
-      'Soy María del Río, editora de video, fotógrafa y filmmaker. He trabajado en Madrid (Serena), Abu Dhabi (She Films) y Dubái (Ninja Media Productions), editando campañas, videos corporativos y comerciales de alto nivel para marcas como Banco Santander, Alsa, Securitas Direct y Etihad Airways.',
+      'Soy María del Río. Crecí con el cine muy presente y con una cámara siempre cerca.',
+      'Editora de vídeo, fotógrafa y filmmaker ✂️📷🎥',
+      'He trabajado en productoras como Serena (Madrid) y She Films (Abu Dhabi), participando en campañas publicitarias y culturales, así como en proyectos para marcas como Banco Santander, Alsa y Securitas Direct, además de colaborar en producciones en Dubái.',
+      '🌍 La experiencia internacional me ha permitido trabajar en entornos multiculturales y adaptarme a distintas formas de producir.',
+      '📍 Actualmente freelance en Barcelona. Disponible para proyectos y colaboraciones.',
     ],
   },
   ca: {
     title: 'Hola!',
     paragraphs: [
-      'Sóc la Maria del Rio, editora de vídeo, fotògrafa i filmmaker. He treballat a Madrid (Serena), Abu Dhabi (She Films) i Dubai (Ninja Media Productions), editant campanyes, vídeos corporatius i anuncis d’alt nivell per a marques com Banco Santander, Alsa, Securitas Direct i Etihad Airways.',
+      'Sóc la María del Río. Vaig créixer amb el cinema molt present i amb una càmera sempre a prop.',
+      'Editora de vídeo, fotògrafa i filmmaker ✂️📷🎥',
+      'He treballat en productores com Serena (Madrid) i She Films (Abu Dhabi), participant en campanyes publicitàries i culturals, així com en projectes per a marques com Banco Santander, Alsa i Securitas Direct, a més de col·laborar en produccions a Dubai.',
+      '🌍 L’experiència internacional m’ha permès treballar en entorns multiculturals i adaptar-me a diferents maneres de produir.',
+      '📍 Actualment freelance a Barcelona. Disponible per a projectes i col·laboracions.',
     ],
   },
 }
@@ -30,11 +42,11 @@ export default function About() {
   return (
     <section className="grid md:grid-cols-3 gap-8 md:gap-6 lg:gap-4 items-left">
       <div className="flex justify-center md:justify-start">
-        <div className="rounded-2xl bg-[#FFDE59] p-2 shadow-sm">
+        <div className="inline-block overflow-hidden">
           <img
             src="/maria.jpg"
             alt="Maria del Rio"
-            className="h-64 w-64 md:h-80 md:w-80 object-cover rounded-xl"
+            className="block w-64 md:w-80 h-auto"
           />
         </div>
       </div>
