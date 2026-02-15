@@ -142,7 +142,7 @@ function App() {
       ? []
       : videos.filter((v) => v.category === activeTab)
 
-  const heroGif = new URL('./assets/rove-2.gif', import.meta.url).href
+  const heroGif = 'https://ik.imagekit.io/dhlq5fcy7w/covers/rove-2.gif'
 
   useEffect(() => {
     document.body.style.backgroundColor = isContactHovered ? '#FFDE59' : ''
