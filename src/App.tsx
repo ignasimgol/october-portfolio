@@ -46,7 +46,7 @@ function App() {
       title: 'Experience Abu Dhabi - GTS',
       src: 'https://ik.imagekit.io/dhlq5fcy7w/video/Grateful%20to%20The%20Athletic%20&%20The%20New%20York%20Times%20for%20the%20interview%20and%20for%20shining%20a%20spotlight%20on%20t%20(1).mp4?updatedAt=1771181407550',
       category: 'commercials',
-      cover: new URL('./assets/covers/barca.png', import.meta.url).href
+      cover: 'https://ik.imagekit.io/dhlq5fcy7w/covers/barca.png'
     },
 
    
@@ -55,42 +55,42 @@ function App() {
       title: 'MiZa Tenants: Ripple - MiZa Abu Dhabi',
       src: 'https://ik.imagekit.io/dhlq5fcy7w/video/She%20Films%20-%20MiZa%20Tenants%20-%20Ripple%20-%20Final%20(1)%20(1).mp4',
       category: 'commercials',
-      cover: new URL('./assets/covers/ripple.jpg', import.meta.url).href
+      cover: 'https://ik.imagekit.io/dhlq5fcy7w/covers/ripple.jpg'
     },
        {
       id: 'a2',
       title: 'Inclusión - Banco Santander',
       src: 'https://ik.imagekit.io/dhlq5fcy7w/video/banco_santander_inclusion%20(1080p).mp4?updatedAt=1771181234934',
       category: 'commercials',
-      cover: new URL('./assets/covers/santander.jpg', import.meta.url).href
+      cover: 'https://ik.imagekit.io/dhlq5fcy7w/covers/santander.jpg'
     },
     {
       id: 'a8',
       title: 'Cadet Pilot Program - Etihad Airways',
       src: 'https://ik.imagekit.io/dhlq5fcy7w/video/How%20can%20you%20make%20the%20world%20your%20home_%D9%83%D9%8A%D9%81%20%D8%AA%D8%AE%D9%84%D9%91%D9%8A%20%D8%A7%D9%84%D8%B9%D8%A7%D9%84%D9%85%20%D8%A8%D9%8A%D8%AA%D9%83_...._etihadairways%20_film%20_abudhabi.mp4?updatedAt=1771181234845',
       category: 'commercials',
-      cover: new URL('./assets/covers/airlines.jpg', import.meta.url).href
+      cover: 'https://ik.imagekit.io/dhlq5fcy7w/covers/airlines.jpg'
     },
      {
       id: 'a1',
       title: 'Rove Home - Dubai Marina',
       src: 'https://ik.imagekit.io/dhlq5fcy7w/video/ROVE_DUBAI_MARINA_HOME_FINAL.mp4?updatedAt=1771181236617',
       category: 'commercials',
-      cover: new URL('./assets/covers/rove.jpg', import.meta.url).href
+      cover: 'https://ik.imagekit.io/dhlq5fcy7w/covers/rove.jpg'
     },
     {
       id: 'a5',
       title: 'UAE Union Day - The Crown Prince Court',
       src: 'https://ik.imagekit.io/dhlq5fcy7w/video/%D8%A7%D9%84%D9%84%D9%87%20%D9%8A%D8%A7%20%D8%AF%D8%A7%D8%B1%20%D8%B2%D8%A7%D9%8A%D8%AF..%20%D8%AD%D9%84%D9%88%D8%A9%20%D8%A8%D8%A7%D9%94%D9%87%D9%84%D9%87%D8%A7%20%D9%88%D8%B9%D9%8A%D8%AF%D9%87%D8%A7%20%D8%BA%D8%A7%D9%84%D9%8A%20%D8%B9%D9%84%D9%8A%D9%86%D8%A7%D9%83%D9%84%20%D8%B9%D8%A7%D9%85%20%D9%88%D8%A8%D9%84%D8%A7%D8%AF%D9%86%D8%A7%20%D8%A8%D8%AE%D9%8A%D8%B1Oh,%20land%20of%20Zayed..%20How%20beau%20(1)%20(2).mp4',
       category: 'commercials',
-      cover: new URL('./assets/covers/union.jpg', import.meta.url).href
+      cover: 'https://ik.imagekit.io/dhlq5fcy7w/covers/union.jpg'
     },
     {
       id: 'a6',
       title: 'Santander Bienestando - Banco Santander',
       src: 'https://www.youtube.com/watch?v=zGRJN3-KhSI',
       category: 'commercials',
-      cover: new URL('./assets/covers/youtube.jpg', import.meta.url).href
+      cover: 'https://ik.imagekit.io/dhlq5fcy7w/covers/youtube.jpg'
     },
 
      {
@@ -98,44 +98,43 @@ function App() {
       title: 'Els carrers i el Barça',
       src: 'https://ik.imagekit.io/dhlq5fcy7w/video/Que%20bonic%20e%CC%81s%20ser%20del%20Barc%CC%A7a_%E2%9D%A4%EF%B8%8FGra%CC%80cies%20per%20tot%20@ramonbridge.jpg%20_i%20gra%CC%80cies%20@ignaaasi5%20per%20reco%CC%81rr.mp4',
       category: 'personal',
-      cover: new URL('./assets/covers/barca.jpg', import.meta.url).href
+      cover: 'https://ik.imagekit.io/dhlq5fcy7w/covers/barca.jpg'
     },
     {
       id: 'p1',
       title: 'UPS Spec Ad. Directed and Edited by Maria del Rio',
       src: 'https://ik.imagekit.io/dhlq5fcy7w/video/UPS_FINAL_1.mov/ik-video.mp4?updatedAt=1771181235867',
       category: 'personal',
-      cover: new URL('./assets/covers/ups.jpg', import.meta.url).href
+      cover: 'https://ik.imagekit.io/dhlq5fcy7w/covers/ups.jpg'
     },
     {
       id: 'p3',
       title: 'Centelles',
       src: 'https://ik.imagekit.io/dhlq5fcy7w/video/CENTELLES_COLOR_17_1.mp4?updatedAt=1771181235669',
       category: 'personal',
-      cover: new URL('./assets/covers/centelles.jpg', import.meta.url).href
+      cover: 'https://ik.imagekit.io/dhlq5fcy7w/covers/centelles.jpg'
     },
     {
       id: 'p2',
       title: 'Abu Dhabi Streets',
       src: 'https://ik.imagekit.io/dhlq5fcy7w/video/sen%CC%83ales_v10.mp4?updatedAt=1771181236018',
       category: 'personal',
-      cover: new URL('./assets/covers/personal1.jpg', import.meta.url).href
+      cover: 'https://ik.imagekit.io/dhlq5fcy7w/covers/personal1.jpg'
     },
     {
       id: 'p5',
       title: 'Hoops Sant Adrià',
       src: 'https://ik.imagekit.io/dhlq5fcy7w/video/Partit%20bene%CC%80fic._%20Dia%2027-12._%20Sant%20Gabriel._%2020h._%20@bymariadelrioAmb%20la%20col_laboracio%CC%81%20de%20@ubs.mp4',
       category: 'personal',
-      cover: new URL('./assets/covers/hoops.jpeg', import.meta.url).href
+      cover: 'https://ik.imagekit.io/dhlq5fcy7w/covers/hoops.jpeg'
     },
         {
       id: 'a3',
       title: 'Securitas Direct con cerradura inteligente - Securitas Direct',
       src: 'https://ik.imagekit.io/dhlq5fcy7w/video/Nueva%20alarma%20de%20Securitas%20Direct%20con%20cerradura%20inteligente.mp4?updatedAt=1771181233795',
       category: 'commercials',
-      cover: new URL('./assets/covers/securitas.jpg', import.meta.url).href
-    },
-
+      cover: 'https://ik.imagekit.io/dhlq5fcy7w/covers/securitas.jpg'
+      }
   ]
 
   const filtered =
