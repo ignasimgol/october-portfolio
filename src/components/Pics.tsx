@@ -10,13 +10,18 @@ type PicItem = {
 
 const pics: PicItem[] = [
   // Street
-  {
-    src: 'https://yjfzriagdd.ufs.sh/f/DM7CcnrlhW9ZtTlAV08PKfT7J1mDe5bv8iRz3XohN2AlruOW',
+   {
+    src: 'https://ik.imagekit.io/dhlq5fcy7w/street/helsinki-street-photography-2.jpg',
     alt: 'Street photography',
     category: 'street',
   },
   {
-    src: 'https://yjfzriagdd.ufs.sh/f/DM7CcnrlhW9ZyrVYhQC1s0hxKJVQYnFpReLTN86qcZDlioGH',
+    src: 'https://ik.imagekit.io/dhlq5fcy7w/street/helsinki-street-photography-13.jpg',
+    alt: 'Street photography',
+    category: 'street',
+  },
+  {
+    src: 'https://ik.imagekit.io/dhlq5fcy7w/street/helsinki-street-photography-4.jpg',
     alt: 'Street photography',
     category: 'street',
   },
@@ -26,27 +31,22 @@ const pics: PicItem[] = [
     category: 'street',
   },
   {
-    src: 'https://yjfzriagdd.ufs.sh/f/DM7CcnrlhW9Z2ZwOKWRcZ30ow7GD2ILksnTq96u5dyfpz4Xg',
+    src: 'https://ik.imagekit.io/dhlq5fcy7w/street/helsinki-street-photography-8.jpg',
     alt: 'Street photography',
     category: 'street',
   },
   {
-    src: 'https://yjfzriagdd.ufs.sh/f/DM7CcnrlhW9ZK7x2oVAOTNJsPaL2xq9me7t0Gh4CoukZ31WQ',
+    src: 'https://ik.imagekit.io/dhlq5fcy7w/street/helsinki-street-photography-12.jpg',
     alt: 'Street photography',
     category: 'street',
   },
   {
-    src: 'https://yjfzriagdd.ufs.sh/f/DM7CcnrlhW9ZWI6nM4dwM62EqnuspVFR0a85iCLkJrmHXycG',
+    src: 'https://ik.imagekit.io/dhlq5fcy7w/street/helsinki%20christmas%20market%205.jpg',
     alt: 'Street photography',
     category: 'street',
   },
   {
-    src: 'https://yjfzriagdd.ufs.sh/f/DM7CcnrlhW9Z8pk7kMnTwoMRPnVrEO1mkHjcLUZ6gAd0zXB4',
-    alt: 'Street photography',
-    category: 'street',
-  },
-  {
-    src: 'https://yjfzriagdd.ufs.sh/f/DM7CcnrlhW9ZX8afVSNlr4FZL6Qwtmsdfy5eNnG2V0aMBucK',
+    src: 'https://ik.imagekit.io/dhlq5fcy7w/street/street_helsinki.jpg',
     alt: 'Street photography',
     category: 'street',
   },
