@@ -46,7 +46,7 @@ export default function About() {
           <img
             src="/maria.jpg"
             alt="Maria del Rio"
-            className="block w-64 md:w-80 h-auto"
+            className="block w-64 md:w-80 h-auto border-[#FFDE59] border-8 rounded-xl"
           />
         </div>
       </div>
