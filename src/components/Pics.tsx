@@ -170,12 +170,12 @@ const pics: PicItem[] = [
 ]
 
 const abuDhabi: PicItem[] = [
-  { src: 'https://yjfzriagdd.ufs.sh/f/DM7CcnrlhW9Zj7FySjrVnyrCSgjcqJWdZufx87wUAlOXF4pk', alt: 'Abu Dhabi street', category: 'street' },
-  { src: 'https://yjfzriagdd.ufs.sh/f/DM7CcnrlhW9Zi95pSxkn1tXSFCjxbYgd8QcvUK0fGA5kJHVh', alt: 'Abu Dhabi street', category: 'street' },
-  { src: 'https://yjfzriagdd.ufs.sh/f/DM7CcnrlhW9ZBuenPPhTSov2LDVwkHi8Z6ea7gmKqjus9OXW', alt: 'Abu Dhabi street', category: 'street' },
-  { src: 'https://yjfzriagdd.ufs.sh/f/DM7CcnrlhW9ZiT1VRPkn1tXSFCjxbYgd8QcvUK0fGA5kJHVh', alt: 'Abu Dhabi street', category: 'street' },
-  { src: 'https://yjfzriagdd.ufs.sh/f/DM7CcnrlhW9Zxd4xtP5GhpvSgs5yaJmncdDLYZ2wQF6UiqNo', alt: 'Abu Dhabi street', category: 'street' },
-  { src: 'https://yjfzriagdd.ufs.sh/f/DM7CcnrlhW9ZUypUvImRBXhxoecZrtk3Izb1WUfaJLADdiq6', alt: 'Abu Dhabi street', category: 'street' },
+  { src: 'https://ik.imagekit.io/dhlq5fcy7w/abu%20dhabi/street_AD_1.jpg', alt: 'Abu Dhabi street', category: 'street' },
+  { src: 'https://ik.imagekit.io/dhlq5fcy7w/abu%20dhabi/street_AD_2.jpg', alt: 'Abu Dhabi street', category: 'street' },
+  { src: 'https://ik.imagekit.io/dhlq5fcy7w/abu%20dhabi/street_AD_3.png', alt: 'Abu Dhabi street', category: 'street' },
+  { src: 'https://ik.imagekit.io/dhlq5fcy7w/abu%20dhabi/street_AD_4.jpg', alt: 'Abu Dhabi street', category: 'street' },
+  { src: 'https://ik.imagekit.io/dhlq5fcy7w/abu%20dhabi/STREET_AD_5.jpg', alt: 'Abu Dhabi street', category: 'street' },
+  { src: 'https://ik.imagekit.io/dhlq5fcy7w/abu%20dhabi/street_AD_2,6.jpg', alt: 'Abu Dhabi street', category: 'street' },
 ]
 
 export default function Pics() {
