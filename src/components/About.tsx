@@ -69,7 +69,7 @@ export default function About({ onContactClick, onContactHoverChange }: AboutPro
           ))}
         </div>
 
-        <div className="mt-4 flex flex-wrap items-center gap-2 md:gap-3">
+        <div className="mt-4 flex flex-col md:flex-row md:items-center md:justify-between gap-2 md:gap-3">
           <nav className="flex gap-2 text-xs md:text-xs">
             {[
               { id: 'ca', label: 'Català' },
@@ -91,7 +91,7 @@ export default function About({ onContactClick, onContactHoverChange }: AboutPro
             ))}
           </nav>
           <button
-            className="cta-button border border-black px-3 py-1 rounded hover:bg-black hover:text-white transition text-xs md:text-xs ml-3 md:ml-4"
+            className="cta-button border border-black px-3 py-1 rounded hover:bg-black hover:text-white transition text-xs md:text-xs w-full md:w-auto md:ml-4 text-center"
             onClick={() => {
               onContactHoverChange?.(false)
               onContactClick?.()
