@@ -96,14 +96,14 @@ function App() {
      {
       id: 'p4',
       title: 'Els carrers i el Barça',
-      src: 'https://ik.imagekit.io/dhlq5fcy7w/video/Que%20bonic%20e%CC%81s%20ser%20del%20Barc%CC%A7a_%E2%9D%A4%EF%B8%8FGra%CC%80cies%20per%20tot%20@ramonbridge.jpg%20_i%20gra%CC%80cies%20@ignaaasi5%20per%20reco%CC%81rr.mp4',
+      src: 'https://customer-dspxeeqa8b06vkql.cloudflarestream.com/7fe4760220be7d9eecc7442ec3e6476a/iframe?autoplay=true&poster=https%3A%2F%2Fcustomer-dspxeeqa8b06vkql.cloudflarestream.com%2F7fe4760220be7d9eecc7442ec3e6476a%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600',
       category: 'personal',
       cover: 'https://ik.imagekit.io/dhlq5fcy7w/covers/barca.jpg'
     },
     {
       id: 'p1',
       title: 'UPS Spec Ad. Directed and Edited by Maria del Rio',
-      src: 'https://ik.imagekit.io/dhlq5fcy7w/video/UPS_FINAL_1.mov/ik-video.mp4?updatedAt=1771181235867',
+      src: 'https://customer-dspxeeqa8b06vkql.cloudflarestream.com/4550ad0d8df644eea0f5b96b35123c69/iframe?autoplay=true&poster=https%3A%2F%2Fcustomer-dspxeeqa8b06vkql.cloudflarestream.com%2F4550ad0d8df644eea0f5b96b35123c69%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600',
       category: 'personal',
       cover: 'https://ik.imagekit.io/dhlq5fcy7w/covers/ups.jpg'
     },
@@ -351,6 +351,7 @@ function VideoTile({ src, title, cover }: { src: string; title: string; cover?: 
   const tileCover = cover ?? coverPoster
 
   const isYouTube = src.includes('youtube.com') || src.includes('youtu.be')
+  const isCloudflareStream = src.includes('cloudflarestream.com')
   const buildYouTubeEmbed = (url: string, mute: boolean) => {
     try {
       const u = new URL(url)
@@ -368,7 +369,7 @@ function VideoTile({ src, title, cover }: { src: string; title: string; cover?: 
   const embedUrl = isYouTube ? buildYouTubeEmbed(src, muted) : null
 
   useEffect(() => {
-    if (!open || isYouTube) return
+    if (!open || isYouTube || isCloudflareStream) return
     const el = videoRef.current
     if (!el) return
     const onPlay = () => setIsPlaying(true)
@@ -385,7 +386,7 @@ function VideoTile({ src, title, cover }: { src: string; title: string; cover?: 
   }, [open, isYouTube])
 
   useEffect(() => {
-    if (!open || isYouTube) return
+    if (!open || isYouTube || isCloudflareStream) return
     const v = videoRef.current
     if (!v) return
     v.muted = muted
@@ -438,6 +439,14 @@ function VideoTile({ src, title, cover }: { src: string; title: string; cover?: 
             {isYouTube ? (
               <iframe
                 src={embedUrl ?? ''}
+                title={title}
+                className="w-full h-full bg-black"
+                allow="autoplay; encrypted-media; picture-in-picture"
+                allowFullScreen
+              />
+            ) : isCloudflareStream ? (
+              <iframe
+                src={src}
                 title={title}
                 className="w-full h-full bg-black"
                 allow="autoplay; encrypted-media; picture-in-picture"
