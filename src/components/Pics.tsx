@@ -165,12 +165,12 @@ const pics: PicItem[] = [
 ]
 
 const abuDhabi: PicItem[] = [
-  { src: 'https://ik.imagekit.io/dhlq5fcy7w/abu%20dhabi/street_AD_1.jpg', alt: 'Abu Dhabi street', category: 'street' },
   { src: 'https://ik.imagekit.io/dhlq5fcy7w/abu%20dhabi/street_AD_2.jpg', alt: 'Abu Dhabi street', category: 'street' },
   { src: 'https://ik.imagekit.io/dhlq5fcy7w/abu%20dhabi/street_AD_3.png', alt: 'Abu Dhabi street', category: 'street' },
   { src: 'https://ik.imagekit.io/dhlq5fcy7w/abu%20dhabi/street_AD_4.jpg', alt: 'Abu Dhabi street', category: 'street' },
   { src: 'https://ik.imagekit.io/dhlq5fcy7w/abu%20dhabi/STREET_AD_5.jpg', alt: 'Abu Dhabi street', category: 'street' },
   { src: 'https://ik.imagekit.io/dhlq5fcy7w/abu%20dhabi/street_AD_2,6.jpg', alt: 'Abu Dhabi street', category: 'street' },
+  { src: 'https://ik.imagekit.io/dhlq5fcy7w/abu%20dhabi/street_AD_1.jpg', alt: 'Abu Dhabi street', category: 'street' },
 ]
 
 export default function Pics() {
