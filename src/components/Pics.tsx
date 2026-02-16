@@ -26,11 +26,6 @@ const pics: PicItem[] = [
     category: 'street',
   },
   {
-    src: 'https://yjfzriagdd.ufs.sh/f/DM7CcnrlhW9ZIy16YJz9ifLgd8hMTA76owI0mJxEtuOpnrlD',
-    alt: 'Street photography',
-    category: 'street',
-  },
-  {
     src: 'https://ik.imagekit.io/dhlq5fcy7w/street/helsinki-street-photography-8.jpg',
     alt: 'Street photography',
     category: 'street',
