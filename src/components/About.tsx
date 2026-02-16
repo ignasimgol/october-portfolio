@@ -41,7 +41,7 @@ const copy: Record<Lang, { title: string; paragraphs: string[] }> = {
 }
 
 export default function About({ onContactClick, onContactHoverChange }: AboutProps) {
-  const [lang, setLang] = useState<Lang>('en')
+  const [lang, setLang] = useState<Lang>('es')
   const active = copy[lang]
 
   return (
@@ -72,9 +72,9 @@ export default function About({ onContactClick, onContactHoverChange }: AboutPro
         <div className="mt-4 flex flex-col md:flex-row md:items-center md:justify-between gap-2 md:gap-3">
           <nav className="flex gap-2 text-xs md:text-xs">
             {[
-              { id: 'ca', label: 'Català' },
-              { id: 'es', label: 'Castellano' },
-              { id: 'en', label: 'English' },
+              { id: 'es', label: 'ESP' },
+              { id: 'ca', label: 'CAT' },
+              { id: 'en', label: 'ENG' },
             ].map((t) => (
               <button
                 key={t.id}
