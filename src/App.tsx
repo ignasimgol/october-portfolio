@@ -151,6 +151,28 @@ function App() {
     }
   }, [isContactHovered])
 
+  // Basic media protection: disable right-click and image drag (can be bypassed, but raises the bar)
+  useEffect(() => {
+    const handleContextMenu = (e: MouseEvent) => {
+      e.preventDefault()
+    }
+
+    const handleDragStart = (e: DragEvent) => {
+      const target = e.target as HTMLElement | null
+      if (target && target.tagName === 'IMG') {
+        e.preventDefault()
+      }
+    }
+
+    document.addEventListener('contextmenu', handleContextMenu)
+    document.addEventListener('dragstart', handleDragStart)
+
+    return () => {
+      document.removeEventListener('contextmenu', handleContextMenu)
+      document.removeEventListener('dragstart', handleDragStart)
+    }
+  }, [])
+
   useEffect(() => {
     const params = new URLSearchParams(window.location.search)
     if (params.get('success') === 'true') {
