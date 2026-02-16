@@ -117,11 +117,7 @@ const pics: PicItem[] = [
     category: 'sports',
   },
   // Events (ordered)
-  {
-    src: 'https://ik.imagekit.io/dhlq5fcy7w/events/event_11%20(1).jpg',
-    alt: 'Event photography',
-    category: 'events',
-  },
+
   {
     src: 'https://ik.imagekit.io/dhlq5fcy7w/events/event_2.jpg',
     alt: 'Event photography',
@@ -161,7 +157,12 @@ const pics: PicItem[] = [
     src: 'https://ik.imagekit.io/dhlq5fcy7w/events/event_10.jpg',
     alt: 'Event photography',
     category: 'events',
-  }
+  },
+  {
+    src: 'https://ik.imagekit.io/dhlq5fcy7w/events/event_11%20(1).jpg',
+    alt: 'Event photography',
+    category: 'events',
+  },
 ]
 
 const abuDhabi: PicItem[] = [
