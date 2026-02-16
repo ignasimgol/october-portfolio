@@ -53,7 +53,7 @@ function App() {
     {
       id: 'a7',
       title: 'MiZa Tenants: Ripple - MiZa Abu Dhabi',
-      src: 'https://ik.imagekit.io/dhlq5fcy7w/video/She%20Films%20-%20MiZa%20Tenants%20-%20Ripple%20-%20Final%20(1)%20(1).mp4',
+      src: 'https://customer-dspxeeqa8b06vkql.cloudflarestream.com/a4ddc6bb65322d1491fffff7b4c7ef43/iframe?poster=https%3A%2F%2Fcustomer-dspxeeqa8b06vkql.cloudflarestream.com%2Fa4ddc6bb65322d1491fffff7b4c7ef43%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600',
       category: 'commercials',
       cover: 'https://ik.imagekit.io/dhlq5fcy7w/covers/ripple.jpg'
     },
