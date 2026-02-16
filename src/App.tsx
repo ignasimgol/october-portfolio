@@ -44,12 +44,10 @@ function App() {
     {
       id: 'a33',
       title: 'Experience Abu Dhabi - GTS',
-      src: 'https://ik.imagekit.io/dhlq5fcy7w/video/Grateful%20to%20The%20Athletic%20&%20The%20New%20York%20Times%20for%20the%20interview%20and%20for%20shining%20a%20spotlight%20on%20t%20(1).mp4?updatedAt=1771181407550',
+      src: 'https://customer-dspxeeqa8b06vkql.cloudflarestream.com/956b6850ea2fc292b21ef96f2e7cd801/iframe?autoplay=true&poster=https%3A%2F%2Fcustomer-dspxeeqa8b06vkql.cloudflarestream.com%2F956b6850ea2fc292b21ef96f2e7cd801%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600',
       category: 'commercials',
       cover: 'https://ik.imagekit.io/dhlq5fcy7w/covers/barca.png'
     },
-
-   
     {
       id: 'a7',
       title: 'MiZa Tenants: Ripple - MiZa Abu Dhabi',
@@ -60,28 +58,28 @@ function App() {
        {
       id: 'a2',
       title: 'Inclusión - Banco Santander',
-      src: 'https://ik.imagekit.io/dhlq5fcy7w/video/banco_santander_inclusion%20(1080p).mp4?updatedAt=1771181234934',
+      src: 'https://customer-dspxeeqa8b06vkql.cloudflarestream.com/3938e8041b92ab389f02784fd4f58d70/iframe?autoplay=true&poster=https%3A%2F%2Fcustomer-dspxeeqa8b06vkql.cloudflarestream.com%2F3938e8041b92ab389f02784fd4f58d70%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600',
       category: 'commercials',
       cover: 'https://ik.imagekit.io/dhlq5fcy7w/covers/santander.jpg'
     },
     {
       id: 'a8',
       title: 'Cadet Pilot Program - Etihad Airways',
-      src: 'https://ik.imagekit.io/dhlq5fcy7w/video/How%20can%20you%20make%20the%20world%20your%20home_%D9%83%D9%8A%D9%81%20%D8%AA%D8%AE%D9%84%D9%91%D9%8A%20%D8%A7%D9%84%D8%B9%D8%A7%D9%84%D9%85%20%D8%A8%D9%8A%D8%AA%D9%83_...._etihadairways%20_film%20_abudhabi.mp4?updatedAt=1771181234845',
+      src: 'https://customer-dspxeeqa8b06vkql.cloudflarestream.com/faa886ad9db6fc0bbe2694f154ce17c7/iframe?autoplay=true&poster=https%3A%2F%2Fcustomer-dspxeeqa8b06vkql.cloudflarestream.com%2Ffaa886ad9db6fc0bbe2694f154ce17c7%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600',
       category: 'commercials',
       cover: 'https://ik.imagekit.io/dhlq5fcy7w/covers/airlines.jpg'
     },
      {
       id: 'a1',
       title: 'Rove Home - Dubai Marina',
-      src: 'https://ik.imagekit.io/dhlq5fcy7w/video/ROVE_DUBAI_MARINA_HOME_FINAL.mp4?updatedAt=1771181236617',
+      src: 'https://customer-dspxeeqa8b06vkql.cloudflarestream.com/70cbb5aa5e94642e3beec40693f1afaa/iframe?autoplay=true&poster=https%3A%2F%2Fcustomer-dspxeeqa8b06vkql.cloudflarestream.com%2F70cbb5aa5e94642e3beec40693f1afaa%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600',
       category: 'commercials',
       cover: 'https://ik.imagekit.io/dhlq5fcy7w/covers/rove.jpg'
     },
     {
       id: 'a5',
       title: 'UAE Union Day - The Crown Prince Court',
-      src: 'https://ik.imagekit.io/dhlq5fcy7w/video/%D8%A7%D9%84%D9%84%D9%87%20%D9%8A%D8%A7%20%D8%AF%D8%A7%D8%B1%20%D8%B2%D8%A7%D9%8A%D8%AF..%20%D8%AD%D9%84%D9%88%D8%A9%20%D8%A8%D8%A7%D9%94%D9%87%D9%84%D9%87%D8%A7%20%D9%88%D8%B9%D9%8A%D8%AF%D9%87%D8%A7%20%D8%BA%D8%A7%D9%84%D9%8A%20%D8%B9%D9%84%D9%8A%D9%86%D8%A7%D9%83%D9%84%20%D8%B9%D8%A7%D9%85%20%D9%88%D8%A8%D9%84%D8%A7%D8%AF%D9%86%D8%A7%20%D8%A8%D8%AE%D9%8A%D8%B1Oh,%20land%20of%20Zayed..%20How%20beau%20(1)%20(2).mp4',
+      src: 'https://customer-dspxeeqa8b06vkql.cloudflarestream.com/92547e3c7b0580651a09b45df877810b/iframe?autoplay=true&poster=https%3A%2F%2Fcustomer-dspxeeqa8b06vkql.cloudflarestream.com%2F92547e3c7b0580651a09b45df877810b%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600',
       category: 'commercials',
       cover: 'https://ik.imagekit.io/dhlq5fcy7w/covers/union.jpg'
     },
@@ -110,28 +108,28 @@ function App() {
     {
       id: 'p3',
       title: 'Centelles',
-      src: 'https://ik.imagekit.io/dhlq5fcy7w/video/CENTELLES_COLOR_17_1.mp4?updatedAt=1771181235669',
+      src: 'https://customer-dspxeeqa8b06vkql.cloudflarestream.com/8e1ea9704be451041da759b7574af2c4/iframe?autoplay=true&poster=https%3A%2F%2Fcustomer-dspxeeqa8b06vkql.cloudflarestream.com%2F8e1ea9704be451041da759b7574af2c4%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600',
       category: 'personal',
       cover: 'https://ik.imagekit.io/dhlq5fcy7w/covers/centelles.jpg'
     },
     {
       id: 'p2',
       title: 'Abu Dhabi Streets',
-      src: 'https://ik.imagekit.io/dhlq5fcy7w/video/sen%CC%83ales_v10.mp4?updatedAt=1771181236018',
+      src: 'https://customer-dspxeeqa8b06vkql.cloudflarestream.com/5be8be8cf17665e49742ddb2059b8640/iframe?autoplay=true&poster=https%3A%2F%2Fcustomer-dspxeeqa8b06vkql.cloudflarestream.com%2F5be8be8cf17665e49742ddb2059b8640%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600',
       category: 'personal',
       cover: 'https://ik.imagekit.io/dhlq5fcy7w/covers/personal1.jpg'
     },
     {
       id: 'p5',
       title: 'Hoops Sant Adrià',
-      src: 'https://ik.imagekit.io/dhlq5fcy7w/video/Partit%20bene%CC%80fic._%20Dia%2027-12._%20Sant%20Gabriel._%2020h._%20@bymariadelrioAmb%20la%20col_laboracio%CC%81%20de%20@ubs.mp4',
+      src: 'https://customer-dspxeeqa8b06vkql.cloudflarestream.com/9dce6c9eb9557d2f7634296dba169fdf/iframe?autoplay=true&poster=https%3A%2F%2Fcustomer-dspxeeqa8b06vkql.cloudflarestream.com%2F9dce6c9eb9557d2f7634296dba169fdf%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600',
       category: 'personal',
       cover: 'https://ik.imagekit.io/dhlq5fcy7w/covers/hoops.jpeg'
     },
         {
       id: 'a3',
       title: 'Securitas Direct con cerradura inteligente - Securitas Direct',
-      src: 'https://ik.imagekit.io/dhlq5fcy7w/video/Nueva%20alarma%20de%20Securitas%20Direct%20con%20cerradura%20inteligente.mp4?updatedAt=1771181233795',
+      src: 'https://customer-dspxeeqa8b06vkql.cloudflarestream.com/22367a42832deb2bcfd46dda88d67716/iframe?autoplay=true&poster=https%3A%2F%2Fcustomer-dspxeeqa8b06vkql.cloudflarestream.com%2F22367a42832deb2bcfd46dda88d67716%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600',
       category: 'commercials',
       cover: 'https://ik.imagekit.io/dhlq5fcy7w/covers/securitas.jpg'
       }
