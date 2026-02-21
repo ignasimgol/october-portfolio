@@ -36,9 +36,9 @@ export default function ContactForm() {
       <div className="flex justify-center md:justify-start">
         <div className="rounded-2xl bg-[#FFDE59] p-2 shadow-sm">
           <img
-            src="/maria.jpg"
+            src="https://ik.imagekit.io/dhlq5fcy7w/profile/contactme%20(1).jpg"
             alt="Maria del Rio"
-            className="h-64 w-64 md:h-80 md:w-80 object-cover rounded-xl"
+            className="w-64 md:w-80 h-auto object-contain rounded-xl"
           />
         </div>
       </div>

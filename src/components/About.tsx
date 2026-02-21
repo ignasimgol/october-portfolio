@@ -49,7 +49,7 @@ export default function About({ onContactClick, onContactHoverChange }: AboutPro
       <div className="flex justify-center md:justify-start">
         <div className="inline-block overflow-hidden">
           <img
-            src="/maria.jpg"
+            src="https://ik.imagekit.io/dhlq5fcy7w/profile/about%20(1).jpg?updatedAt=1771702031099"
             alt="Maria del Rio"
             className="block w-64 md:w-80 h-auto border-[#FFDE59] border-8 rounded-2xl"
           />
