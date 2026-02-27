@@ -137,35 +137,35 @@ function App() {
     {
       id: 's2',
       title: 'Wellness Abu Dhabi',
-      src: 'https://customer-dspxeeqa8b06vkql.cloudflarestream.com/d2015f65e5cbdf6855f7170b0354b5f0/iframe?poster=https%3A%2F%2Fcustomer-dspxeeqa8b06vkql.cloudflarestream.com%2Fd2015f65e5cbdf6855f7170b0354b5f0%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600',
+      src: 'https://customer-dspxeeqa8b06vkql.cloudflarestream.com/d2015f65e5cbdf6855f7170b0354b5f0/iframe?autoplay=true&poster=https%3A%2F%2Fcustomer-dspxeeqa8b06vkql.cloudflarestream.com%2Fd2015f65e5cbdf6855f7170b0354b5f0%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600',
       category: 'social_media',
       cover: 'https://ik.imagekit.io/dhlq5fcy7w/covers/wellnes_AD.jpg'
     },
     {
       id: 's3',
       title: 'MiZa',
-      src: 'https://customer-dspxeeqa8b06vkql.cloudflarestream.com/dcc8b4f3fcf5caf1a968a51669a8a4ed/iframe?poster=https%3A%2F%2Fcustomer-dspxeeqa8b06vkql.cloudflarestream.com%2Fdcc8b4f3fcf5caf1a968a51669a8a4ed%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600',
+      src: 'https://customer-dspxeeqa8b06vkql.cloudflarestream.com/dcc8b4f3fcf5caf1a968a51669a8a4ed/iframe?autoplay=true&poster=https%3A%2F%2Fcustomer-dspxeeqa8b06vkql.cloudflarestream.com%2Fdcc8b4f3fcf5caf1a968a51669a8a4ed%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600',
       category: 'social_media',
       cover: 'https://ik.imagekit.io/dhlq5fcy7w/covers/MiZa.jpg'
     },
     {
       id: 's4',
       title: 'MiZa Ad',
-      src: 'https://customer-dspxeeqa8b06vkql.cloudflarestream.com/10a4793df04b8573c637011b1c4d5011/iframe?poster=https%3A%2F%2Fcustomer-dspxeeqa8b06vkql.cloudflarestream.com%2F10a4793df04b8573c637011b1c4d5011%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600',
+      src: 'https://customer-dspxeeqa8b06vkql.cloudflarestream.com/10a4793df04b8573c637011b1c4d5011/iframe?autoplay=true&poster=https%3A%2F%2Fcustomer-dspxeeqa8b06vkql.cloudflarestream.com%2F10a4793df04b8573c637011b1c4d5011%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600',
       category: 'social_media',
       cover: 'https://ik.imagekit.io/dhlq5fcy7w/covers/AD_MiZa.jpg'
     },
      {
       id: 's5',
       title: 'GTS Academy',
-      src: 'https://customer-dspxeeqa8b06vkql.cloudflarestream.com/14ab04a54dbd5360264c609702b75206/iframe?poster=https%3A%2F%2Fcustomer-dspxeeqa8b06vkql.cloudflarestream.com%2F14ab04a54dbd5360264c609702b75206%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600',
+      src: 'https://customer-dspxeeqa8b06vkql.cloudflarestream.com/14ab04a54dbd5360264c609702b75206/iframe?autoplay=true&poster=https%3A%2F%2Fcustomer-dspxeeqa8b06vkql.cloudflarestream.com%2F14ab04a54dbd5360264c609702b75206%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600',
       category: 'social_media',
       cover: 'https://ik.imagekit.io/dhlq5fcy7w/covers/GTS_AD.jpg'
     },
     {
       id: 's6',
       title: 'Basketball Abu Dhabi',
-      src: 'https://customer-dspxeeqa8b06vkql.cloudflarestream.com/eb4081b874eaf55dfc785c1004f6f523/iframe?poster=https%3A%2F%2Fcustomer-dspxeeqa8b06vkql.cloudflarestream.com%2Feb4081b874eaf55dfc785c1004f6f523%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600',
+      src: 'https://customer-dspxeeqa8b06vkql.cloudflarestream.com/eb4081b874eaf55dfc785c1004f6f523/iframe?autoplay=true&poster=https%3A%2F%2Fcustomer-dspxeeqa8b06vkql.cloudflarestream.com%2Feb4081b874eaf55dfc785c1004f6f523%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600',
       category: 'social_media',
       cover: 'https://ik.imagekit.io/dhlq5fcy7w/covers/BSK_AD.jpg'
     },
