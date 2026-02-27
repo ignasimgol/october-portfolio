@@ -143,14 +143,14 @@ function App() {
     },
     {
       id: 's3',
-      title: 'MiZa',
+      title: 'MiZa - The Alley',
       src: 'https://customer-dspxeeqa8b06vkql.cloudflarestream.com/dcc8b4f3fcf5caf1a968a51669a8a4ed/iframe?autoplay=true&poster=https%3A%2F%2Fcustomer-dspxeeqa8b06vkql.cloudflarestream.com%2Fdcc8b4f3fcf5caf1a968a51669a8a4ed%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600',
       category: 'social_media',
       cover: 'https://ik.imagekit.io/dhlq5fcy7w/covers/MiZa.jpg'
     },
     {
       id: 's4',
-      title: 'MiZa Ad',
+      title: 'MiZa & Sail GP',
       src: 'https://customer-dspxeeqa8b06vkql.cloudflarestream.com/10a4793df04b8573c637011b1c4d5011/iframe?autoplay=true&poster=https%3A%2F%2Fcustomer-dspxeeqa8b06vkql.cloudflarestream.com%2F10a4793df04b8573c637011b1c4d5011%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600',
       category: 'social_media',
       cover: 'https://ik.imagekit.io/dhlq5fcy7w/covers/AD_MiZa.jpg'
@@ -309,7 +309,7 @@ function App() {
                 activeTab === tab
                   ? 'bg-black text-white border-black'
                   : 'bg-transparent border-neutral-300 text-neutral-600 hover:border-black hover:text-black'
-              }`}
+              } ${tab === 'about' ? 'col-span-2' : ''}`}
             >
               {tab === 'social_media' ? 'Social Media' : tab[0].toUpperCase() + tab.slice(1)}
             </button>
