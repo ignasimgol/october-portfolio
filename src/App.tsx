@@ -5,7 +5,7 @@ import About from './components/About'
 import ContactForm from './components/ContactForm'
 
 function App() {
-  type Tab =  'personal' | 'commercials' | 'about' | 'photo' | 'contact'
+  type Tab =  'personal' | 'commercials' | 'about' | 'photo' | 'contact' | 'social_media'
   const [activeTab, setActiveTab] = useState<Tab>('commercials')
   // Notificación (toast)
   const [toast, setToast] = useState<string | null>(null)
@@ -36,7 +36,7 @@ function App() {
     id: string
     title: string
     src: string
-    category: 'personal' | 'commercials' | 'photo'
+    category: 'personal' | 'commercials' | 'photo' | 'social_media'
     cover: string
   }
 
@@ -119,20 +119,57 @@ function App() {
       category: 'personal',
       cover: 'https://ik.imagekit.io/dhlq5fcy7w/covers/personal1.jpg'
     },
+
     {
-      id: 'p5',
-      title: 'Hoops Sant Adrià',
-      src: 'https://customer-dspxeeqa8b06vkql.cloudflarestream.com/9dce6c9eb9557d2f7634296dba169fdf/iframe?autoplay=true&poster=https%3A%2F%2Fcustomer-dspxeeqa8b06vkql.cloudflarestream.com%2F9dce6c9eb9557d2f7634296dba169fdf%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600',
-      category: 'personal',
-      cover: 'https://ik.imagekit.io/dhlq5fcy7w/covers/hoops.jpeg'
-    },
-        {
       id: 'a3',
       title: 'Securitas Direct con cerradura inteligente - Securitas Direct',
       src: 'https://customer-dspxeeqa8b06vkql.cloudflarestream.com/22367a42832deb2bcfd46dda88d67716/iframe?autoplay=true&poster=https%3A%2F%2Fcustomer-dspxeeqa8b06vkql.cloudflarestream.com%2F22367a42832deb2bcfd46dda88d67716%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600',
       category: 'commercials',
       cover: 'https://ik.imagekit.io/dhlq5fcy7w/covers/securitas.jpg'
-      }
+    },
+    {
+      id: 's1',
+      title: 'Hoops Sant Adrià',
+      src: 'https://customer-dspxeeqa8b06vkql.cloudflarestream.com/9dce6c9eb9557d2f7634296dba169fdf/iframe?autoplay=true&poster=https%3A%2F%2Fcustomer-dspxeeqa8b06vkql.cloudflarestream.com%2F9dce6c9eb9557d2f7634296dba169fdf%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600',
+      category: 'social_media',
+      cover: 'https://ik.imagekit.io/dhlq5fcy7w/covers/hoops.jpeg'
+    },
+    {
+      id: 's2',
+      title: 'Wellness Abu Dhabi',
+      src: 'https://customer-dspxeeqa8b06vkql.cloudflarestream.com/d2015f65e5cbdf6855f7170b0354b5f0/iframe?poster=https%3A%2F%2Fcustomer-dspxeeqa8b06vkql.cloudflarestream.com%2Fd2015f65e5cbdf6855f7170b0354b5f0%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600',
+      category: 'social_media',
+      cover: 'https://ik.imagekit.io/dhlq5fcy7w/covers/wellnes_AD.jpg'
+    },
+    {
+      id: 's3',
+      title: 'MiZa',
+      src: 'https://customer-dspxeeqa8b06vkql.cloudflarestream.com/dcc8b4f3fcf5caf1a968a51669a8a4ed/iframe?poster=https%3A%2F%2Fcustomer-dspxeeqa8b06vkql.cloudflarestream.com%2Fdcc8b4f3fcf5caf1a968a51669a8a4ed%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600',
+      category: 'social_media',
+      cover: 'https://ik.imagekit.io/dhlq5fcy7w/covers/MiZa.jpg'
+    },
+    {
+      id: 's4',
+      title: 'MiZa Ad',
+      src: 'https://customer-dspxeeqa8b06vkql.cloudflarestream.com/10a4793df04b8573c637011b1c4d5011/iframe?poster=https%3A%2F%2Fcustomer-dspxeeqa8b06vkql.cloudflarestream.com%2F10a4793df04b8573c637011b1c4d5011%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600',
+      category: 'social_media',
+      cover: 'https://ik.imagekit.io/dhlq5fcy7w/covers/AD_MiZa.jpg'
+    },
+     {
+      id: 's5',
+      title: 'GTS Academy',
+      src: 'https://customer-dspxeeqa8b06vkql.cloudflarestream.com/14ab04a54dbd5360264c609702b75206/iframe?poster=https%3A%2F%2Fcustomer-dspxeeqa8b06vkql.cloudflarestream.com%2F14ab04a54dbd5360264c609702b75206%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600',
+      category: 'social_media',
+      cover: 'https://ik.imagekit.io/dhlq5fcy7w/covers/GTS_AD.jpg'
+    },
+    {
+      id: 's6',
+      title: 'Basketball Abu Dhabi',
+      src: 'https://customer-dspxeeqa8b06vkql.cloudflarestream.com/eb4081b874eaf55dfc785c1004f6f523/iframe?poster=https%3A%2F%2Fcustomer-dspxeeqa8b06vkql.cloudflarestream.com%2Feb4081b874eaf55dfc785c1004f6f523%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600',
+      category: 'social_media',
+      cover: 'https://ik.imagekit.io/dhlq5fcy7w/covers/BSK_AD.jpg'
+    },
+   
   ]
 
   const filtered =
@@ -264,7 +301,7 @@ function App() {
         </div>
 
         <nav className="mt-6 grid grid-cols-2 gap-2 md:flex md:flex-nowrap md:gap-2 text-xs md:text-sm">
-          {(['commercials', 'personal', 'photo', 'about'] as const).map((tab) => (
+          {(['commercials', 'social_media', 'photo', 'personal', 'about'] as const).map((tab) => (
             <button
               key={tab}
               onClick={() => setActiveTab(tab)}
@@ -274,7 +311,7 @@ function App() {
                   : 'bg-transparent border-neutral-300 text-neutral-600 hover:border-black hover:text-black'
               }`}
             >
-              {tab[0].toUpperCase() + tab.slice(1)}
+              {tab === 'social_media' ? 'Social Media' : tab[0].toUpperCase() + tab.slice(1)}
             </button>
           ))}
         </nav>
