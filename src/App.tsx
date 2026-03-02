@@ -409,6 +409,7 @@ function VideoTile({ src, title, cover }: { src: string; title: string; cover?: 
 
   const isYouTube = src.includes('youtube.com') || src.includes('youtu.be')
   const isCloudflareStream = src.includes('cloudflarestream.com')
+  const isMediaDelivery = src.includes('mediadelivery.net')
   const buildYouTubeEmbed = (url: string, mute: boolean) => {
     try {
       const u = new URL(url)
@@ -426,7 +427,7 @@ function VideoTile({ src, title, cover }: { src: string; title: string; cover?: 
   const embedUrl = isYouTube ? buildYouTubeEmbed(src, muted) : null
 
   useEffect(() => {
-    if (!open || isYouTube || isCloudflareStream) return
+    if (!open || isYouTube || isCloudflareStream || isMediaDelivery) return
     const el = videoRef.current
     if (!el) return
     const onPlay = () => setIsPlaying(true)
@@ -443,7 +444,7 @@ function VideoTile({ src, title, cover }: { src: string; title: string; cover?: 
   }, [open, isYouTube])
 
   useEffect(() => {
-    if (!open || isYouTube || isCloudflareStream) return
+    if (!open || isYouTube || isCloudflareStream || isMediaDelivery) return
     const v = videoRef.current
     if (!v) return
     v.muted = muted
@@ -456,7 +457,7 @@ function VideoTile({ src, title, cover }: { src: string; title: string; cover?: 
       }
     }
     setTimeout(attemptPlay, 0)
-  }, [open, muted, isYouTube])
+  }, [open, muted, isYouTube, isCloudflareStream, isMediaDelivery])
 
   return (
     <>
@@ -501,7 +502,7 @@ function VideoTile({ src, title, cover }: { src: string; title: string; cover?: 
                 allow="autoplay; encrypted-media; picture-in-picture"
                 allowFullScreen
               />
-            ) : isCloudflareStream ? (
+            ) : isCloudflareStream || isMediaDelivery ? (
               <iframe
                 src={src}
                 title={title}
