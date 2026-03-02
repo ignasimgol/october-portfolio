@@ -38,6 +38,7 @@ function App() {
     src: string
     category: 'personal' | 'commercials' | 'photo' | 'social_media'
     cover: string
+    isVertical?: boolean
   }
 
   const videos: Video[] = [
@@ -51,7 +52,7 @@ function App() {
     {
       id: 'a7',
       title: 'MiZa Tenants: Ripple - MiZa Abu Dhabi',
-      src: 'https://customer-dspxeeqa8b06vkql.cloudflarestream.com/a4ddc6bb65322d1491fffff7b4c7ef43/iframe?autoplay=true&poster=https%3A%2F%2Fcustomer-dspxeeqa8b06vkql.cloudflarestream.com%2Fa4ddc6bb65322d1491fffff7b4c7ef43%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600',
+      src: 'https://iframe.mediadelivery.net/play/609765/50ba8c55-681c-46cf-9e82-59eeb31b7480',
       category: 'commercials',
       cover: 'https://ik.imagekit.io/dhlq5fcy7w/covers/ripple.jpg'
     },
@@ -72,7 +73,7 @@ function App() {
      {
       id: 'a1',
       title: 'Rove Home - Dubai Marina',
-      src: 'https://customer-dspxeeqa8b06vkql.cloudflarestream.com/70cbb5aa5e94642e3beec40693f1afaa/iframe?autoplay=true&poster=https%3A%2F%2Fcustomer-dspxeeqa8b06vkql.cloudflarestream.com%2F70cbb5aa5e94642e3beec40693f1afaa%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600',
+      src: 'https://iframe.mediadelivery.net/play/609765/2379ce21-e940-4a1e-be4f-72f8adc21486',
       category: 'commercials',
       cover: 'https://ik.imagekit.io/dhlq5fcy7w/covers/rove.jpg'
     },
@@ -101,7 +102,7 @@ function App() {
     {
       id: 'p1',
       title: 'UPS Spec Ad. Directed and Edited by Maria del Rio',
-      src: 'https://customer-dspxeeqa8b06vkql.cloudflarestream.com/4550ad0d8df644eea0f5b96b35123c69/iframe?autoplay=true&poster=https%3A%2F%2Fcustomer-dspxeeqa8b06vkql.cloudflarestream.com%2F4550ad0d8df644eea0f5b96b35123c69%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600',
+      src: 'https://iframe.mediadelivery.net/play/609765/ae1eefdc-a068-4357-a0aa-d3095f84187f',
       category: 'personal',
       cover: 'https://ik.imagekit.io/dhlq5fcy7w/covers/ups.jpg'
     },
@@ -130,44 +131,50 @@ function App() {
     {
       id: 's1',
       title: 'Hoops Sant Adrià',
-      src: 'https://customer-dspxeeqa8b06vkql.cloudflarestream.com/9dce6c9eb9557d2f7634296dba169fdf/iframe?autoplay=true&poster=https%3A%2F%2Fcustomer-dspxeeqa8b06vkql.cloudflarestream.com%2F9dce6c9eb9557d2f7634296dba169fdf%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600',
+      src: 'https://iframe.mediadelivery.net/play/609765/edbb25f6-96b5-4e3c-93f9-441bdefc8dcd',
       category: 'social_media',
-      cover: 'https://ik.imagekit.io/dhlq5fcy7w/covers/hoops.jpeg'
+      cover: 'https://ik.imagekit.io/dhlq5fcy7w/covers/hoops.jpeg',
+      isVertical: false
     },
     {
       id: 's2',
       title: 'Wellness Abu Dhabi',
       src: 'https://customer-dspxeeqa8b06vkql.cloudflarestream.com/d2015f65e5cbdf6855f7170b0354b5f0/iframe?autoplay=true&poster=https%3A%2F%2Fcustomer-dspxeeqa8b06vkql.cloudflarestream.com%2Fd2015f65e5cbdf6855f7170b0354b5f0%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600',
       category: 'social_media',
-      cover: 'https://ik.imagekit.io/dhlq5fcy7w/covers/wellnes_AD.jpg'
+      cover: 'https://ik.imagekit.io/dhlq5fcy7w/covers/wellnes_AD.jpg',
+      isVertical: true
     },
     {
       id: 's3',
       title: 'MiZa - The Alley',
       src: 'https://customer-dspxeeqa8b06vkql.cloudflarestream.com/dcc8b4f3fcf5caf1a968a51669a8a4ed/iframe?autoplay=true&poster=https%3A%2F%2Fcustomer-dspxeeqa8b06vkql.cloudflarestream.com%2Fdcc8b4f3fcf5caf1a968a51669a8a4ed%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600',
       category: 'social_media',
-      cover: 'https://ik.imagekit.io/dhlq5fcy7w/covers/MiZa.jpg'
+      cover: 'https://ik.imagekit.io/dhlq5fcy7w/covers/MiZa.jpg',
+      isVertical: true
     },
     {
       id: 's4',
       title: 'MiZa & Sail GP',
       src: 'https://customer-dspxeeqa8b06vkql.cloudflarestream.com/10a4793df04b8573c637011b1c4d5011/iframe?autoplay=true&poster=https%3A%2F%2Fcustomer-dspxeeqa8b06vkql.cloudflarestream.com%2F10a4793df04b8573c637011b1c4d5011%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600',
       category: 'social_media',
-      cover: 'https://ik.imagekit.io/dhlq5fcy7w/covers/AD_MiZa.jpg'
+      cover: 'https://ik.imagekit.io/dhlq5fcy7w/covers/AD_MiZa.jpg',
+      isVertical: true
     },
      {
       id: 's5',
       title: 'GTS Academy',
       src: 'https://customer-dspxeeqa8b06vkql.cloudflarestream.com/14ab04a54dbd5360264c609702b75206/iframe?autoplay=true&poster=https%3A%2F%2Fcustomer-dspxeeqa8b06vkql.cloudflarestream.com%2F14ab04a54dbd5360264c609702b75206%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600',
       category: 'social_media',
-      cover: 'https://ik.imagekit.io/dhlq5fcy7w/covers/GTS_AD.jpg'
+      cover: 'https://ik.imagekit.io/dhlq5fcy7w/covers/GTS_AD.jpg',
+      isVertical: true
     },
     {
       id: 's6',
       title: 'Basketball Abu Dhabi',
       src: 'https://iframe.mediadelivery.net/play/609765/f977fb2f-ff31-4ec6-8c8d-d48dfd22f26c',
       category: 'social_media',
-      cover: 'https://ik.imagekit.io/dhlq5fcy7w/covers/BSK_AD.jpg'
+      cover: 'https://ik.imagekit.io/dhlq5fcy7w/covers/BSK_AD.jpg',
+      isVertical: true
     },
    
   ]
@@ -331,7 +338,7 @@ function App() {
           <section className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
             {filtered.map((v) => (
               <div key={v.id} className="flex flex-col">
-                <VideoTile src={v.src} title={v.title} cover={v.cover} />
+                <VideoTile src={v.src} title={v.title} cover={v.cover} isVertical={v.isVertical} />
                 <div className="mt-2 text-xs text-black">
                   {v.title}
                 </div>
@@ -399,7 +406,7 @@ function App() {
   )
 }
 
-function VideoTile({ src, title, cover }: { src: string; title: string; cover?: string }) {
+function VideoTile({ src, title, cover, isVertical }: { src: string; title: string; cover?: string; isVertical?: boolean }) {
   const videoRef = useRef<HTMLVideoElement | null>(null)
   const [, setIsPlaying] = useState(false) // eslint-disable-line @typescript-eslint/no-unused-vars
   const coverPoster = 'https://ik.imagekit.io/dhlq5fcy7w/covers/bg.jpeg'
@@ -491,7 +498,11 @@ function VideoTile({ src, title, cover }: { src: string; title: string; cover?: 
           role="dialog"
         >
           <div
-            className="relative w-screen h-[85vh] sm:w-[65vw] sm:h-[75vh] bg-black rounded-none sm:rounded-lg overflow-hidden shadow-xl"
+            className={`relative bg-black rounded-none sm:rounded-lg overflow-hidden shadow-xl ${
+              typeof isVertical !== 'undefined' && isVertical
+                ? 'h-[85vh] aspect-[9/16] max-w-[90vw]'
+                : 'w-screen h-[85vh] sm:w-[65vw] sm:h-[75vh]'
+            }`}
             onClick={(e) => e.stopPropagation()}
           >
             {isYouTube ? (
