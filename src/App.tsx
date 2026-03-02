@@ -418,7 +418,7 @@ function VideoTile({ src, title, cover }: { src: string; title: string; cover?: 
       } else {
         id = u.searchParams.get('v') || ''
       }
-      return `https://www.youtube.com/embed/${id}?autoplay=1&mute=${mute ? 1 : 0}&rel=0&playsinline=1`
+      return `https://www.youtube.com/embed/${id}?autoplay=1&mute=${mute ? 1 : 0}&rel=0&playsinline=1&modestbranding=1&iv_load_policy=3&controls=0`
     } catch {
       return url
     }
