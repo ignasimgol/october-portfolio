@@ -58,14 +58,14 @@ function App() {
        {
       id: 'a2',
       title: 'Inclusión - Banco Santander',
-      src: 'https://customer-dspxeeqa8b06vkql.cloudflarestream.com/3938e8041b92ab389f02784fd4f58d70/iframe?autoplay=true&poster=https%3A%2F%2Fcustomer-dspxeeqa8b06vkql.cloudflarestream.com%2F3938e8041b92ab389f02784fd4f58d70%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600',
+      src: 'https://iframe.mediadelivery.net/play/609765/f2b69487-4d4a-46dd-97c6-851ad398c30e',
       category: 'commercials',
       cover: 'https://ik.imagekit.io/dhlq5fcy7w/covers/santander.jpg'
     },
     {
       id: 'a8',
       title: 'Cadet Pilot Program - Etihad Airways',
-      src: 'https://customer-dspxeeqa8b06vkql.cloudflarestream.com/faa886ad9db6fc0bbe2694f154ce17c7/iframe?autoplay=true&poster=https%3A%2F%2Fcustomer-dspxeeqa8b06vkql.cloudflarestream.com%2Ffaa886ad9db6fc0bbe2694f154ce17c7%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600',
+      src: 'https://iframe.mediadelivery.net/play/609765/886fb7cf-1c3a-4032-b135-3b1fd6bc91c7',
       category: 'commercials',
       cover: 'https://ik.imagekit.io/dhlq5fcy7w/covers/airlines.jpg'
     },
@@ -123,7 +123,7 @@ function App() {
     {
       id: 'a3',
       title: 'Securitas Direct con cerradura inteligente - Securitas Direct',
-      src: 'https://customer-dspxeeqa8b06vkql.cloudflarestream.com/22367a42832deb2bcfd46dda88d67716/iframe?autoplay=true&poster=https%3A%2F%2Fcustomer-dspxeeqa8b06vkql.cloudflarestream.com%2F22367a42832deb2bcfd46dda88d67716%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600',
+      src: 'https://iframe.mediadelivery.net/play/609765/6fe896aa-ed23-467e-99fc-e427ce5db7cb',
       category: 'commercials',
       cover: 'https://ik.imagekit.io/dhlq5fcy7w/covers/securitas.jpg'
     },
@@ -165,7 +165,7 @@ function App() {
     {
       id: 's6',
       title: 'Basketball Abu Dhabi',
-      src: 'https://customer-dspxeeqa8b06vkql.cloudflarestream.com/eb4081b874eaf55dfc785c1004f6f523/iframe?autoplay=true&poster=https%3A%2F%2Fcustomer-dspxeeqa8b06vkql.cloudflarestream.com%2Feb4081b874eaf55dfc785c1004f6f523%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600',
+      src: 'https://iframe.mediadelivery.net/play/609765/f977fb2f-ff31-4ec6-8c8d-d48dfd22f26c',
       category: 'social_media',
       cover: 'https://ik.imagekit.io/dhlq5fcy7w/covers/BSK_AD.jpg'
     },
@@ -503,13 +503,15 @@ function VideoTile({ src, title, cover }: { src: string; title: string; cover?: 
                 allowFullScreen
               />
             ) : isCloudflareStream || isMediaDelivery ? (
-              <iframe
-                src={src}
-                title={title}
-                className="w-full h-full bg-black"
-                allow="autoplay; encrypted-media; picture-in-picture"
-                allowFullScreen
-              />
+              <div className="relative w-full h-full">
+                <iframe
+                  src={src}
+                  title={title}
+                  className="absolute top-0 left-0 w-full h-full bg-black"
+                  allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
+                  allowFullScreen
+                />
+              </div>
             ) : (
               <video
                 ref={videoRef}
