@@ -108,7 +108,7 @@ function App() {
     {
       id: 'p3',
       title: 'Centelles',
-      src: 'https://customer-dspxeeqa8b06vkql.cloudflarestream.com/8e1ea9704be451041da759b7574af2c4/iframe?autoplay=true&poster=https%3A%2F%2Fcustomer-dspxeeqa8b06vkql.cloudflarestream.com%2F8e1ea9704be451041da759b7574af2c4%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600',
+      src: 'https://iframe.mediadelivery.net/play/609765/d8475142-9334-4a6a-a5f1-adf3f5870548',
       category: 'personal',
       cover: 'https://ik.imagekit.io/dhlq5fcy7w/covers/centelles.jpg'
     },
