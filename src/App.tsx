@@ -79,7 +79,7 @@ function App() {
     {
       id: 'a5',
       title: 'UAE Union Day - The Crown Prince Court',
-      src: 'https://customer-dspxeeqa8b06vkql.cloudflarestream.com/92547e3c7b0580651a09b45df877810b/iframe?autoplay=true&poster=https%3A%2F%2Fcustomer-dspxeeqa8b06vkql.cloudflarestream.com%2F92547e3c7b0580651a09b45df877810b%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600',
+      src: 'https://iframe.mediadelivery.net/play/609765/fc1dedb0-5d5d-4411-9d84-765a0f508e68',
       category: 'commercials',
       cover: 'https://ik.imagekit.io/dhlq5fcy7w/covers/union.jpg'
     },
@@ -126,6 +126,13 @@ function App() {
       src: 'https://iframe.mediadelivery.net/play/609765/6fe896aa-ed23-467e-99fc-e427ce5db7cb',
       category: 'commercials',
       cover: 'https://ik.imagekit.io/dhlq5fcy7w/covers/securitas.jpg'
+    },
+    {
+      id: 's9',
+      title: 'The Clean Up Movement - Abu Dhabi',
+      src: 'https://iframe.mediadelivery.net/play/609765/7f166cfc-df45-4a58-bb77-d2d0f41ab8a1',
+      category: 'social_media',
+      cover: 'https://ik.imagekit.io/dhlq5fcy7w/abu%20dhabi/Captura%20de%20pantalla%202026-03-02%20a%20las%2023.34.32.png'
     },
     {
       id: 's1',
