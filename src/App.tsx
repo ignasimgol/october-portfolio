@@ -94,7 +94,7 @@ function App() {
      {
       id: 'p4',
       title: 'Els carrers i el Barça',
-      src: 'https://customer-dspxeeqa8b06vkql.cloudflarestream.com/7fe4760220be7d9eecc7442ec3e6476a/iframe?autoplay=true&poster=https%3A%2F%2Fcustomer-dspxeeqa8b06vkql.cloudflarestream.com%2F7fe4760220be7d9eecc7442ec3e6476a%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600',
+      src: 'https://iframe.mediadelivery.net/play/609765/3613af5e-68f7-4f21-a644-e4fdf012be62',
       category: 'personal',
       cover: 'https://ik.imagekit.io/dhlq5fcy7w/covers/barca.jpg'
     },
