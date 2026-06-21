@@ -43,21 +43,21 @@ function App() {
   const videos: Video[] = [
     {
       id: 'a34',
-      title: 'Brisa',
+      title: 'Brisa - Gin MG',
       src: 'https://iframe.mediadelivery.net/play/609765/0720ec93-c516-4ff0-8af0-4fa6c9076939',
       category: 'commercials',
       cover: 'https://ik.imagekit.io/dhlq5fcy7w/abu%20dhabi/anuncis5.jpg'
     },
     {
       id: 'a35',
-      title: 'Veuve Clicquot Picnic',
+      title: 'Le Picnic - Veuve Clicquot',
       src: 'https://iframe.mediadelivery.net/play/609765/fc7e1541-151f-4e9a-b42f-bfbc1a58184f',
       category: 'commercials',
       cover: 'https://ik.imagekit.io/dhlq5fcy7w/abu%20dhabi/anuncis3.jpg'
     },
     {
       id: 'a36',
-      title: 'Le Tribute',
+      title: 'Aperitvo - Le Tribute',
       src: 'https://iframe.mediadelivery.net/play/609765/eff3a12e-72bb-4297-9798-3aa9c28348fc',
       category: 'commercials',
       cover: 'https://ik.imagekit.io/dhlq5fcy7w/abu%20dhabi/anuncis6.jpg'
@@ -163,25 +163,11 @@ function App() {
       cover: 'https://ik.imagekit.io/dhlq5fcy7w/abu%20dhabi/anuncis2.jpg'
     },
     {
-      id: 's9',
-      title: 'The Clean Up Movement - Abu Dhabi',
-      src: 'https://iframe.mediadelivery.net/play/609765/7f166cfc-df45-4a58-bb77-d2d0f41ab8a1',
-      category: 'social_media',
-      cover: 'https://ik.imagekit.io/dhlq5fcy7w/abu%20dhabi/Captura%20de%20pantalla%202026-03-02%20a%20las%2023.34.32.png'
-    },
-    {
       id: 's1',
       title: 'Hoops Sant Adrià',
       src: 'https://iframe.mediadelivery.net/play/609765/edbb25f6-96b5-4e3c-93f9-441bdefc8dcd',
       category: 'social_media',
       cover: 'https://ik.imagekit.io/dhlq5fcy7w/covers/hoops.jpeg'
-    },
-    {
-      id: 's2',
-      title: 'Wellness Abu Dhabi',
-      src: 'https://iframe.mediadelivery.net/play/609765/8a8a5cbf-9498-4633-a1c3-f2ea4d54bc14',
-      category: 'social_media',
-      cover: 'https://ik.imagekit.io/dhlq5fcy7w/covers/wellnes_AD.jpg'
     },
     {
       id: 's3',
@@ -190,26 +176,12 @@ function App() {
       category: 'social_media',
       cover: 'https://ik.imagekit.io/dhlq5fcy7w/covers/MiZa.jpg'
     },
-    {
-      id: 's4',
-      title: 'MiZa & Sail GP',
-      src: 'https://iframe.mediadelivery.net/play/609765/b3d2fe5e-3a2f-4778-aa5e-ad4452052a7f',
-      category: 'social_media',
-      cover: 'https://ik.imagekit.io/dhlq5fcy7w/covers/AD_MiZa.jpg'
-    },
      {
       id: 's5',
       title: 'GTS Academy',
       src: 'https://iframe.mediadelivery.net/play/609765/184337d6-7d56-4518-a7c3-e54bb9806551',
       category: 'social_media',
       cover: 'https://ik.imagekit.io/dhlq5fcy7w/covers/GTS_AD.jpg'
-    },
-    {
-      id: 's6',
-      title: 'Basketball Abu Dhabi',
-      src: 'https://iframe.mediadelivery.net/play/609765/a26636b7-c202-4b34-b17b-8a9d01fcc213',
-      category: 'social_media',
-      cover: 'https://ik.imagekit.io/dhlq5fcy7w/covers/BSK_AD.jpg'
     },
    
   ]
