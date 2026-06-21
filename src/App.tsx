@@ -42,6 +42,27 @@ function App() {
 
   const videos: Video[] = [
     {
+      id: 'a34',
+      title: 'Brisa',
+      src: 'https://iframe.mediadelivery.net/play/609765/0720ec93-c516-4ff0-8af0-4fa6c9076939',
+      category: 'commercials',
+      cover: 'https://ik.imagekit.io/dhlq5fcy7w/abu%20dhabi/anuncis5.jpg'
+    },
+    {
+      id: 'a35',
+      title: 'Veuve Clicquot Picnic',
+      src: 'https://iframe.mediadelivery.net/play/609765/fc7e1541-151f-4e9a-b42f-bfbc1a58184f',
+      category: 'commercials',
+      cover: 'https://ik.imagekit.io/dhlq5fcy7w/abu%20dhabi/anuncis3.jpg'
+    },
+    {
+      id: 'a36',
+      title: 'Le Tribute',
+      src: 'https://iframe.mediadelivery.net/play/609765/eff3a12e-72bb-4297-9798-3aa9c28348fc',
+      category: 'commercials',
+      cover: 'https://ik.imagekit.io/dhlq5fcy7w/abu%20dhabi/anuncis6.jpg'
+    },
+    {
       id: 'a33',
       title: 'Experience Abu Dhabi - GTS',
       src: 'https://iframe.mediadelivery.net/play/609765/f977fb2f-ff31-4ec6-8c8d-d48dfd22f26c',
@@ -75,13 +96,6 @@ function App() {
       src: 'https://www.youtube.com/watch?v=izM1AenOZNo',
       category: 'commercials',
       cover: 'https://ik.imagekit.io/dhlq5fcy7w/covers/rove.jpg'
-    },
-    {
-      id: 'a5',
-      title: 'UAE Union Day - The Crown Prince Court',
-      src: 'https://iframe.mediadelivery.net/play/609765/fc1dedb0-5d5d-4411-9d84-765a0f508e68',
-      category: 'commercials',
-      cover: 'https://ik.imagekit.io/dhlq5fcy7w/covers/union.jpg'
     },
     {
       id: 'a6',
@@ -126,6 +140,27 @@ function App() {
       src: 'https://iframe.mediadelivery.net/play/609765/6fe896aa-ed23-467e-99fc-e427ce5db7cb',
       category: 'commercials',
       cover: 'https://ik.imagekit.io/dhlq5fcy7w/covers/securitas.jpg'
+    },
+     {
+      id: 's10',
+      title: 'Brisa',
+      src: 'https://iframe.mediadelivery.net/play/609765/320adcf0-2cb3-4d24-abef-b632d33c8b6d',
+      category: 'social_media',
+      cover: 'https://ik.imagekit.io/dhlq5fcy7w/abu%20dhabi/anuncis1.jpg'
+    },
+     {
+      id: 's11',
+      title: 'Katia - Veuve Clicquot',
+      src: 'https://iframe.mediadelivery.net/play/609765/2be70f08-9fdc-40ff-b752-b401eceaafc2',
+      category: 'social_media',
+      cover: 'https://ik.imagekit.io/dhlq5fcy7w/abu%20dhabi/anuncis4.jpg'
+    },
+     {
+      id: 's12',
+      title: 'Le Tribute',
+      src: 'https://iframe.mediadelivery.net/play/609765/48e96f65-f8c4-4f30-b6f6-3b2b734c26af',
+      category: 'social_media',
+      cover: 'https://ik.imagekit.io/dhlq5fcy7w/abu%20dhabi/anuncis2.jpg'
     },
     {
       id: 's9',
