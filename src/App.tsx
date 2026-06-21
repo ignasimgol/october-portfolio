@@ -143,7 +143,7 @@ function App() {
     },
      {
       id: 's10',
-      title: 'Brisa',
+      title: 'Brisa - Gin MG',
       src: 'https://iframe.mediadelivery.net/play/609765/320adcf0-2cb3-4d24-abef-b632d33c8b6d',
       category: 'social_media',
       cover: 'https://ik.imagekit.io/dhlq5fcy7w/abu%20dhabi/anuncis1.jpg'
@@ -157,7 +157,7 @@ function App() {
     },
      {
       id: 's12',
-      title: 'Le Tribute',
+      title: 'Aperitvo - Le Tribute',
       src: 'https://iframe.mediadelivery.net/play/609765/48e96f65-f8c4-4f30-b6f6-3b2b734c26af',
       category: 'social_media',
       cover: 'https://ik.imagekit.io/dhlq5fcy7w/abu%20dhabi/anuncis2.jpg'
