@@ -32,13 +32,13 @@ function App() {
     }
   }
 
-  type Video = {
-    id: string
-    title: string
-    src: string
-    category: 'personal' | 'commercials' | 'photo' | 'social_media'
-    cover: string
-  }
+type Video = {
+  id: string
+  title: string
+  src: string
+  category: 'personal' | 'commercials' | 'photo' | 'social_media'
+  cover: string
+}
 
   const videos: Video[] = [
     {
@@ -354,6 +354,9 @@ function App() {
           </section>
         )}
       </main>
+      <div className="px-6 md:px-10 pb-10">
+
+      </div>
       <footer className="border-t border-neutral-200 px-6 md:px-10 py-6">
         <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between text-sm">
           <div className="flex items-center gap-4">

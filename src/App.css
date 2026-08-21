@@ -65,3 +65,48 @@
 .cta-button {
   animation: cta-colors 3s infinite ease-in-out;
 }
+
+.brand-carousel {
+  overflow: hidden;
+}
+
+.brand-carousel__track {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  animation: brand-scroll 18s linear infinite;
+}
+
+.brand-carousel__item {
+  flex-shrink: 0;
+}
+
+.brand-carousel__item img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  filter: grayscale(20%);
+  opacity: 0.95;
+  transition: filter 200ms ease, opacity 200ms ease;
+}
+
+.brand-carousel__item img:hover {
+  filter: grayscale(0%);
+  opacity: 1;
+}
+
+@keyframes brand-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .brand-carousel__track {
+    animation: none;
+  }
+}
