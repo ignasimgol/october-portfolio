@@ -95,14 +95,6 @@ type Video = {
       category: 'commercials',
       cover: 'https://ik.imagekit.io/dhlq5fcy7w/covers/youtube.jpg'
     },
-
-     {
-      id: 'p4',
-      title: 'Els carrers i el Barça',
-      src: 'https://player.vimeo.com/video/1222529457?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479',
-      category: 'social_media',
-      cover: 'https://ik.imagekit.io/dhlq5fcy7w/covers/barca.jpg'
-    },
     {
       id: 'p1',
       title: 'UPS Spec Ad. Directed and Edited by Maria del Rio',
@@ -110,21 +102,6 @@ type Video = {
       category: 'commercials',
       cover: 'https://ik.imagekit.io/dhlq5fcy7w/covers/ups.jpg'
     },
-    {
-      id: 'p3',
-      title: 'Centelles',
-      src: 'https://player.vimeo.com/video/1222527695?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479',
-      category: 'social_media',
-      cover: 'https://ik.imagekit.io/dhlq5fcy7w/covers/centelles.jpg'
-    },
-    {
-      id: 'p2',
-      title: 'Abu Dhabi Streets',
-      src: 'https://player.vimeo.com/video/1222527210?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479',
-      category: 'social_media',
-      cover: 'https://ik.imagekit.io/dhlq5fcy7w/covers/personal1.jpg'
-    },
-
     {
       id: 'a3',
       title: 'Securitas Direct con cerradura inteligente - Securitas Direct',
@@ -167,7 +144,13 @@ type Video = {
       category: 'social_media',
       cover: 'https://ik.imagekit.io/dhlq5fcy7w/covers/hoops.jpeg'
     },
-
+    {
+      id: 'p2',
+      title: 'Abu Dhabi Streets',
+      src: 'https://player.vimeo.com/video/1222527210?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479',
+      category: 'social_media',
+      cover: 'https://ik.imagekit.io/dhlq5fcy7w/covers/personal1.jpg'
+    },
     {
       id: 's5',
       title: 'GTS Academy',
@@ -345,7 +328,7 @@ type Video = {
           <div className="space-y-12 md:space-y-16">
             <Brands />
             <section className="space-y-5">
-              <h2 className="text-left text-2xl font-semibold md:text-3xl">Advertisements</h2>
+              <h2 className="text-left text-2xl font-semibold md:text-3xl">Commercials</h2>
               <HomeAds />
             </section>
             <section className="space-y-5">

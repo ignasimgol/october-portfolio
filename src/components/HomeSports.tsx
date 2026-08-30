@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState, type TouchEvent } from 'react'
 
 import { homeSportsImages } from '../data/HomeSportsImages'
 
@@ -25,6 +25,32 @@ function HomeSports() {
     if (activeIndex === null) return
     const next = (activeIndex + 1) % homeSportsImages.length
     setActiveIndex(next)
+  }
+
+  const touchStartRef = useRef<{ x: number; y: number } | null>(null)
+
+  const handleTouchStart = (e: TouchEvent<HTMLDivElement>) => {
+    const t = e.touches[0]
+    if (!t) return
+    touchStartRef.current = { x: t.clientX, y: t.clientY }
+  }
+
+  const handleTouchEnd = (e: TouchEvent<HTMLDivElement>) => {
+    const start = touchStartRef.current
+    touchStartRef.current = null
+    if (!start) return
+
+    const t = e.changedTouches[0]
+    if (!t) return
+
+    const dx = t.clientX - start.x
+    const dy = t.clientY - start.y
+
+    if (Math.abs(dx) < 45) return
+    if (Math.abs(dx) < Math.abs(dy) * 1.2) return
+
+    if (dx < 0) goNext()
+    else goPrev()
   }
 
   useEffect(() => {
@@ -112,7 +138,12 @@ function HomeSports() {
             <span className="text-5xl leading-none">›</span>
           </button>
 
-          <div className="relative z-10 flex h-full w-full items-center justify-center p-4" onClick={(e) => e.stopPropagation()}>
+          <div
+            className="relative z-10 flex h-full w-full items-center justify-center p-4"
+            onClick={(e) => e.stopPropagation()}
+            onTouchStart={handleTouchStart}
+            onTouchEnd={handleTouchEnd}
+          >
             <img
               src={activeImage.src}
               alt={activeImage.alt}

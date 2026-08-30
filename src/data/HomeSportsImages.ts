@@ -40,10 +40,6 @@ export const homeSportsImages = [
     alt: 'Canada Manresa',
   },
   {
-    src: 'https://ik.imagekit.io/dhlq5fcy7w/abu%20dhabi/WEB%20NEW/esport/CANADA_MANRESA_40.jpg?updatedAt=1788124114218',
-    alt: 'Canada Manresa',
-  },
-  {
     src: 'https://ik.imagekit.io/dhlq5fcy7w/abu%20dhabi/WEB%20NEW/esport/CANADA_PENYA_1.jpg?updatedAt=1788124114158',
     alt: 'Canada Penya',
   },
