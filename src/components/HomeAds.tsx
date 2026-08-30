@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react'
+import { useEffect, useRef, useState, type TouchEvent } from 'react'
 
 import { adsCarouselHorizontalImages, adsCarouselVerticalImages } from '../data/AdsImages'
 
@@ -37,6 +37,9 @@ function HomeAds() {
   const verticalRafRef = useRef<number | null>(null)
   const horizontalItemRefs = useRef<Array<HTMLElement | null>>([])
   const verticalItemRefs = useRef<Array<HTMLElement | null>>([])
+
+  const [lightbox, setLightbox] = useState<{ type: 'horizontal' | 'vertical'; index: number } | null>(null)
+  const touchStartRef = useRef<{ x: number; y: number } | null>(null)
 
   const clampIndex = (index: number, length: number) => Math.max(0, Math.min(length - 1, index))
 
@@ -106,13 +109,67 @@ function HomeAds() {
     })
   }
 
+  const activeLightboxImages = lightbox?.type === 'horizontal' ? adsCarouselHorizontalImages : adsCarouselVerticalImages
+  const activeLightboxImage = lightbox ? activeLightboxImages[lightbox.index] : null
+
+  const closeLightbox = () => setLightbox(null)
+
+  const goPrev = () => {
+    if (!lightbox) return
+    const nextIndex = (lightbox.index - 1 + activeLightboxImages.length) % activeLightboxImages.length
+    setLightbox({ ...lightbox, index: nextIndex })
+  }
+
+  const goNext = () => {
+    if (!lightbox) return
+    const nextIndex = (lightbox.index + 1) % activeLightboxImages.length
+    setLightbox({ ...lightbox, index: nextIndex })
+  }
+
+  const handleTouchStart = (e: TouchEvent<HTMLDivElement>) => {
+    const t = e.touches[0]
+    if (!t) return
+    touchStartRef.current = { x: t.clientX, y: t.clientY }
+  }
+
+  const handleTouchEnd = (e: TouchEvent<HTMLDivElement>) => {
+    const start = touchStartRef.current
+    touchStartRef.current = null
+    if (!start) return
+
+    const t = e.changedTouches[0]
+    if (!t) return
+
+    const dx = t.clientX - start.x
+    const dy = t.clientY - start.y
+
+    if (Math.abs(dx) < 45) return
+    if (Math.abs(dx) < Math.abs(dy) * 1.2) return
+
+    if (dx < 0) goNext()
+    else goPrev()
+  }
+
+  useEffect(() => {
+    if (!lightbox) return
+
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') closeLightbox()
+      if (e.key === 'ArrowLeft') goPrev()
+      if (e.key === 'ArrowRight') goNext()
+    }
+
+    window.addEventListener('keydown', onKeyDown)
+    return () => window.removeEventListener('keydown', onKeyDown)
+  }, [lightbox])
+
   return (
     <div className="space-y-6">
       <div className="relative">
         <div
           ref={horizontalRef}
           onScroll={onHorizontalScroll}
-          className="mx-auto flex w-full max-w-5xl snap-x snap-mandatory gap-4 overflow-x-auto px-4 py-2 scroll-smooth overscroll-x-contain [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden sm:px-6"
+          className="mx-auto flex w-full max-w-5xl snap-x snap-mandatory gap-2 overflow-x-auto px-2 py-2 scroll-smooth overscroll-x-contain [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden sm:gap-4 sm:px-6"
         >
           {adsCarouselHorizontalImages.map((image, index) => (
             <article
@@ -120,16 +177,21 @@ function HomeAds() {
               ref={(node) => {
                 horizontalItemRefs.current[index] = node
               }}
-              className="w-[88%] flex-none snap-center [scroll-snap-stop:always] overflow-hidden rounded-md bg-white sm:w-[82%] md:w-[72%] lg:w-[62%]"
+              className="w-[92%] flex-none snap-center [scroll-snap-stop:always] overflow-hidden rounded-md bg-white sm:w-[86%] md:w-[72%] lg:w-[62%]"
             >
-              <div className="flex h-[45vh] items-center justify-center sm:h-[50vh] lg:h-[52vh]">
+              <button
+                type="button"
+                onClick={() => setLightbox({ type: 'horizontal', index })}
+                className="flex w-full aspect-video items-center justify-center sm:aspect-auto sm:h-[50vh] lg:h-[52vh]"
+                aria-label={`Open image: ${image.alt}`}
+              >
                 <img
                   src={image.src}
                   alt={image.alt}
                   loading="lazy"
-                  className="max-h-full max-w-full object-contain"
+                  className="h-full w-full object-contain"
                 />
-              </div>
+              </button>
             </article>
           ))}
         </div>
@@ -218,7 +280,7 @@ function HomeAds() {
         <div
           ref={verticalRef}
           onScroll={onVerticalScroll}
-          className="mx-auto flex w-full max-w-3xl snap-x snap-mandatory gap-2 overflow-x-auto px-4 py-2 scroll-smooth overscroll-x-contain [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden sm:px-6"
+          className="mx-auto flex w-full max-w-3xl snap-x snap-mandatory gap-2 overflow-x-auto px-2 py-2 scroll-smooth overscroll-x-contain [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden sm:px-6"
         >
           {adsCarouselVerticalImages.map((image, index) => (
             <article
@@ -226,16 +288,21 @@ function HomeAds() {
               ref={(node) => {
                 verticalItemRefs.current[index] = node
               }}
-              className="w-[84%] flex-none snap-center [scroll-snap-stop:always] overflow-hidden rounded-md bg-white sm:w-[76%] md:w-[60%] lg:w-[46%]"
+              className="w-[90%] flex-none snap-center [scroll-snap-stop:always] overflow-hidden rounded-md bg-white sm:w-[82%] md:w-[60%] lg:w-[46%]"
             >
-              <div className="flex h-[60vh] items-center justify-center px-2 sm:h-[65vh] lg:h-[68vh]">
+              <button
+                type="button"
+                onClick={() => setLightbox({ type: 'vertical', index })}
+                className="flex w-full aspect-[4/5] items-center justify-center px-2 sm:aspect-auto sm:h-[65vh] lg:h-[68vh]"
+                aria-label={`Open image: ${image.alt}`}
+              >
                 <img
                   src={image.src}
                   alt={image.alt}
                   loading="lazy"
-                  className="h-full w-auto max-w-full object-contain"
+                  className="h-full w-full object-contain"
                 />
-              </div>
+              </button>
             </article>
           ))}
         </div>
@@ -271,6 +338,57 @@ function HomeAds() {
           ))}
         </div>
       </div>
+
+      {activeLightboxImage && (
+        <div className="fixed inset-0 z-50 bg-black">
+          <button
+            type="button"
+            className="absolute inset-0 bg-black"
+            onClick={closeLightbox}
+            aria-label="Close lightbox"
+          />
+
+          <button
+            type="button"
+            onClick={closeLightbox}
+            className="absolute right-4 top-4 z-30 text-white/90 hover:text-white text-3xl leading-none"
+            aria-label="Close"
+          >
+            ×
+          </button>
+
+          <button
+            type="button"
+            onClick={goPrev}
+            className="absolute left-0 top-0 z-20 h-full w-16 sm:w-24 flex items-center justify-center text-white/80 hover:text-white transition"
+            aria-label="Previous image"
+          >
+            <span className="text-5xl leading-none">‹</span>
+          </button>
+
+          <button
+            type="button"
+            onClick={goNext}
+            className="absolute right-0 top-0 z-20 h-full w-16 sm:w-24 flex items-center justify-center text-white/80 hover:text-white transition"
+            aria-label="Next image"
+          >
+            <span className="text-5xl leading-none">›</span>
+          </button>
+
+          <div
+            className="relative z-10 flex h-full w-full items-center justify-center p-4"
+            onClick={(e) => e.stopPropagation()}
+            onTouchStart={handleTouchStart}
+            onTouchEnd={handleTouchEnd}
+          >
+            <img
+              src={activeLightboxImage.src}
+              alt={activeLightboxImage.alt}
+              className="max-h-[90vh] max-w-[92vw] object-contain"
+            />
+          </div>
+        </div>
+      )}
     </div>
   )
 }
