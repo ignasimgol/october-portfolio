@@ -3,13 +3,18 @@ import './App.css'
 import Pics from './components/Pics'
 import About from './components/About'
 import ContactForm from './components/ContactForm'
+import Navigation, { type Tab } from './components/Navigation'
+import Brands from './components/Brands'
+import HomeAds from './components/HomeAds'
+import HomeSports from'./components/HomeSports'
 
 function App() {
-  type Tab =  'personal' | 'commercials' | 'about' | 'photo' | 'contact' | 'social_media'
-  const [activeTab, setActiveTab] = useState<Tab>('commercials')
+  const [activeTab, setActiveTab] = useState<Tab>('home')
   // Notificación (toast)
   const [toast, setToast] = useState<string | null>(null)
   const [isContactHovered, setIsContactHovered] = useState(false)
+  const navSentinelRef = useRef<HTMLDivElement | null>(null)
+  const [, setIsNavStuck] = useState(false)
 
   const handleCopyEmail = async () => {
     const email = 'bymariadelrio@gmail.com'
@@ -44,53 +49,39 @@ type Video = {
     {
       id: 'a34',
       title: 'Brisa - Gin MG',
-      src: 'https://iframe.mediadelivery.net/play/609765/0720ec93-c516-4ff0-8af0-4fa6c9076939',
+      src: 'https://player.vimeo.com/video/1222511612?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479',
       category: 'commercials',
       cover: 'https://ik.imagekit.io/dhlq5fcy7w/abu%20dhabi/anuncis5.jpg'
     },
     {
       id: 'a36',
       title: 'Aperitvo - Le Tribute',
-      src: 'https://iframe.mediadelivery.net/play/609765/eff3a12e-72bb-4297-9798-3aa9c28348fc',
+      src: 'https://player.vimeo.com/video/1222511614?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479',
       category: 'commercials',
       cover: 'https://ik.imagekit.io/dhlq5fcy7w/abu%20dhabi/anuncis6.jpg'
     },
     {
       id: 'a33',
       title: 'Experience Abu Dhabi - GTS',
-      src: 'https://iframe.mediadelivery.net/play/609765/f977fb2f-ff31-4ec6-8c8d-d48dfd22f26c',
+      src: 'https://player.vimeo.com/video/1222529789?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479',
       category: 'commercials',
       cover: 'https://ik.imagekit.io/dhlq5fcy7w/covers/barca.png'
     },
     {
       id: 'a7',
       title: 'MiZa Tenants: Ripple - MiZa Abu Dhabi',
-      src: 'https://iframe.mediadelivery.net/play/609765/50ba8c55-681c-46cf-9e82-59eeb31b7480',
+      src: 'https://player.vimeo.com/video/1222531085?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479',
       category: 'commercials',
       cover: 'https://ik.imagekit.io/dhlq5fcy7w/covers/ripple.jpg'
     },
     {
       id: 'a35',
       title: 'Le Picnic - Veuve Clicquot',
-      src: 'https://iframe.mediadelivery.net/play/609765/fc7e1541-151f-4e9a-b42f-bfbc1a58184f',
+      src: 'https://player.vimeo.com/video/1222511613?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"',
       category: 'commercials',
       cover: 'https://ik.imagekit.io/dhlq5fcy7w/abu%20dhabi/anuncis3.jpg'
     },
     {
-      id: 'a2',
-      title: 'Inclusión - Banco Santander',
-      src: 'https://iframe.mediadelivery.net/play/609765/f2b69487-4d4a-46dd-97c6-851ad398c30e',
-      category: 'commercials',
-      cover: 'https://ik.imagekit.io/dhlq5fcy7w/covers/santander.jpg'
-    },
-    {
-      id: 'a8',
-      title: 'Cadet Pilot Program - Etihad Airways',
-      src: 'https://iframe.mediadelivery.net/play/609765/886fb7cf-1c3a-4032-b135-3b1fd6bc91c7',
-      category: 'commercials',
-      cover: 'https://ik.imagekit.io/dhlq5fcy7w/covers/airlines.jpg'
-    },
-     {
       id: 'a1',
       title: 'Rove Home - Dubai Marina',
       src: 'https://www.youtube.com/watch?v=izM1AenOZNo',
@@ -108,45 +99,52 @@ type Video = {
      {
       id: 'p4',
       title: 'Els carrers i el Barça',
-      src: 'https://iframe.mediadelivery.net/play/609765/3613af5e-68f7-4f21-a644-e4fdf012be62',
-      category: 'personal',
+      src: 'https://player.vimeo.com/video/1222529457?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479',
+      category: 'social_media',
       cover: 'https://ik.imagekit.io/dhlq5fcy7w/covers/barca.jpg'
     },
     {
       id: 'p1',
       title: 'UPS Spec Ad. Directed and Edited by Maria del Rio',
-      src: 'https://iframe.mediadelivery.net/play/609765/ae1eefdc-a068-4357-a0aa-d3095f84187f',
-      category: 'personal',
+      src: 'https://player.vimeo.com/video/1222529136?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479',
+      category: 'commercials',
       cover: 'https://ik.imagekit.io/dhlq5fcy7w/covers/ups.jpg'
     },
     {
       id: 'p3',
       title: 'Centelles',
-      src: 'https://iframe.mediadelivery.net/play/609765/d8475142-9334-4a6a-a5f1-adf3f5870548',
-      category: 'personal',
+      src: 'https://player.vimeo.com/video/1222527695?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479',
+      category: 'social_media',
       cover: 'https://ik.imagekit.io/dhlq5fcy7w/covers/centelles.jpg'
     },
     {
       id: 'p2',
       title: 'Abu Dhabi Streets',
-      src: 'https://iframe.mediadelivery.net/play/609765/eebe069c-55a7-42d8-9b3d-a9de549071bf',
-      category: 'personal',
+      src: 'https://player.vimeo.com/video/1222527210?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479',
+      category: 'social_media',
       cover: 'https://ik.imagekit.io/dhlq5fcy7w/covers/personal1.jpg'
     },
 
     {
       id: 'a3',
       title: 'Securitas Direct con cerradura inteligente - Securitas Direct',
-      src: 'https://iframe.mediadelivery.net/play/609765/6fe896aa-ed23-467e-99fc-e427ce5db7cb',
+      src: 'https://player.vimeo.com/video/1222528656?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479',
       category: 'commercials',
       cover: 'https://ik.imagekit.io/dhlq5fcy7w/covers/securitas.jpg'
     },
-     {
+    {
       id: 's10',
       title: 'Brisa - Gin MG',
-      src: 'https://iframe.mediadelivery.net/play/609765/320adcf0-2cb3-4d24-abef-b632d33c8b6d',
+      src: 'https://player.vimeo.com/video/1222512853?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479',
       category: 'social_media',
       cover: 'https://ik.imagekit.io/dhlq5fcy7w/abu%20dhabi/anuncis1.jpg'
+    },
+     {
+      id: 's21',
+      title: 'Spirit',
+      src: 'https://player.vimeo.com/video/1222530364?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479',
+      category: 'social_media',
+      cover: 'https://ik.imagekit.io/dhlq5fcy7w/abu%20dhabi/WEB%20NEW/Captura%20de%20pantalla%202026-08-30%20a%20las%2023.01.22.png'
     },
      {
       id: 's11',
@@ -158,28 +156,22 @@ type Video = {
      {
       id: 's12',
       title: 'Aperitvo - Le Tribute',
-      src: 'https://iframe.mediadelivery.net/play/609765/48e96f65-f8c4-4f30-b6f6-3b2b734c26af',
+      src: 'https://player.vimeo.com/video/1222512854?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479',
       category: 'social_media',
       cover: 'https://ik.imagekit.io/dhlq5fcy7w/abu%20dhabi/anuncis2.jpg'
     },
     {
       id: 's1',
       title: 'Hoops Sant Adrià',
-      src: 'https://iframe.mediadelivery.net/play/609765/edbb25f6-96b5-4e3c-93f9-441bdefc8dcd',
+      src: 'https://player.vimeo.com/video/1222529307?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479',
       category: 'social_media',
       cover: 'https://ik.imagekit.io/dhlq5fcy7w/covers/hoops.jpeg'
     },
+
     {
-      id: 's3',
-      title: 'MiZa - The Alley',
-      src: 'https://iframe.mediadelivery.net/play/609765/1a9a568d-a2c9-42c3-83c1-71ec039c1d6e',
-      category: 'social_media',
-      cover: 'https://ik.imagekit.io/dhlq5fcy7w/covers/MiZa.jpg'
-    },
-     {
       id: 's5',
       title: 'GTS Academy',
-      src: 'https://iframe.mediadelivery.net/play/609765/184337d6-7d56-4518-a7c3-e54bb9806551',
+      src: 'https://player.vimeo.com/video/1222524826?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479',
       category: 'social_media',
       cover: 'https://ik.imagekit.io/dhlq5fcy7w/covers/GTS_AD.jpg'
     },
@@ -187,7 +179,7 @@ type Video = {
   ]
 
   const filtered =
-    activeTab === 'about'
+    activeTab === 'about' || activeTab === 'photo' || activeTab === 'contact' || activeTab === 'home'
       ? []
       : videos.filter((v) => v.category === activeTab)
 
@@ -201,6 +193,25 @@ type Video = {
       document.body.style.transition = ''
     }
   }, [isContactHovered])
+
+  useEffect(() => {
+    const el = navSentinelRef.current
+    if (!el) return
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsNavStuck(!entry.isIntersecting)
+      },
+      {
+        root: null,
+        threshold: 0,
+        rootMargin: '-16px 0px 0px 0px',
+      }
+    )
+
+    observer.observe(el)
+    return () => observer.disconnect()
+  }, [])
 
   // Basic media protection: disable right-click and image drag (can be bypassed, but raises the bar)
   useEffect(() => {
@@ -314,24 +325,13 @@ type Video = {
           </div>
         </div>
 
-        <nav className="mt-6 grid grid-cols-2 gap-2 md:flex md:flex-nowrap md:gap-2 text-xs md:text-sm">
-          {(['commercials', 'social_media', 'photo', 'personal', 'about'] as const).map((tab) => (
-            <button
-              key={tab}
-              onClick={() => setActiveTab(tab)}
-              className={`w-full md:w-auto text-center px-2 py-0.5 md:px-3 md:py-1 border rounded-[5px] transition-colors ${
-                activeTab === tab
-                  ? 'bg-black text-white border-black'
-                  : 'bg-transparent border-neutral-300 text-neutral-600 hover:border-black hover:text-black'
-              } ${tab === 'about' ? 'col-span-2' : ''}`}
-            >
-              {tab === 'social_media' ? 'Social Media' : tab[0].toUpperCase() + tab.slice(1)}
-            </button>
-          ))}
-        </nav>
       </header>
 
-      <main className="px-6 md:px-10 pb-20">
+      <div className="px-6 md:px-10">
+        <div ref={navSentinelRef} className="hidden md:block h-px" />
+        <Navigation activeTab={activeTab} onTabChange={setActiveTab} />
+
+        <main className="pb-20">
         {activeTab === 'about' ? (
           <About
             onContactClick={() => setActiveTab('contact')}
@@ -341,6 +341,18 @@ type Video = {
           <Pics />
         ) : activeTab === 'contact' ? (
           <ContactForm />
+        ) : activeTab === 'home' ? (
+          <div className="space-y-12 md:space-y-16">
+            <Brands />
+            <section className="space-y-5">
+              <h2 className="text-left text-2xl font-semibold md:text-3xl">Advertisements</h2>
+              <HomeAds />
+            </section>
+            <section className="space-y-5">
+              <h2 className="text-left text-2xl font-semibold md:text-3xl">Sports</h2>
+              <HomeSports />
+            </section>
+          </div>
         ) : (
           <section className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
             {filtered.map((v) => (
@@ -353,10 +365,9 @@ type Video = {
             ))}
           </section>
         )}
-      </main>
-      <div className="px-6 md:px-10 pb-10">
-
+        </main>
       </div>
+
       <footer className="border-t border-neutral-200 px-6 md:px-10 py-6">
         <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between text-sm">
           <div className="flex items-center gap-4">
@@ -408,6 +419,16 @@ type Video = {
             >
               bymariadelrio@gmail.com
             </button>
+            <button
+              type="button"
+              onClick={() => setActiveTab('contact')}
+              onMouseEnter={() => setIsContactHovered(true)}
+              onMouseLeave={() => setIsContactHovered(false)}
+              className="underline hover:opacity-70"
+              aria-label="Go to contact tab"
+            >
+              Contact Me
+            </button>
             <span>Barcelona</span>
           </div>
         </div>
@@ -425,6 +446,7 @@ function VideoTile({ src, title, cover }: { src: string; title: string; cover?: 
   const tileCover = cover ?? coverPoster
 
   const isYouTube = src.includes('youtube.com') || src.includes('youtu.be')
+  const isVimeo = src.includes('vimeo.com')
   const isCloudflareStream = src.includes('cloudflarestream.com')
   const isMediaDelivery = src.includes('mediadelivery.net')
   const buildYouTubeEmbed = (url: string, mute: boolean) => {
@@ -442,6 +464,27 @@ function VideoTile({ src, title, cover }: { src: string; title: string; cover?: 
     }
   }
 
+  const buildVimeoEmbed = (url: string, mute: boolean) => {
+    try {
+      const u = new URL(url)
+
+      if (u.hostname.includes('player.vimeo.com')) {
+        u.searchParams.set('autoplay', '1')
+        u.searchParams.set('muted', mute ? '1' : '0')
+        u.searchParams.set('title', '0')
+        u.searchParams.set('byline', '0')
+        u.searchParams.set('portrait', '0')
+        return u.toString()
+      }
+
+      const match = u.pathname.match(/\/(\d+)(?:$|\/)/)
+      const id = match?.[1] ?? ''
+      return `https://player.vimeo.com/video/${id}?autoplay=1&muted=${mute ? 1 : 0}&title=0&byline=0&portrait=0`
+    } catch {
+      return url
+    }
+  }
+
   const buildMediaDeliveryEmbed = (url: string, mute: boolean) => {
     const newUrl = url.replace('/play/', '/embed/')
     const hasParams = newUrl.includes('?')
@@ -451,12 +494,14 @@ function VideoTile({ src, title, cover }: { src: string; title: string; cover?: 
 
   const embedUrl = isYouTube
     ? buildYouTubeEmbed(src, muted)
+    : isVimeo
+    ? buildVimeoEmbed(src, muted)
     : isMediaDelivery
     ? buildMediaDeliveryEmbed(src, muted)
     : null
 
   useEffect(() => {
-    if (!open || isYouTube || isCloudflareStream || isMediaDelivery) return
+    if (!open || isYouTube || isVimeo || isCloudflareStream || isMediaDelivery) return
     const el = videoRef.current
     if (!el) return
     const onPlay = () => setIsPlaying(true)
@@ -470,23 +515,21 @@ function VideoTile({ src, title, cover }: { src: string; title: string; cover?: 
       el.removeEventListener('pause', onPause)
       el.removeEventListener('ended', onEnded)
     }
-  }, [open, isYouTube])
+  }, [open, isYouTube, isVimeo, isCloudflareStream, isMediaDelivery])
 
   useEffect(() => {
-    if (!open || isYouTube || isCloudflareStream || isMediaDelivery) return
+    if (!open || isYouTube || isVimeo || isCloudflareStream || isMediaDelivery) return
     const v = videoRef.current
     if (!v) return
     v.muted = muted
     const attemptPlay = () => {
       const p = v.play()
       if (p && typeof p.catch === 'function') {
-        p.catch(() => {
-          // Autoplay with sound may be blocked by the browser; user can press play.
-        })
+        p.catch(() => {})
       }
     }
     setTimeout(attemptPlay, 0)
-  }, [open, muted, isYouTube, isCloudflareStream, isMediaDelivery])
+  }, [open, muted, isYouTube, isVimeo, isCloudflareStream, isMediaDelivery])
 
   return (
     <>
@@ -523,7 +566,7 @@ function VideoTile({ src, title, cover }: { src: string; title: string; cover?: 
             className="relative bg-black rounded-none sm:rounded-lg overflow-hidden shadow-xl w-screen h-[85vh] sm:w-[65vw] sm:h-[75vh]"
             onClick={(e) => e.stopPropagation()}
           >
-            {isYouTube ? (
+            {isYouTube || isVimeo ? (
               <iframe
                 src={embedUrl ?? ''}
                 title={title}

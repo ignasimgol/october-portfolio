@@ -68,27 +68,37 @@
 
 .brand-carousel {
   overflow: hidden;
+  background-color: inherit;
 }
 
 .brand-carousel__track {
   display: flex;
   align-items: center;
+  width: max-content;
   gap: 2rem;
-  animation: brand-scroll 18s linear infinite;
+  animation: brand-scroll 22s linear infinite;
 }
 
 .brand-carousel__item {
-  flex-shrink: 0;
+  flex: 0 0 auto;
 }
 
 .brand-carousel__item img {
   display: block;
-  width: 100%;
-  height: auto;
+  height: 2rem;
+  width: auto;
   object-fit: contain;
   filter: grayscale(20%);
   opacity: 0.95;
-  transition: filter 200ms ease, opacity 200ms ease;
+  transition: filter 200ms ease, opacity 200ms ease, transform 200ms ease;
+}
+
+.brand-carousel__item--small img {
+  height: 1.7rem;
+}
+
+.brand-carousel__item--large img {
+  height: 2.3rem;
 }
 
 .brand-carousel__item img:hover {
@@ -96,12 +106,26 @@
   opacity: 1;
 }
 
+@media (min-width: 768px) {
+  .brand-carousel__item img {
+    height: 2.75rem;
+  }
+
+  .brand-carousel__item--small img {
+    height: 2.3rem;
+  }
+
+  .brand-carousel__item--large img {
+    height: 3.15rem;
+  }
+}
+
 @keyframes brand-scroll {
-  0% {
+  from {
     transform: translateX(0);
   }
-  100% {
-    transform: translateX(-50%);
+  to {
+    transform: translateX(calc(-50% - 1rem));
   }
 }
 
