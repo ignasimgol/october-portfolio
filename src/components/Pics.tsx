@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from 'react'
+import { useState, useRef, useEffect, type TouchEvent } from 'react'
 
 type Category = 'street' | 'sports' | 'events'
 
@@ -188,6 +188,9 @@ export default function Pics() {
   const [orientations, setOrientations] = useState<Record<number, boolean>>({})
   const [adOrientations, setAdOrientations] = useState<Record<number, boolean>>({})
 
+  const [lightbox, setLightbox] = useState<{ type: 'main' | 'abuDhabi'; index: number } | null>(null)
+  const touchStartRef = useRef<{ x: number; y: number } | null>(null)
+
   const clampIndex = (index: number, length: number) => Math.max(0, Math.min(length - 1, index))
 
   const getClosestIndexToCenter = (el: HTMLDivElement, items: Array<HTMLElement | null>) => {
@@ -276,6 +279,59 @@ export default function Pics() {
     setAdOrientations({})
   }, [activeCategory])
 
+  const activeLightboxImages = lightbox?.type === 'main' ? filteredPics : abuDhabi
+  const activeLightboxImage = lightbox ? activeLightboxImages[lightbox.index] : null
+
+  const closeLightbox = () => setLightbox(null)
+
+  const goPrev = () => {
+    if (!lightbox) return
+    const nextIndex = (lightbox.index - 1 + activeLightboxImages.length) % activeLightboxImages.length
+    setLightbox({ ...lightbox, index: nextIndex })
+  }
+
+  const goNext = () => {
+    if (!lightbox) return
+    const nextIndex = (lightbox.index + 1) % activeLightboxImages.length
+    setLightbox({ ...lightbox, index: nextIndex })
+  }
+
+  const handleTouchStart = (e: TouchEvent<HTMLDivElement>) => {
+    const t = e.touches[0]
+    if (!t) return
+    touchStartRef.current = { x: t.clientX, y: t.clientY }
+  }
+
+  const handleTouchEnd = (e: TouchEvent<HTMLDivElement>) => {
+    const start = touchStartRef.current
+    touchStartRef.current = null
+    if (!start) return
+
+    const t = e.changedTouches[0]
+    if (!t) return
+
+    const dx = t.clientX - start.x
+    const dy = t.clientY - start.y
+
+    if (Math.abs(dx) < 45) return
+    if (Math.abs(dx) < Math.abs(dy) * 1.2) return
+
+    if (dx < 0) goNext()
+    else goPrev()
+  }
+
+  useEffect(() => {
+    if (!lightbox) return
+
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') closeLightbox()
+      if (e.key === 'ArrowLeft') goPrev()
+      if (e.key === 'ArrowRight') goNext()
+    }
+
+    window.addEventListener('keydown', onKeyDown)
+    return () => window.removeEventListener('keydown', onKeyDown)
+  }, [lightbox])
 
   return (
     <div className="space-y-8">
@@ -310,7 +366,7 @@ export default function Pics() {
             const isLandscape = orientations[i] ?? true
 
             return (
-              <div
+              <article
                 key={i}
                 ref={(node) => {
                   helsinkiItemRefs.current[i] = node
@@ -321,7 +377,12 @@ export default function Pics() {
                     : 'w-[70%] sm:w-[60%] md:w-[46%] lg:w-[40%]'
                 } shrink-0 snap-center [scroll-snap-stop:always] overflow-hidden rounded-md`}
               >
-                <div className="flex h-[50vh] items-center justify-center md:h-[60vh]">
+                <button
+                  type="button"
+                  onClick={() => setLightbox({ type: 'main', index: i })}
+                  className="flex h-[50vh] w-full items-center justify-center md:h-[60vh]"
+                  aria-label={`Open image: ${pic.alt}`}
+                >
                   <img
                     src={pic.src}
                     alt={pic.alt}
@@ -333,8 +394,8 @@ export default function Pics() {
                       setOrientations((prev) => (prev[i] === nextLandscape ? prev : { ...prev, [i]: nextLandscape }))
                     }}
                   />
-                </div>
-              </div>
+                </button>
+              </article>
             )
           })}
           {filteredPics.length === 0 && (
@@ -393,7 +454,7 @@ export default function Pics() {
                 const isLandscape = adOrientations[i] ?? true
 
                 return (
-                  <div
+                  <article
                     key={i}
                     ref={(node) => {
                       adItemRefs.current[i] = node
@@ -404,7 +465,12 @@ export default function Pics() {
                         : 'w-[70%] sm:w-[60%] md:w-[46%] lg:w-[40%]'
                     } shrink-0 snap-center [scroll-snap-stop:always] overflow-hidden rounded-md`}
                   >
-                    <div className="flex h-[50vh] items-center justify-center md:h-[60vh]">
+                    <button
+                      type="button"
+                      onClick={() => setLightbox({ type: 'abuDhabi', index: i })}
+                      className="flex h-[50vh] w-full items-center justify-center md:h-[60vh]"
+                      aria-label={`Open image: ${pic.alt}`}
+                    >
                       <img
                         src={pic.src}
                         alt={pic.alt}
@@ -418,8 +484,8 @@ export default function Pics() {
                           )
                         }}
                       />
-                    </div>
-                  </div>
+                    </button>
+                  </article>
                 )
               })}
             </div>
@@ -458,6 +524,57 @@ export default function Pics() {
                 </div>
               </>
             )}
+          </div>
+        </div>
+      )}
+
+      {activeLightboxImage && (
+        <div className="fixed inset-0 z-50 bg-black">
+          <button
+            type="button"
+            className="absolute inset-0 bg-black"
+            onClick={closeLightbox}
+            aria-label="Close lightbox"
+          />
+
+          <button
+            type="button"
+            onClick={closeLightbox}
+            className="absolute right-4 top-4 z-30 text-white/90 hover:text-white text-3xl leading-none"
+            aria-label="Close"
+          >
+            ×
+          </button>
+
+          <button
+            type="button"
+            onClick={goPrev}
+            className="absolute left-0 top-0 z-20 h-full w-16 sm:w-24 flex items-center justify-center text-white/80 hover:text-white transition"
+            aria-label="Previous image"
+          >
+            <span className="text-5xl leading-none">‹</span>
+          </button>
+
+          <button
+            type="button"
+            onClick={goNext}
+            className="absolute right-0 top-0 z-20 h-full w-16 sm:w-24 flex items-center justify-center text-white/80 hover:text-white transition"
+            aria-label="Next image"
+          >
+            <span className="text-5xl leading-none">›</span>
+          </button>
+
+          <div
+            className="relative z-10 flex h-full w-full items-center justify-center p-4"
+            onClick={(e) => e.stopPropagation()}
+            onTouchStart={handleTouchStart}
+            onTouchEnd={handleTouchEnd}
+          >
+            <img
+              src={activeLightboxImage.src}
+              alt={activeLightboxImage.alt}
+              className="max-h-[90vh] max-w-[92vw] object-contain"
+            />
           </div>
         </div>
       )}

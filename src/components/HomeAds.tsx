@@ -11,20 +11,28 @@ type HomeVideo = {
 const adVideos: HomeVideo[] = [
   {
     title: 'Brisa - Gin MG',
-    src: 'https://iframe.mediadelivery.net/play/609765/0720ec93-c516-4ff0-8af0-4fa6c9076939',
+    src: 'https://player.vimeo.com/video/1222511612?title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479',
     cover: 'https://ik.imagekit.io/dhlq5fcy7w/abu%20dhabi/anuncis5.jpg?updatedAt=1782027291268',
   },
   {
     title: 'Le Picnic - Veuve Clicquot',
-    src: 'https://iframe.mediadelivery.net/play/609765/fc7e1541-151f-4e9a-b42f-bfbc1a58184f',
+    src: 'https://player.vimeo.com/video/1222511613?title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479',
     cover: 'https://ik.imagekit.io/dhlq5fcy7w/abu%20dhabi/anuncis3.jpg?updatedAt=1782027291275',
   },
 ]
 
-function buildMediaDeliveryEmbed(url: string) {
-  const embedUrl = url.replace('/play/', '/embed/')
-  const separator = embedUrl.includes('?') ? '&' : '?'
-  return `${embedUrl}${separator}autoplay=false&loop=false&muted=false&preload=true&responsive=true`
+function buildVimeoEmbed(url: string) {
+  try {
+    const u = new URL(url)
+    u.searchParams.set('autoplay', '1')
+    u.searchParams.set('muted', '0')
+    u.searchParams.set('title', '0')
+    u.searchParams.set('byline', '0')
+    u.searchParams.set('portrait', '0')
+    return u.toString()
+  } catch {
+    return url
+  }
 }
 
 function HomeAds() {
@@ -237,10 +245,10 @@ function HomeAds() {
               <div className="aspect-video overflow-hidden rounded-md bg-black">
                 {isOpen ? (
                   <iframe
-                    src={buildMediaDeliveryEmbed(video.src)}
+                    src={buildVimeoEmbed(video.src)}
                     title={video.title}
                     className="h-full w-full"
-                    allow="accelerometer; gyroscope; encrypted-media; picture-in-picture;"
+                    allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
                     allowFullScreen
                   />
                 ) : (
