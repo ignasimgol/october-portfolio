@@ -156,7 +156,7 @@ type Video = {
       title: 'GTS Academy',
       src: 'https://player.vimeo.com/video/1223754089?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479',
       category: 'social_media',
-      cover: 'https://ik.imagekit.io/dhlq5fcy7w/covers/GTS_AD.jpg'
+      cover: 'https://ik.imagekit.io/dhlq5fcy7w/abu%20dhabi/Captura%20de%20pantalla%202026-09-03%20a%20las%2019.33.39.png'
     },
    
   ]
