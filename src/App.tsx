@@ -126,7 +126,7 @@ type Video = {
      {
       id: 's11',
       title: 'Katia - Veuve Clicquot',
-      src: 'https://iframe.mediadelivery.net/play/609765/2be70f08-9fdc-40ff-b752-b401eceaafc2',
+      src: 'https://player.vimeo.com/video/1223752814?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479',
       category: 'social_media',
       cover: 'https://ik.imagekit.io/dhlq5fcy7w/abu%20dhabi/anuncis4.jpg'
     },
@@ -154,7 +154,7 @@ type Video = {
     {
       id: 's5',
       title: 'GTS Academy',
-      src: 'https://player.vimeo.com/video/1222524826?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479',
+      src: 'https://player.vimeo.com/video/1223754089?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479',
       category: 'social_media',
       cover: 'https://ik.imagekit.io/dhlq5fcy7w/covers/GTS_AD.jpg'
     },
@@ -336,6 +336,17 @@ type Video = {
               <HomeSports />
             </section>
           </div>
+        ) : activeTab === 'social_media' ? (
+          <section className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 md:gap-4">
+            {filtered.map((v) => (
+              <div key={v.id} className="flex flex-col">
+                <VideoTile src={v.src} title={v.title} cover={v.cover} aspect="aspect-[9/16]" />
+                <div className="mt-2 text-xs text-black">
+                  {v.title}
+                </div>
+              </div>
+            ))}
+          </section>
         ) : (
           <section className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
             {filtered.map((v) => (
@@ -420,7 +431,17 @@ type Video = {
   )
 }
 
-function VideoTile({ src, title, cover }: { src: string; title: string; cover?: string }) {
+function VideoTile({
+  src,
+  title,
+  cover,
+  aspect = 'aspect-[4/3]',
+}: {
+  src: string
+  title: string
+  cover?: string
+  aspect?: string
+}) {
   const videoRef = useRef<HTMLVideoElement | null>(null)
   const [, setIsPlaying] = useState(false) // eslint-disable-line @typescript-eslint/no-unused-vars
   const coverPoster = 'https://ik.imagekit.io/dhlq5fcy7w/covers/bg.jpeg'
@@ -517,7 +538,7 @@ function VideoTile({ src, title, cover }: { src: string; title: string; cover?: 
   return (
     <>
       {/* Tile cover */}
-      <figure className="group relative overflow-hidden rounded-md bg-neutral-100 aspect-[4/3]">
+      <figure className={`group relative overflow-hidden rounded-md bg-neutral-100 ${aspect}`}>
         <img
           src={tileCover}
           alt={title}
