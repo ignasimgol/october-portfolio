@@ -112,49 +112,49 @@ type Video = {
     {
       id: 's10',
       title: 'Brisa - Gin MG',
-      src: 'https://player.vimeo.com/video/1222512853?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479',
+      src: 'https://ik.imagekit.io/dhlq5fcy7w/videos/brisa.mp4',
       category: 'social_media',
       cover: 'https://ik.imagekit.io/dhlq5fcy7w/abu%20dhabi/anuncis1.jpg'
     },
      {
       id: 's21',
       title: 'Spirit',
-      src: 'https://player.vimeo.com/video/1222530364?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479',
+      src: 'https://ik.imagekit.io/dhlq5fcy7w/videos/spirit.mp4',
       category: 'social_media',
       cover: 'https://ik.imagekit.io/dhlq5fcy7w/abu%20dhabi/WEB%20NEW/Captura%20de%20pantalla%202026-08-30%20a%20las%2023.01.22.png'
     },
      {
       id: 's11',
       title: 'Katia - Veuve Clicquot',
-      src: 'https://player.vimeo.com/video/1223752814?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479',
+      src: 'https://ik.imagekit.io/dhlq5fcy7w/videos/katia.mp4',
       category: 'social_media',
       cover: 'https://ik.imagekit.io/dhlq5fcy7w/abu%20dhabi/anuncis4.jpg'
     },
      {
       id: 's12',
       title: 'Aperitvo - Le Tribute',
-      src: 'https://player.vimeo.com/video/1222512854?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479',
+      src: 'https://ik.imagekit.io/dhlq5fcy7w/videos/letribute.mp4',
       category: 'social_media',
       cover: 'https://ik.imagekit.io/dhlq5fcy7w/abu%20dhabi/anuncis2.jpg'
     },
     {
       id: 's1',
       title: 'Hoops Sant Adrià',
-      src: 'https://player.vimeo.com/video/1222529307?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479',
+      src: 'https://ik.imagekit.io/dhlq5fcy7w/videos/hoops.mp4',
       category: 'social_media',
       cover: 'https://ik.imagekit.io/dhlq5fcy7w/covers/hoops.jpeg'
     },
     {
       id: 'p2',
       title: 'Abu Dhabi Streets',
-      src: 'https://player.vimeo.com/video/1222527210?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479',
+      src: 'https://ik.imagekit.io/dhlq5fcy7w/videos/abudhabi.mp4',
       category: 'social_media',
       cover: 'https://ik.imagekit.io/dhlq5fcy7w/covers/personal1.jpg'
     },
     {
       id: 's5',
       title: 'GTS Academy',
-      src: 'https://player.vimeo.com/video/1223754089?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479',
+      src: 'https://ik.imagekit.io/dhlq5fcy7w/videos/yousef.mp4',
       category: 'social_media',
       cover: 'https://ik.imagekit.io/dhlq5fcy7w/abu%20dhabi/Captura%20de%20pantalla%202026-09-03%20a%20las%2019.33.39.png'
     },
