@@ -112,49 +112,49 @@ type Video = {
     {
       id: 's10',
       title: 'Brisa - Gin MG',
-      src: 'https://ik.imagekit.io/dhlq5fcy7w/videos/brisa.mp4',
+      src: 'https://res.cloudinary.com/dwu8zidoo/video/upload/v1788796505/brisa.mp4',
       category: 'social_media',
       cover: 'https://ik.imagekit.io/dhlq5fcy7w/abu%20dhabi/anuncis1.jpg'
     },
      {
       id: 's21',
       title: 'Spirit',
-      src: 'https://ik.imagekit.io/dhlq5fcy7w/videos/spirit.mp4',
+      src: 'https://res.cloudinary.com/dwu8zidoo/video/upload/v1788796535/spirit.mp4',
       category: 'social_media',
       cover: 'https://ik.imagekit.io/dhlq5fcy7w/abu%20dhabi/WEB%20NEW/Captura%20de%20pantalla%202026-08-30%20a%20las%2023.01.22.png'
     },
      {
       id: 's11',
       title: 'Katia - Veuve Clicquot',
-      src: 'https://ik.imagekit.io/dhlq5fcy7w/videos/katia.mp4',
+      src: 'https://res.cloudinary.com/dwu8zidoo/video/upload/v1788796527/katia.mp4',
       category: 'social_media',
       cover: 'https://ik.imagekit.io/dhlq5fcy7w/abu%20dhabi/anuncis4.jpg'
     },
      {
       id: 's12',
       title: 'Aperitvo - Le Tribute',
-      src: 'https://ik.imagekit.io/dhlq5fcy7w/videos/letribute.mp4',
+      src: 'https://res.cloudinary.com/dwu8zidoo/video/upload/v1788796528/letribute.mp4',
       category: 'social_media',
       cover: 'https://ik.imagekit.io/dhlq5fcy7w/abu%20dhabi/anuncis2.jpg'
     },
     {
       id: 's1',
       title: 'Hoops Sant Adrià',
-      src: 'https://ik.imagekit.io/dhlq5fcy7w/videos/hoops.mp4',
+      src: 'https://res.cloudinary.com/dwu8zidoo/video/upload/v1788796523/hoops.mp4',
       category: 'social_media',
       cover: 'https://ik.imagekit.io/dhlq5fcy7w/covers/hoops.jpeg'
     },
     {
       id: 'p2',
       title: 'Abu Dhabi Streets',
-      src: 'https://ik.imagekit.io/dhlq5fcy7w/videos/abudhabi.mp4',
+      src: 'https://res.cloudinary.com/dwu8zidoo/video/upload/v1788796503/abudhabi.mp4',
       category: 'social_media',
       cover: 'https://ik.imagekit.io/dhlq5fcy7w/covers/personal1.jpg'
     },
     {
       id: 's5',
       title: 'GTS Academy',
-      src: 'https://ik.imagekit.io/dhlq5fcy7w/videos/yousef.mp4',
+      src: 'https://res.cloudinary.com/dwu8zidoo/video/upload/v1788796505/yousef.mp4',
       category: 'social_media',
       cover: 'https://ik.imagekit.io/dhlq5fcy7w/abu%20dhabi/Captura%20de%20pantalla%202026-09-03%20a%20las%2019.33.39.png'
     },
