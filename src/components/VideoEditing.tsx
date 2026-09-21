@@ -117,7 +117,7 @@ export default function VideoEditing() {
         </div>
       </section>
 
-      {/* MÉTRICAS / IMPACTO */}
+      {/* MÉTRICAS / IMPACTO 
       <section className="border-y border-black/10 bg-neutral-50 py-12">
         <div className="max-w-5xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
           <div>
@@ -138,6 +138,7 @@ export default function VideoEditing() {
           </div>
         </div>
       </section>
+      */}
 
       {/* SECCIÓN SOBRE MÍ / PROPUESTA */}
       <section className="max-w-5xl mx-auto px-6 py-20">
