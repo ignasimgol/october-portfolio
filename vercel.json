@@ -1,0 +1,6 @@
+{
+  "rewrites": [
+    { "source": "/video-editor", "destination": "/index.html" },
+    { "source": "/video-editor/:path*", "destination": "/index.html" }
+  ]
+}
