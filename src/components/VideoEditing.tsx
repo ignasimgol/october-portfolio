@@ -141,50 +141,50 @@ export default function VideoEditing() {
       */}
 
       {/* SECCIÓN SOBRE MÍ / PROPUESTA */}
-      <section className="max-w-5xl mx-auto px-6 py-20">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div>
-            <span className="text-xs font-bold text-neutral-500 tracking-widest uppercase mb-2 block">
-              Sobre el servicio
-            </span>
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 leading-tight text-black">
-              Edición enfocada en retener la atención y transmitir emoción
-            </h2>
-            <p className="text-neutral-600 mb-4 leading-relaxed">
-              No se trata solo de cortar clips. Cada corte, transición y ajuste de color está pensado para mantener al espectador enganchado desde el primer segundo.
-            </p>
-            <p className="text-neutral-600 leading-relaxed">
-              Trabajo con flujos eficientes para garantizar entregas rápidas sin comprometer la calidad estética ni narrativa.
-            </p>
-          </div>
+<section className="max-w-5xl mx-auto px-6 py-20">
+  <div className="grid md:grid-cols-2 gap-12 items-center">
+    <div>
+      <span className="text-xs font-bold text-neutral-500 tracking-widest uppercase mb-2 block">
+        Sobre el servicio
+      </span>
+      <h2 className="text-3xl md:text-4xl font-bold mb-6 leading-tight text-black">
+        Edición enfocada en retener la atención y transmitir emoción
+      </h2>
+      <p className="text-neutral-600 mb-4 leading-relaxed">
+        No se trata solo de cortar clips. Cada corte, transición y ajuste de color está pensado para mantener al espectador enganchado desde el primer segundo.
+      </p>
+      <p className="text-neutral-600 leading-relaxed">
+        Trabajo con flujos eficientes para garantizar entregas rápidas sin comprometer la calidad estética ni narrativa.
+      </p>
+    </div>
 
-          <div className="grid grid-cols-1 gap-4">
-            <div className="group bg-white border border-black/10 p-6 rounded-2xl shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:border-black/30 cursor-default">
-              <h3 className="text-lg font-bold text-black mb-2 flex items-center gap-2">
-                <span className="inline-block transition-transform duration-300 group-hover:scale-125 group-hover:rotate-12">⚡</span> 
-                Edición Dinámica & Social Media
-              </h3>
-              <p className="text-sm text-neutral-600">Reels, TikToks y YouTube Shorts con subtítulos animados, efectos de sonido y ritmo acelerado.</p>
-            </div>
+    <div className="grid grid-cols-1 gap-4">
+      <div className="group bg-white border border-black/10 p-6 rounded-2xl shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:border-black/30 cursor-default">
+        <h3 className="text-lg font-bold text-black mb-2 flex items-center justify-center text-center gap-2">
+          <span className="inline-block transition-transform duration-300 group-hover:scale-125 group-hover:rotate-12">⚡</span> 
+          Edición Dinámica & Social Media
+        </h3>
+        <p className="text-sm text-neutral-600">Reels, TikToks y YouTube Shorts con subtítulos animados, efectos de sonido y ritmo acelerado.</p>
+      </div>
 
-            <div className="group bg-white border border-black/10 p-6 rounded-2xl shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:border-black/30 cursor-default">
-              <h3 className="text-lg font-bold text-black mb-2 flex items-center gap-2">
-                <span className="inline-block transition-transform duration-300 group-hover:scale-125 group-hover:-rotate-12">🎨</span> 
-                Color Grading & Estética
-              </h3>
-              <p className="text-sm text-neutral-600">Corrección de color profesional para darle un aspecto de cine o estilo de marca homogéneo.</p>
-            </div>
+      <div className="group bg-white border border-black/10 p-6 rounded-2xl shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:border-black/30 cursor-default">
+        <h3 className="text-lg font-bold text-black mb-2 flex items-center justify-center text-center gap-2">
+          <span className="inline-block transition-transform duration-300 group-hover:scale-125 group-hover:-rotate-12">🎨</span> 
+          Color Grading & Estética
+        </h3>
+        <p className="text-sm text-neutral-600">Corrección de color profesional para darle un aspecto de cine o estilo de marca homogéneo.</p>
+      </div>
 
-            <div className="group bg-white border border-black/10 p-6 rounded-2xl shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:border-black/30 cursor-default">
-              <h3 className="text-lg font-bold text-black mb-2 flex items-center gap-2">
-                <span className="inline-block transition-transform duration-300 group-hover:scale-125 group-hover:rotate-6">💼</span> 
-                Vídeo Corporativo e Interno
-              </h3>
-              <p className="text-sm text-neutral-600">Píldoras formativas, eventos, testimoniales y onboarding institucional con acabado limpio.</p>
-            </div>
-          </div>
-        </div>
-      </section>
+      <div className="group bg-white border border-black/10 p-6 rounded-2xl shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:border-black/30 cursor-default">
+        <h3 className="text-lg font-bold text-black mb-2 flex items-center justify-center text-center gap-2">
+          <span className="inline-block transition-transform duration-300 group-hover:scale-125 group-hover:rotate-6">💼</span> 
+          Vídeo Corporativo e Interno
+        </h3>
+        <p className="text-sm text-neutral-600">Píldoras formativas, eventos, testimoniales y onboarding institucional con acabado limpio.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
       {/* GALERÍA DE TRABAJOS (REELS VERTICALES SIN FILTROS NI TÍTULOS) */}
       <section id="work" className="max-w-6xl mx-auto px-6 py-20 border-t border-black/10">
